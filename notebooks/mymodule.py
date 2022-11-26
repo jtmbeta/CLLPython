@@ -53,7 +53,7 @@ def check_prime_number(number):
     """
     # Throw an error if number is not an integer
     if not isinstance(number, int):
-        raise ValueError(f"check_prime_number expects int, not {type(number)}")
+        raise TypeError(f"check_prime_number expects int, but got {type(number)}")
 
     # Print out some feedback
     print(f"Checking to see if {number} is a prime number.")
@@ -96,8 +96,8 @@ def fahrenheit_to_celsius(temp):
     """
     # Throw an error if number is not integer or floating point
     if not isinstance(temp, (int, float)):
-        raise ValueError(
-            f"fahrenheit_to_celsius expects int or float, not {type(temp)}"
+        raise TypeError(
+            f"fahrenheit_to_celsius expects int or float, got {type(temp)}"
         )
 
     # Convert to Celsius

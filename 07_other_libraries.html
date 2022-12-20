@@ -296,7 +296,7 @@ div.rendered_html tbody tr:hover {
 <section id="Week-8---Other-libraries-and-cool-things">
 <h1>Week 8 - Other libraries and cool things<a class="headerlink" href="#Week-8---Other-libraries-and-cool-things" title="Permalink to this heading">¶</a></h1>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -311,7 +311,7 @@ div.rendered_html tbody tr:hover {
 <p><code class="docutils literal notranslate"><span class="pre">seaborn</span></code> is a Python data visualisation library for making statistical graphics. It is built on top of <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and integrates very closely with <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
 <p>Exploratory visualisations are often much easier with <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>. For example, with only a few lines of code, we can visualise 5 columns from the titanic dataset.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[71]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">context</span><span class="o">=</span><span class="s1">&#39;notebook&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;darkgrid&#39;</span><span class="p">)</span>
@@ -340,7 +340,7 @@ div.rendered_html tbody tr:hover {
 <h2>Matplotlib figure anatomy<a class="headerlink" href="#Matplotlib-figure-anatomy" title="Permalink to this heading">¶</a></h2>
 <p>A <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> figure is a collection of <code class="docutils literal notranslate"><span class="pre">Artist</span></code> objects stored together in a logical parent-child hierarchy. Here’s a neat way to visualise it.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib.artist</span> <span class="kn">import</span> <span class="n">Artist</span>
@@ -390,49 +390,49 @@ Figure(600x600)
         XAxis(75.0,65.99999999999999)
             Text(0.5, 0, &#39;The x-axis&#39;)
             Text(1, 0, &#39;&#39;)
-            &lt;matplotlib.axis.XTick object at 0x7fbc94f22370&gt;
+            &lt;matplotlib.axis.XTick object at 0x7ff55aa2cd30&gt;
                 Line2D()
                 Line2D()
                 Line2D()
                 Text(0, 0, &#39;&#39;)
                 Text(0, 1, &#39;&#39;)
-            &lt;matplotlib.axis.XTick object at 0x7fbc94f22340&gt;
+            &lt;matplotlib.axis.XTick object at 0x7ff55aa2cd00&gt;
                 Line2D()
                 Line2D()
                 Line2D()
                 Text(0, 0, &#39;&#39;)
                 Text(0, 1, &#39;&#39;)
-            &lt;matplotlib.axis.XTick object at 0x7fbc94c1a3d0&gt;
+            &lt;matplotlib.axis.XTick object at 0x7ff5391fea90&gt;
                 Line2D()
                 Line2D()
                 Line2D()
                 Text(0, 0, &#39;&#39;)
                 Text(0, 1, &#39;&#39;)
-            &lt;matplotlib.axis.XTick object at 0x7fbc94c1a9d0&gt;
+            &lt;matplotlib.axis.XTick object at 0x7ff5280bc2e0&gt;
                 Line2D()
                 Line2D()
                 Line2D()
                 Text(0, 0, &#39;&#39;)
                 Text(0, 1, &#39;&#39;)
-            &lt;matplotlib.axis.XTick object at 0x7fbc94c230d0&gt;
+            &lt;matplotlib.axis.XTick object at 0x7ff5280bca30&gt;
                 Line2D()
                 Line2D()
                 Line2D()
                 Text(0, 0, &#39;&#39;)
                 Text(0, 1, &#39;&#39;)
-            &lt;matplotlib.axis.XTick object at 0x7fbc94c23820&gt;
+            &lt;matplotlib.axis.XTick object at 0x7ff5280c21c0&gt;
                 Line2D()
                 Line2D()
                 Line2D()
                 Text(0, 0, &#39;&#39;)
                 Text(0, 1, &#39;&#39;)
-            &lt;matplotlib.axis.XTick object at 0x7fbc94c28040&gt;
+            &lt;matplotlib.axis.XTick object at 0x7ff5280c2910&gt;
                 Line2D()
                 Line2D()
                 Line2D()
                 Text(0, 0, &#39;&#39;)
                 Text(0, 1, &#39;&#39;)
-            &lt;matplotlib.axis.XTick object at 0x7fbc94c28700&gt;
+            &lt;matplotlib.axis.XTick object at 0x7ff5280bca90&gt;
                 Line2D()
                 Line2D()
                 Line2D()
@@ -441,49 +441,49 @@ Figure(600x600)
         YAxis(75.0,65.99999999999999)
             Text(0, 0.5, &#39;The y-axis&#39;)
             Text(0, 0.5, &#39;&#39;)
-            &lt;matplotlib.axis.YTick object at 0x7fbc94f292b0&gt;
+            &lt;matplotlib.axis.YTick object at 0x7ff55aa2ceb0&gt;
                 Line2D()
                 Line2D()
                 Line2D()
                 Text(0, 0, &#39;&#39;)
                 Text(1, 0, &#39;&#39;)
-            &lt;matplotlib.axis.YTick object at 0x7fbc94f22af0&gt;
+            &lt;matplotlib.axis.YTick object at 0x7ff55aa2ce80&gt;
                 Line2D()
                 Line2D()
                 Line2D()
                 Text(0, 0, &#39;&#39;)
                 Text(1, 0, &#39;&#39;)
-            &lt;matplotlib.axis.YTick object at 0x7fbc94c1a310&gt;
+            &lt;matplotlib.axis.YTick object at 0x7ff5280c2490&gt;
                 Line2D()
                 Line2D()
                 Line2D()
                 Text(0, 0, &#39;&#39;)
                 Text(1, 0, &#39;&#39;)
-            &lt;matplotlib.axis.YTick object at 0x7fbc94c28eb0&gt;
+            &lt;matplotlib.axis.YTick object at 0x7ff5280c8400&gt;
                 Line2D()
                 Line2D()
                 Line2D()
                 Text(0, 0, &#39;&#39;)
                 Text(1, 0, &#39;&#39;)
-            &lt;matplotlib.axis.YTick object at 0x7fbc94c23d00&gt;
+            &lt;matplotlib.axis.YTick object at 0x7ff5280c8b50&gt;
                 Line2D()
                 Line2D()
                 Line2D()
                 Text(0, 0, &#39;&#39;)
                 Text(1, 0, &#39;&#39;)
-            &lt;matplotlib.axis.YTick object at 0x7fbc94c2e490&gt;
+            &lt;matplotlib.axis.YTick object at 0x7ff5280cf2e0&gt;
                 Line2D()
                 Line2D()
                 Line2D()
                 Text(0, 0, &#39;&#39;)
                 Text(1, 0, &#39;&#39;)
-            &lt;matplotlib.axis.YTick object at 0x7fbc94c2eb50&gt;
+            &lt;matplotlib.axis.YTick object at 0x7ff5280cfa30&gt;
                 Line2D()
                 Line2D()
                 Line2D()
                 Text(0, 0, &#39;&#39;)
                 Text(1, 0, &#39;&#39;)
-            &lt;matplotlib.axis.YTick object at 0x7fbc94c362e0&gt;
+            &lt;matplotlib.axis.YTick object at 0x7ff5280d61c0&gt;
                 Line2D()
                 Line2D()
                 Line2D()
@@ -493,15 +493,15 @@ Figure(600x600)
         Text(0.0, 1.0, &#39;&#39;)
         Text(1.0, 1.0, &#39;&#39;)
         Legend
-            &lt;matplotlib.offsetbox.VPacker object at 0x7fbc94c1a0d0&gt;
-                &lt;matplotlib.offsetbox.TextArea object at 0x7fbc94c11e50&gt;
+            &lt;matplotlib.offsetbox.VPacker object at 0x7ff55aa1b340&gt;
+                &lt;matplotlib.offsetbox.TextArea object at 0x7ff5280ad910&gt;
                     Text(0, 0, &#39;&#39;)
-                &lt;matplotlib.offsetbox.HPacker object at 0x7fbc94c11d00&gt;
-                    &lt;matplotlib.offsetbox.VPacker object at 0x7fbc94c11ca0&gt;
-                        &lt;matplotlib.offsetbox.HPacker object at 0x7fbc94c11cd0&gt;
-                            &lt;matplotlib.offsetbox.DrawingArea object at 0x7fbc94c117c0&gt;
+                &lt;matplotlib.offsetbox.HPacker object at 0x7ff5280ad310&gt;
+                    &lt;matplotlib.offsetbox.VPacker object at 0x7ff55aa510d0&gt;
+                        &lt;matplotlib.offsetbox.HPacker object at 0x7ff55aa51100&gt;
+                            &lt;matplotlib.offsetbox.DrawingArea object at 0x7ff5280ad3a0&gt;
                                 Line2D(A diaganol line)
-                            &lt;matplotlib.offsetbox.TextArea object at 0x7fbc94c11790&gt;
+                            &lt;matplotlib.offsetbox.TextArea object at 0x7ff5280ad370&gt;
                                 Text(0, 0, &#39;A diaganol line&#39;)
             FancyBboxPatch((0, 0), width=1, height=1)
         Rectangle(xy=(0, 0), width=1, height=1, angle=0)
@@ -516,7 +516,7 @@ Figure(600x600)
 </div>
 <p>Now, to demonstrate the power of matplotlib, let’s traverse this hierarchy in true object-oriented fashion and make some changes to a single element.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">()[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span>
@@ -532,21 +532,12 @@ Figure(600x600)
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
 </div>
 <div class="output_area docutils container">
-<div class="highlight"><pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">/var/folders/c9/7yddvl1n2ss863cgfngj0wpm0000gp/T/ipykernel_38199/3625628455.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> fig.axes[0].get_xticklabels()[4].set(
-</span><span class="ansi-green-intense-fg ansi-bold">      2</span>     color<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;r&#39;</span><span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span>     style<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;italic&#39;</span><span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span>     weight<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;bold&#39;</span><span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span>     size<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">42</span><span class="ansi-blue-fg">,</span>
-
-<span class="ansi-red-fg">NameError</span>: name &#39;fig&#39; is not defined
-</pre></div></div>
+<img alt="_images/07_other_libraries_7_0.png" src="_images/07_other_libraries_7_0.png" />
+</div>
 </div>
 <p>This may seem like a silly exercise, but it reveals much about <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. What else about the plot can you change?</p>
 </section>
@@ -554,7 +545,7 @@ Figure(600x600)
 <h2>Animations with matplotlib<a class="headerlink" href="#Animations-with-matplotlib" title="Permalink to this heading">¶</a></h2>
 <p>With <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, it is also possible to make animated plots. Here’s one that shows the number of cycling accidents over time. Note you may need to install some additional libraries for this to work in a Jupyter notebook.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
@@ -562,7 +553,7 @@ Figure(600x600)
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -583,265 +574,194 @@ Figure(600x600)
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
-      <th>Gender</th>
-      <th>Female</th>
-      <th>Male</th>
-      <th>Other</th>
-    </tr>
-    <tr>
-      <th>Year</th>
       <th></th>
-      <th></th>
-      <th></th>
+      <th>PassengerID</th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>1979</th>
-      <td>4374.0</td>
-      <td>18114.0</td>
-      <td>2.0</td>
-    </tr>
-    <tr>
-      <th>1980</th>
-      <td>4723.0</td>
-      <td>18838.0</td>
-      <td>7.0</td>
-    </tr>
-    <tr>
-      <th>1981</th>
-      <td>5041.0</td>
-      <td>19000.0</td>
-      <td>11.0</td>
-    </tr>
-    <tr>
-      <th>1982</th>
-      <td>5819.0</td>
-      <td>21048.0</td>
+      <th>0</th>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Braund, Mr. Owen Harris</td>
+      <td>male</td>
+      <td>22.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>A/5 21171</td>
+      <td>7.2500</td>
       <td>NaN</td>
+      <td>S</td>
     </tr>
     <tr>
-      <th>1983</th>
-      <td>6056.0</td>
-      <td>23126.0</td>
+      <th>1</th>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Cumings, Mrs. John Bradley (Florence Briggs Th...</td>
+      <td>female</td>
+      <td>38.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>PC 17599</td>
+      <td>71.2833</td>
+      <td>C85</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>1</td>
+      <td>3</td>
+      <td>Heikkinen, Miss. Laina</td>
+      <td>female</td>
+      <td>26.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>STON/O2. 3101282</td>
+      <td>7.9250</td>
       <td>NaN</td>
+      <td>S</td>
     </tr>
     <tr>
-      <th>1984</th>
-      <td>6380.0</td>
-      <td>23071.0</td>
+      <th>3</th>
+      <td>4</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>
+      <td>female</td>
+      <td>35.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>113803</td>
+      <td>53.1000</td>
+      <td>C123</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Allen, Mr. William Henry</td>
+      <td>male</td>
+      <td>35.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>373450</td>
+      <td>8.0500</td>
       <td>NaN</td>
+      <td>S</td>
     </tr>
     <tr>
-      <th>1985</th>
-      <td>5610.0</td>
-      <td>20019.0</td>
-      <td>1.0</td>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
-      <th>1986</th>
-      <td>5594.0</td>
-      <td>19278.0</td>
-      <td>2.0</td>
-    </tr>
-    <tr>
-      <th>1987</th>
-      <td>5403.0</td>
-      <td>19550.0</td>
-      <td>3.0</td>
-    </tr>
-    <tr>
-      <th>1988</th>
-      <td>5122.0</td>
-      <td>19502.0</td>
-      <td>2.0</td>
-    </tr>
-    <tr>
-      <th>1989</th>
-      <td>5564.0</td>
-      <td>21494.0</td>
-      <td>2.0</td>
-    </tr>
-    <tr>
-      <th>1990</th>
-      <td>5283.0</td>
-      <td>19760.0</td>
-      <td>4.0</td>
-    </tr>
-    <tr>
-      <th>1991</th>
-      <td>4946.0</td>
-      <td>18472.0</td>
-      <td>2.0</td>
-    </tr>
-    <tr>
-      <th>1992</th>
-      <td>4997.0</td>
-      <td>18306.0</td>
-      <td>5.0</td>
-    </tr>
-    <tr>
-      <th>1993</th>
-      <td>4596.0</td>
-      <td>18004.0</td>
-      <td>5.0</td>
-    </tr>
-    <tr>
-      <th>1994</th>
-      <td>4706.0</td>
-      <td>18586.0</td>
-      <td>3.0</td>
-    </tr>
-    <tr>
-      <th>1995</th>
-      <td>4748.0</td>
-      <td>18649.0</td>
-      <td>4.0</td>
-    </tr>
-    <tr>
-      <th>1996</th>
-      <td>4620.0</td>
-      <td>18474.0</td>
-      <td>10.0</td>
-    </tr>
-    <tr>
-      <th>1997</th>
-      <td>4698.0</td>
-      <td>18502.0</td>
-      <td>8.0</td>
-    </tr>
-    <tr>
-      <th>1998</th>
-      <td>4382.0</td>
-      <td>17084.0</td>
-      <td>6.0</td>
-    </tr>
-    <tr>
-      <th>1999</th>
-      <td>4250.0</td>
-      <td>17110.0</td>
-      <td>2.0</td>
-    </tr>
-    <tr>
-      <th>2000</th>
-      <td>3958.0</td>
-      <td>15282.0</td>
-      <td>3.0</td>
-    </tr>
-    <tr>
-      <th>2001</th>
-      <td>3463.0</td>
-      <td>14353.0</td>
-      <td>7.0</td>
-    </tr>
-    <tr>
-      <th>2002</th>
-      <td>3114.0</td>
-      <td>12886.0</td>
-      <td>4.0</td>
-    </tr>
-    <tr>
-      <th>2003</th>
-      <td>3090.0</td>
-      <td>12774.0</td>
-      <td>2.0</td>
-    </tr>
-    <tr>
-      <th>2004</th>
-      <td>3040.0</td>
-      <td>12540.0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>2005</th>
-      <td>2754.0</td>
-      <td>11446.0</td>
-      <td>2.0</td>
-    </tr>
-    <tr>
-      <th>2006</th>
-      <td>2727.0</td>
-      <td>11419.0</td>
+      <th>886</th>
+      <td>887</td>
+      <td>0</td>
+      <td>2</td>
+      <td>Montvila, Rev. Juozas</td>
+      <td>male</td>
+      <td>27.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>211536</td>
+      <td>13.0000</td>
       <td>NaN</td>
+      <td>S</td>
     </tr>
     <tr>
-      <th>2007</th>
-      <td>2763.0</td>
-      <td>11514.0</td>
-      <td>1.0</td>
+      <th>887</th>
+      <td>888</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Graham, Miss. Margaret Edith</td>
+      <td>female</td>
+      <td>19.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>112053</td>
+      <td>30.0000</td>
+      <td>B42</td>
+      <td>S</td>
     </tr>
     <tr>
-      <th>2008</th>
-      <td>2806.0</td>
-      <td>11746.0</td>
-      <td>5.0</td>
-    </tr>
-    <tr>
-      <th>2009</th>
-      <td>2902.0</td>
-      <td>12331.0</td>
+      <th>888</th>
+      <td>889</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Johnston, Miss. Catherine Helen "Carrie"</td>
+      <td>female</td>
       <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2010</th>
-      <td>2893.0</td>
-      <td>12659.0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>W./C. 6607</td>
+      <td>23.4500</td>
       <td>NaN</td>
+      <td>S</td>
     </tr>
     <tr>
-      <th>2011</th>
-      <td>3347.0</td>
-      <td>14055.0</td>
+      <th>889</th>
+      <td>890</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Behr, Mr. Karl Howell</td>
+      <td>male</td>
+      <td>26.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>111369</td>
+      <td>30.0000</td>
+      <td>C148</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>890</th>
+      <td>891</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Dooley, Mr. Patrick</td>
+      <td>male</td>
+      <td>32.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>370376</td>
+      <td>7.7500</td>
       <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2012</th>
-      <td>3302.0</td>
-      <td>14138.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2013</th>
-      <td>3370.0</td>
-      <td>14452.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2014</th>
-      <td>3805.0</td>
-      <td>15795.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2015</th>
-      <td>3423.0</td>
-      <td>14646.0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>2016</th>
-      <td>3362.0</td>
-      <td>14310.0</td>
-      <td>5.0</td>
-    </tr>
-    <tr>
-      <th>2017</th>
-      <td>3372.0</td>
-      <td>14225.0</td>
-      <td>7.0</td>
-    </tr>
-    <tr>
-      <th>2018</th>
-      <td>3314.0</td>
-      <td>13467.0</td>
-      <td>2.0</td>
+      <td>Q</td>
     </tr>
   </tbody>
 </table>
+<p>891 rows × 12 columns</p>
 </div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[50]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib.animation</span> <span class="kn">import</span> <span class="n">FuncAnimation</span>
@@ -891,12 +811,11 @@ Figure(600x600)
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "2427889fffd3436d903d6315bd76fb14", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "03d23c83f1a44962af884b92e68ba389", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
-</section>
 <section id="Geographical-plots-with-cartopy">
-<h1>Geographical plots with <code class="docutils literal notranslate"><span class="pre">cartopy</span></code><a class="headerlink" href="#Geographical-plots-with-cartopy" title="Permalink to this heading">¶</a></h1>
+<h2>Geographical plots with <code class="docutils literal notranslate"><span class="pre">cartopy</span></code><a class="headerlink" href="#Geographical-plots-with-cartopy" title="Permalink to this heading">¶</a></h2>
 <p>Map projections:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Map_projection">https://en.wikipedia.org/wiki/Map_projection</a></p></li>
@@ -909,7 +828,7 @@ Figure(600x600)
 <li><p><a class="reference external" href="https://simplemaps.com/data/world-cities">https://simplemaps.com/data/world-cities</a></p></li>
 </ul>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -925,7 +844,7 @@ Figure(600x600)
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -1121,7 +1040,7 @@ Figure(600x600)
 </div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
@@ -1186,12 +1105,11 @@ Figure(600x600)
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/07_other_libraries_14_0.png" src="_images/07_other_libraries_14_0.png" />
-</div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "b5c42faab1634ef592bf817bda88487e", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> has its own <a class="reference external" href="https://matplotlib.org/basemap/users/index.html">Basemap Toolkit</a> which predates <code class="docutils literal notranslate"><span class="pre">cartopy</span></code>. Soon I’ll be off to Copenhagen, so I decided to use it to plot the <a class="reference external" href="https://en.wikipedia.org/wiki/Great_circle">great circle</a> route between airports.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mpl_toolkits.basemap</span> <span class="kn">import</span> <span class="n">Basemap</span>
@@ -1234,9 +1152,9 @@ Figure(600x600)
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/07_other_libraries_16_0.png" src="_images/07_other_libraries_16_0.png" />
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "77ab6416b6ee467ea3a8d99ac96b01b2", "version_major": 2, "version_minor": 0}</script></div>
 </div>
-</div>
+</section>
 </section>
 
 
@@ -1281,9 +1199,9 @@ Figure(600x600)
 <li class="toctree-l2"><a class="reference internal" href="#seaborn">seaborn</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Matplotlib-figure-anatomy">Matplotlib figure anatomy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Animations-with-matplotlib">Animations with matplotlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Geographical-plots-with-cartopy">Geographical plots with <code class="docutils literal notranslate"><span class="pre">cartopy</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#Geographical-plots-with-cartopy">Geographical plots with <code class="docutils literal notranslate"><span class="pre">cartopy</span></code></a></li>
 </ul>
 
 <div class="relations">

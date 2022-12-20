@@ -1,0 +1,1308 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Week 8 - Other libraries and cool things &#8212; CLLPython 0.0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars and line breaks on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+    white-space: pre;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt .copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+.jp-RenderedHTMLCommon table,
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+.jp-RenderedHTMLCommon thead,
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+.jp-RenderedHTMLCommon tr,
+.jp-RenderedHTMLCommon th,
+.jp-RenderedHTMLCommon td,
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+.jp-RenderedHTMLCommon th,
+div.rendered_html th {
+  font-weight: bold;
+}
+.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.jp-RenderedHTMLCommon tbody tr:hover,
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+</style>
+<section id="Week-8---Other-libraries-and-cool-things">
+<h1>Week 8 - Other libraries and cool things<a class="headerlink" href="#Week-8---Other-libraries-and-cool-things" title="Permalink to this heading">¶</a></h1>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+<section id="seaborn">
+<h2><a class="reference external" href="https://seaborn.pydata.org/index.html">seaborn</a><a class="headerlink" href="#seaborn" title="Permalink to this heading">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">seaborn</span></code> is a Python data visualisation library for making statistical graphics. It is built on top of <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and integrates very closely with <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
+<p>Exploratory visualisations are often much easier with <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>. For example, with only a few lines of code, we can visualise 5 columns from the titanic dataset.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[71]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">context</span><span class="o">=</span><span class="s1">&#39;notebook&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;darkgrid&#39;</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/titanic.csv&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">relplot</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Fare&#39;</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s1">&#39;Embarked&#39;</span><span class="p">,</span>
+    <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Sex&#39;</span><span class="p">,</span>
+    <span class="n">style</span><span class="o">=</span><span class="s1">&#39;Survived&#39;</span><span class="p">,</span>
+    <span class="n">markers</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;o&#39;</span><span class="p">},</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_07_other_libraries_3_0.png" src="../_images/notebooks_07_other_libraries_3_0.png" />
+</div>
+</div>
+</section>
+<section id="Matplotlib-figure-anatomy">
+<h2>Matplotlib figure anatomy<a class="headerlink" href="#Matplotlib-figure-anatomy" title="Permalink to this heading">¶</a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> figure is a collection of <code class="docutils literal notranslate"><span class="pre">Artist</span></code> objects stored together in a logical parent-child hierarchy. Here’s a neat way to visualise it.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib.artist</span> <span class="kn">import</span> <span class="n">Artist</span>
+
+<span class="c1"># Make a basic example figure</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;A diaganol line&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span>
+    <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;The x-axis&#39;</span><span class="p">,</span>
+    <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;The y-axis&#39;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Example figure&#39;</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+    <span class="n">text</span><span class="o">=</span><span class="s1">&#39;This is the halfway point&#39;</span><span class="p">,</span>
+    <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+    <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">80</span><span class="p">),</span>
+    <span class="n">arrowprops</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;width&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;facecolor&#39;</span><span class="p">:</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="s1">&#39;edgecolor&#39;</span><span class="p">:</span><span class="s1">&#39;k&#39;</span><span class="p">}</span>
+<span class="p">)</span>
+
+<span class="c1"># A function to plot all of the Artists</span>
+<span class="k">def</span> <span class="nf">recursive_get_children</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">Artist</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  &#39;</span> <span class="o">*</span> <span class="n">depth</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">artist</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">artist</span><span class="o">.</span><span class="n">get_children</span><span class="p">():</span>
+            <span class="n">recursive_get_children</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">depth</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Call the function on our figure</span>
+<span class="n">recursive_get_children</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Figure(600x600)
+    Rectangle(xy=(0, 0), width=1, height=1, angle=0)
+    AxesSubplot(0.125,0.11;0.775x0.77)
+        Line2D(A diaganol line)
+        Annotation(50, 50, &#39;This is the halfway point&#39;)
+        Spine
+        Spine
+        Spine
+        Spine
+        XAxis(75.0,65.99999999999999)
+            Text(0.5, 0, &#39;The x-axis&#39;)
+            Text(1, 0, &#39;&#39;)
+            &lt;matplotlib.axis.XTick object at 0x7fbc94f22370&gt;
+                Line2D()
+                Line2D()
+                Line2D()
+                Text(0, 0, &#39;&#39;)
+                Text(0, 1, &#39;&#39;)
+            &lt;matplotlib.axis.XTick object at 0x7fbc94f22340&gt;
+                Line2D()
+                Line2D()
+                Line2D()
+                Text(0, 0, &#39;&#39;)
+                Text(0, 1, &#39;&#39;)
+            &lt;matplotlib.axis.XTick object at 0x7fbc94c1a3d0&gt;
+                Line2D()
+                Line2D()
+                Line2D()
+                Text(0, 0, &#39;&#39;)
+                Text(0, 1, &#39;&#39;)
+            &lt;matplotlib.axis.XTick object at 0x7fbc94c1a9d0&gt;
+                Line2D()
+                Line2D()
+                Line2D()
+                Text(0, 0, &#39;&#39;)
+                Text(0, 1, &#39;&#39;)
+            &lt;matplotlib.axis.XTick object at 0x7fbc94c230d0&gt;
+                Line2D()
+                Line2D()
+                Line2D()
+                Text(0, 0, &#39;&#39;)
+                Text(0, 1, &#39;&#39;)
+            &lt;matplotlib.axis.XTick object at 0x7fbc94c23820&gt;
+                Line2D()
+                Line2D()
+                Line2D()
+                Text(0, 0, &#39;&#39;)
+                Text(0, 1, &#39;&#39;)
+            &lt;matplotlib.axis.XTick object at 0x7fbc94c28040&gt;
+                Line2D()
+                Line2D()
+                Line2D()
+                Text(0, 0, &#39;&#39;)
+                Text(0, 1, &#39;&#39;)
+            &lt;matplotlib.axis.XTick object at 0x7fbc94c28700&gt;
+                Line2D()
+                Line2D()
+                Line2D()
+                Text(0, 0, &#39;&#39;)
+                Text(0, 1, &#39;&#39;)
+        YAxis(75.0,65.99999999999999)
+            Text(0, 0.5, &#39;The y-axis&#39;)
+            Text(0, 0.5, &#39;&#39;)
+            &lt;matplotlib.axis.YTick object at 0x7fbc94f292b0&gt;
+                Line2D()
+                Line2D()
+                Line2D()
+                Text(0, 0, &#39;&#39;)
+                Text(1, 0, &#39;&#39;)
+            &lt;matplotlib.axis.YTick object at 0x7fbc94f22af0&gt;
+                Line2D()
+                Line2D()
+                Line2D()
+                Text(0, 0, &#39;&#39;)
+                Text(1, 0, &#39;&#39;)
+            &lt;matplotlib.axis.YTick object at 0x7fbc94c1a310&gt;
+                Line2D()
+                Line2D()
+                Line2D()
+                Text(0, 0, &#39;&#39;)
+                Text(1, 0, &#39;&#39;)
+            &lt;matplotlib.axis.YTick object at 0x7fbc94c28eb0&gt;
+                Line2D()
+                Line2D()
+                Line2D()
+                Text(0, 0, &#39;&#39;)
+                Text(1, 0, &#39;&#39;)
+            &lt;matplotlib.axis.YTick object at 0x7fbc94c23d00&gt;
+                Line2D()
+                Line2D()
+                Line2D()
+                Text(0, 0, &#39;&#39;)
+                Text(1, 0, &#39;&#39;)
+            &lt;matplotlib.axis.YTick object at 0x7fbc94c2e490&gt;
+                Line2D()
+                Line2D()
+                Line2D()
+                Text(0, 0, &#39;&#39;)
+                Text(1, 0, &#39;&#39;)
+            &lt;matplotlib.axis.YTick object at 0x7fbc94c2eb50&gt;
+                Line2D()
+                Line2D()
+                Line2D()
+                Text(0, 0, &#39;&#39;)
+                Text(1, 0, &#39;&#39;)
+            &lt;matplotlib.axis.YTick object at 0x7fbc94c362e0&gt;
+                Line2D()
+                Line2D()
+                Line2D()
+                Text(0, 0, &#39;&#39;)
+                Text(1, 0, &#39;&#39;)
+        Text(0.5, 1.0, &#39;Example figure&#39;)
+        Text(0.0, 1.0, &#39;&#39;)
+        Text(1.0, 1.0, &#39;&#39;)
+        Legend
+            &lt;matplotlib.offsetbox.VPacker object at 0x7fbc94c1a0d0&gt;
+                &lt;matplotlib.offsetbox.TextArea object at 0x7fbc94c11e50&gt;
+                    Text(0, 0, &#39;&#39;)
+                &lt;matplotlib.offsetbox.HPacker object at 0x7fbc94c11d00&gt;
+                    &lt;matplotlib.offsetbox.VPacker object at 0x7fbc94c11ca0&gt;
+                        &lt;matplotlib.offsetbox.HPacker object at 0x7fbc94c11cd0&gt;
+                            &lt;matplotlib.offsetbox.DrawingArea object at 0x7fbc94c117c0&gt;
+                                Line2D(A diaganol line)
+                            &lt;matplotlib.offsetbox.TextArea object at 0x7fbc94c11790&gt;
+                                Text(0, 0, &#39;A diaganol line&#39;)
+            FancyBboxPatch((0, 0), width=1, height=1)
+        Rectangle(xy=(0, 0), width=1, height=1, angle=0)
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_07_other_libraries_5_1.png" src="../_images/notebooks_07_other_libraries_5_1.png" />
+</div>
+</div>
+<p>Now, to demonstrate the power of matplotlib, let’s traverse this hierarchy in true object-oriented fashion and make some changes to a single element.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">()[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span>
+    <span class="n">style</span><span class="o">=</span><span class="s1">&#39;italic&#39;</span><span class="p">,</span>
+    <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">,</span>
+    <span class="n">size</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span>
+    <span class="n">family</span><span class="o">=</span><span class="s1">&#39;Comic Sans MS&#39;</span>
+<span class="p">)</span>
+
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">/var/folders/c9/7yddvl1n2ss863cgfngj0wpm0000gp/T/ipykernel_38199/3625628455.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> fig.axes[0].get_xticklabels()[4].set(
+</span><span class="ansi-green-intense-fg ansi-bold">      2</span>     color<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;r&#39;</span><span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span>     style<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;italic&#39;</span><span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span>     weight<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;bold&#39;</span><span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span>     size<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">42</span><span class="ansi-blue-fg">,</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;fig&#39; is not defined
+</pre></div></div>
+</div>
+<p>This may seem like a silly exercise, but it reveals much about <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. What else about the plot can you change?</p>
+</section>
+<section id="Animations-with-matplotlib">
+<h2>Animations with matplotlib<a class="headerlink" href="#Animations-with-matplotlib" title="Permalink to this heading">¶</a></h2>
+<p>With <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, it is also possible to make animated plots. Here’s one that shows the number of cycling accidents over time. Note you may need to install some additional libraries for this to work in a Jupyter notebook.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Gender</th>
+      <th>Female</th>
+      <th>Male</th>
+      <th>Other</th>
+    </tr>
+    <tr>
+      <th>Year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1979</th>
+      <td>4374.0</td>
+      <td>18114.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>1980</th>
+      <td>4723.0</td>
+      <td>18838.0</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <th>1981</th>
+      <td>5041.0</td>
+      <td>19000.0</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>1982</th>
+      <td>5819.0</td>
+      <td>21048.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1983</th>
+      <td>6056.0</td>
+      <td>23126.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1984</th>
+      <td>6380.0</td>
+      <td>23071.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1985</th>
+      <td>5610.0</td>
+      <td>20019.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1986</th>
+      <td>5594.0</td>
+      <td>19278.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>1987</th>
+      <td>5403.0</td>
+      <td>19550.0</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>1988</th>
+      <td>5122.0</td>
+      <td>19502.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>1989</th>
+      <td>5564.0</td>
+      <td>21494.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>1990</th>
+      <td>5283.0</td>
+      <td>19760.0</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>1991</th>
+      <td>4946.0</td>
+      <td>18472.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>1992</th>
+      <td>4997.0</td>
+      <td>18306.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>1993</th>
+      <td>4596.0</td>
+      <td>18004.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>1994</th>
+      <td>4706.0</td>
+      <td>18586.0</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>1995</th>
+      <td>4748.0</td>
+      <td>18649.0</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>1996</th>
+      <td>4620.0</td>
+      <td>18474.0</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>1997</th>
+      <td>4698.0</td>
+      <td>18502.0</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>1998</th>
+      <td>4382.0</td>
+      <td>17084.0</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>1999</th>
+      <td>4250.0</td>
+      <td>17110.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>2000</th>
+      <td>3958.0</td>
+      <td>15282.0</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>2001</th>
+      <td>3463.0</td>
+      <td>14353.0</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <th>2002</th>
+      <td>3114.0</td>
+      <td>12886.0</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>2003</th>
+      <td>3090.0</td>
+      <td>12774.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>2004</th>
+      <td>3040.0</td>
+      <td>12540.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2005</th>
+      <td>2754.0</td>
+      <td>11446.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>2006</th>
+      <td>2727.0</td>
+      <td>11419.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <td>2763.0</td>
+      <td>11514.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2008</th>
+      <td>2806.0</td>
+      <td>11746.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>2009</th>
+      <td>2902.0</td>
+      <td>12331.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2010</th>
+      <td>2893.0</td>
+      <td>12659.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2011</th>
+      <td>3347.0</td>
+      <td>14055.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <td>3302.0</td>
+      <td>14138.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2013</th>
+      <td>3370.0</td>
+      <td>14452.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2014</th>
+      <td>3805.0</td>
+      <td>15795.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>3423.0</td>
+      <td>14646.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>3362.0</td>
+      <td>14310.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>3372.0</td>
+      <td>14225.0</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <th>2018</th>
+      <td>3314.0</td>
+      <td>13467.0</td>
+      <td>2.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[50]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib.animation</span> <span class="kn">import</span> <span class="n">FuncAnimation</span>
+<span class="o">%</span><span class="k">matplotlib</span> widget
+
+<span class="n">df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/gb_cycling_accidents.csv&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="k">lambda</span> <span class="n">df_</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">(</span><span class="n">df_</span><span class="o">.</span><span class="n">Date</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">df_</span><span class="o">.</span><span class="n">Time</span><span class="p">))</span>
+    <span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">Year</span><span class="o">=</span><span class="k">lambda</span> <span class="n">df_</span><span class="p">:</span> <span class="n">df_</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Gender&#39;</span><span class="p">])[</span><span class="s1">&#39;Accident_Index&#39;</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">count</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="n">ln_male</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([],</span> <span class="p">[],</span> <span class="s1">&#39;ro-&#39;</span><span class="p">)</span>
+<span class="n">ln_female</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([],</span> <span class="p">[],</span> <span class="s1">&#39;bo-&#39;</span><span class="p">)</span>
+<span class="n">ln_other</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([],</span> <span class="p">[],</span> <span class="s1">&#39;go-&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">init</span><span class="p">():</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">1000</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">Male</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">*</span><span class="mf">1.05</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">((</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">()))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Number of accidents&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Cycling accidents in Great Britain (1979-2018)&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="n">ln_male</span><span class="p">,</span> <span class="n">ln_female</span><span class="p">,</span> <span class="n">ln_other</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Males&#39;</span><span class="p">,</span> <span class="s1">&#39;Females&#39;</span><span class="p">,</span> <span class="s1">&#39;Other&#39;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">ln_male</span><span class="p">,</span> <span class="n">ln_female</span><span class="p">,</span> <span class="n">ln_other</span><span class="p">,</span>
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">frame</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">frame</span><span class="p">]</span>
+    <span class="n">ln_male</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">Male</span><span class="p">)</span>
+    <span class="n">ln_female</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">Female</span><span class="p">)</span>
+    <span class="n">ln_other</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">Other</span><span class="p">)</span>
+
+
+    <span class="k">return</span> <span class="n">ln_male</span><span class="p">,</span> <span class="n">ln_female</span><span class="p">,</span> <span class="n">ln_other</span><span class="p">,</span>
+
+<span class="n">ani</span> <span class="o">=</span> <span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">update</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()),</span>
+                    <span class="n">init_func</span><span class="o">=</span><span class="n">init</span><span class="p">,</span> <span class="n">blit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "2427889fffd3436d903d6315bd76fb14", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+</section>
+</section>
+<section id="Geographical-plots-with-cartopy">
+<h1>Geographical plots with <code class="docutils literal notranslate"><span class="pre">cartopy</span></code><a class="headerlink" href="#Geographical-plots-with-cartopy" title="Permalink to this heading">¶</a></h1>
+<p>Map projections:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Map_projection">https://en.wikipedia.org/wiki/Map_projection</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Equirectangular_projection">https://en.wikipedia.org/wiki/Equirectangular_projection</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/List_of_map_projections">https://en.wikipedia.org/wiki/List_of_map_projections</a></p></li>
+</ul>
+<p>There are various libraries for plotting geospatial data in Python. A good example is the <code class="docutils literal notranslate"><span class="pre">`cartopy</span></code> &lt;<a class="reference external" href="https://scitools.org.uk/cartopy/docs/latest/">https://scitools.org.uk/cartopy/docs/latest/</a>&gt;`__ library. Here, I use <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> to plot the night-time shading for the current time on a flat map of the earth, along with the location of the University of York, and the 10 most populated cities.</p>
+<p>The city data are freely available at the following web page:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://simplemaps.com/data/world-cities">https://simplemaps.com/data/world-cities</a></p></li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Load the city data</span>
+<span class="n">df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/worldcities.csv&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;population&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>city</th>
+      <th>city_ascii</th>
+      <th>lat</th>
+      <th>lng</th>
+      <th>country</th>
+      <th>iso2</th>
+      <th>iso3</th>
+      <th>admin_name</th>
+      <th>capital</th>
+      <th>population</th>
+      <th>id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Tokyo</td>
+      <td>Tokyo</td>
+      <td>35.6839</td>
+      <td>139.7744</td>
+      <td>Japan</td>
+      <td>JP</td>
+      <td>JPN</td>
+      <td>Tōkyō</td>
+      <td>primary</td>
+      <td>39105000.0</td>
+      <td>1392685764</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Jakarta</td>
+      <td>Jakarta</td>
+      <td>-6.2146</td>
+      <td>106.8451</td>
+      <td>Indonesia</td>
+      <td>ID</td>
+      <td>IDN</td>
+      <td>Jakarta</td>
+      <td>primary</td>
+      <td>35362000.0</td>
+      <td>1360771077</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Delhi</td>
+      <td>Delhi</td>
+      <td>28.6667</td>
+      <td>77.2167</td>
+      <td>India</td>
+      <td>IN</td>
+      <td>IND</td>
+      <td>Delhi</td>
+      <td>admin</td>
+      <td>31870000.0</td>
+      <td>1356872604</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Manila</td>
+      <td>Manila</td>
+      <td>14.6000</td>
+      <td>120.9833</td>
+      <td>Philippines</td>
+      <td>PH</td>
+      <td>PHL</td>
+      <td>Manila</td>
+      <td>primary</td>
+      <td>23971000.0</td>
+      <td>1608618140</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>São Paulo</td>
+      <td>Sao Paulo</td>
+      <td>-23.5504</td>
+      <td>-46.6339</td>
+      <td>Brazil</td>
+      <td>BR</td>
+      <td>BRA</td>
+      <td>São Paulo</td>
+      <td>admin</td>
+      <td>22495000.0</td>
+      <td>1076532519</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>Nanchong</td>
+      <td>Nanchong</td>
+      <td>30.7991</td>
+      <td>106.0784</td>
+      <td>China</td>
+      <td>CN</td>
+      <td>CHN</td>
+      <td>Sichuan</td>
+      <td>minor</td>
+      <td>6278614.0</td>
+      <td>1156762337</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>Zunyi</td>
+      <td>Zunyi</td>
+      <td>27.7050</td>
+      <td>106.9336</td>
+      <td>China</td>
+      <td>CN</td>
+      <td>CHN</td>
+      <td>Guizhou</td>
+      <td>NaN</td>
+      <td>6270700.0</td>
+      <td>1156539782</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>Qujing</td>
+      <td>Qujing</td>
+      <td>25.5102</td>
+      <td>103.8029</td>
+      <td>China</td>
+      <td>CN</td>
+      <td>CHN</td>
+      <td>Yunnan</td>
+      <td>NaN</td>
+      <td>6155400.0</td>
+      <td>1156747998</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>Xinyang</td>
+      <td>Xinyang</td>
+      <td>32.1264</td>
+      <td>114.0672</td>
+      <td>China</td>
+      <td>CN</td>
+      <td>CHN</td>
+      <td>Henan</td>
+      <td>NaN</td>
+      <td>6109106.0</td>
+      <td>1156273453</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>Baghdad</td>
+      <td>Baghdad</td>
+      <td>33.3500</td>
+      <td>44.4167</td>
+      <td>Iraq</td>
+      <td>IQ</td>
+      <td>IRQ</td>
+      <td>Baghdād</td>
+      <td>primary</td>
+      <td>6107000.0</td>
+      <td>1368596238</td>
+    </tr>
+  </tbody>
+</table>
+<p>100 rows × 11 columns</p>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
+<span class="kn">from</span> <span class="nn">cartopy.feature.nightshade</span> <span class="kn">import</span> <span class="n">Nightshade</span>
+
+<span class="c1"># Create a figure with a GeoAxes by specifying</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+
+<span class="c1"># Get current date and time</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+
+<span class="c1"># Location of University of York</span>
+<span class="n">location</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.0311947681813436</span><span class="p">,</span> <span class="mf">53.94930227196749</span><span class="p">)</span>
+
+<span class="c1"># Arrow props</span>
+<span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+    <span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;fancy&#39;</span><span class="p">,</span>
+    <span class="n">shrinkA</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">shrinkB</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">fc</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span>
+    <span class="n">connectionstyle</span><span class="o">=</span><span class="s2">&quot;arc3,rad=-0.05&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># Add title</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Night time shading for </span><span class="si">{</span><span class="n">dt</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># Draw a standard flat map of the world</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">stock_img</span><span class="p">()</span>
+
+<span class="c1"># Add the nightshade feature</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">Nightshade</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">))</span>
+
+<span class="c1"># Add University of York location and annotate</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="o">*</span><span class="n">location</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+    <span class="n">text</span><span class="o">=</span><span class="s1">&#39;University of York&#39;</span><span class="p">,</span>
+    <span class="n">xy</span><span class="o">=</span><span class="n">location</span><span class="p">,</span>
+    <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">65</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span>
+    <span class="n">arrowprops</span><span class="o">=</span><span class="n">arrowprops</span>
+<span class="p">)</span>
+
+<span class="c1"># Plot the city locations</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">lng</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">lat</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># Annotate with the names of the cities</span>
+<span class="c1"># for idx, row in df.iterrows():</span>
+<span class="c1">#     ax.annotate(</span>
+<span class="c1">#         text=row.city,</span>
+<span class="c1">#         xy=(row.lng+1, row.lat+1)</span>
+<span class="c1">#     )</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_07_other_libraries_14_0.png" src="../_images/notebooks_07_other_libraries_14_0.png" />
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> has its own <a class="reference external" href="https://matplotlib.org/basemap/users/index.html">Basemap Toolkit</a> which predates <code class="docutils literal notranslate"><span class="pre">cartopy</span></code>. Soon I’ll be off to Copenhagen, so I decided to use it to plot the <a class="reference external" href="https://en.wikipedia.org/wiki/Great_circle">great circle</a> route between airports.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mpl_toolkits.basemap</span> <span class="kn">import</span> <span class="n">Basemap</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># create new figure, axes instances.</span>
+<span class="n">fig</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">=</span><span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.8</span><span class="p">])</span>
+
+<span class="c1"># setup mercator map projection.</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">Basemap</span><span class="p">(</span>
+    <span class="n">llcrnrlon</span><span class="o">=-</span><span class="mf">15.</span><span class="p">,</span><span class="n">llcrnrlat</span><span class="o">=</span><span class="mf">45.</span><span class="p">,</span><span class="n">urcrnrlon</span><span class="o">=</span><span class="mf">25.</span><span class="p">,</span><span class="n">urcrnrlat</span><span class="o">=</span><span class="mf">65.</span><span class="p">,</span>
+    <span class="n">rsphere</span><span class="o">=</span><span class="p">(</span><span class="mf">6378137.00</span><span class="p">,</span><span class="mf">6356752.3142</span><span class="p">),</span>
+    <span class="n">resolution</span><span class="o">=</span><span class="s1">&#39;l&#39;</span><span class="p">,</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;merc&#39;</span><span class="p">,</span>
+    <span class="n">lat_0</span><span class="o">=</span><span class="mf">40.</span><span class="p">,</span><span class="n">lon_0</span><span class="o">=-</span><span class="mf">20.</span><span class="p">,</span><span class="n">lat_ts</span><span class="o">=</span><span class="mf">20.</span>
+<span class="p">)</span>
+
+<span class="c1"># lat/lon for manchester and copenhagen</span>
+<span class="n">cop_lat</span><span class="p">,</span> <span class="n">cop_lon</span> <span class="o">=</span> <span class="mf">55.62798787190983</span><span class="p">,</span> <span class="mf">12.643942953245418</span>
+<span class="n">man_lat</span><span class="p">,</span> <span class="n">man_lon</span> <span class="o">=</span> <span class="mf">53.35544507391249</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.277185420260674</span>
+
+<span class="c1"># draw great circle route between manchster and copenhagen</span>
+<span class="n">m</span><span class="o">.</span><span class="n">drawgreatcircle</span><span class="p">(</span><span class="n">cop_lon</span><span class="p">,</span><span class="n">cop_lat</span><span class="p">,</span><span class="n">man_lon</span><span class="p">,</span><span class="n">man_lat</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">m</span><span class="o">.</span><span class="n">drawcoastlines</span><span class="p">()</span>
+<span class="n">m</span><span class="o">.</span><span class="n">fillcontinents</span><span class="p">()</span>
+
+<span class="c1"># draw parallels</span>
+<span class="n">m</span><span class="o">.</span><span class="n">drawparallels</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">20</span><span class="p">),</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># draw meridians</span>
+<span class="n">m</span><span class="o">.</span><span class="n">drawmeridians</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">30</span><span class="p">),</span><span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Great Circle from Manchester to Copenhagen&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_07_other_libraries_16_0.png" src="../_images/notebooks_07_other_libraries_16_0.png" />
+</div>
+</div>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">CLLPython</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="00_introduction_to_the_python_programming_language.html">Week 0 - Introduction to the Python programming language</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Joel T. Martin.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.0.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/notebooks/07_other_libraries.ipynb.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

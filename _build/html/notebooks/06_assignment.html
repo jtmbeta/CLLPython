@@ -1,0 +1,989 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>End of course assignment &#8212; CLLPython 0.0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars and line breaks on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+    white-space: pre;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt .copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+.jp-RenderedHTMLCommon table,
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+.jp-RenderedHTMLCommon thead,
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+.jp-RenderedHTMLCommon tr,
+.jp-RenderedHTMLCommon th,
+.jp-RenderedHTMLCommon td,
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+.jp-RenderedHTMLCommon th,
+div.rendered_html th {
+  font-weight: bold;
+}
+.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.jp-RenderedHTMLCommon tbody tr:hover,
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+</style>
+<section id="End-of-course-assignment">
+<h1>End of course assignment<a class="headerlink" href="#End-of-course-assignment" title="Permalink to this heading">¶</a></h1>
+<p>It’s time for you to put your newly developed Python skills to use! The assignment is simple: find some data and tell a story. At the very least, this will require you to:</p>
+<ul class="simple">
+<li><p>locate and download an interesting dataset</p></li>
+<li><p>load it into Python</p></li>
+<li><p>make a chart to visualise some trend in the data</p></li>
+<li><p>share your findings with the group in a 3-5 minute presentation</p></li>
+</ul>
+<p>You can complete the task in this notebook using either Jupyter or <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>, or by writing a script in Spyder. Some potential sources of interesting data are listed below, but there are many other sources of quality data on the internet and you are free to choose whatever you want. In the final session, you will be able to share your screen via zoom, or you can post an image or pdf document in the group chat.</p>
+<section id="Potential-sources-of-data">
+<h2>Potential sources of data<a class="headerlink" href="#Potential-sources-of-data" title="Permalink to this heading">¶</a></h2>
+<section id="kaggle">
+<h3><a class="reference external" href="https://www.kaggle.com/">kaggle</a><a class="headerlink" href="#kaggle" title="Permalink to this heading">¶</a></h3>
+<p>This excellent little website is as much a thriving community of data scientists as it is a source of quality data. After making a free account, you can browse over 178,000 data sets or search using keywords. The kaggle community even post code, analyses and discussion points, which you may look to for inspiration.</p>
+<p>Here are some interesting data sets that caught my eye on kaggle:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.kaggle.com/datasets/ricardopaula/blood-type-distribution-by-country">Blood Type Distribution by Country</a></p>
+<ul>
+<li><p>What are the most and least common blood types, and which countries appear to have the most and least of this blood type?</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://www.kaggle.com/datasets/nehaprabhavalkar/indian-food-101">Indian Food 101</a></p>
+<ul>
+<li><p>How many unique ingredients are there across all dishes in the data set?</p></li>
+<li><p>What is the most common ingredient?</p></li>
+<li><p>From which state do most dishes originate?</p></li>
+<li><p>Including both preparation and cooking time, what are the fastest and slowest dishes to make?</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://www.kaggle.com/datasets/unsdsn/world-happiness">World Happiness Report</a></p>
+<ul>
+<li><p>In the period 2015 - 2019, which countries were the happiest? For which countries did happiness increase / decrease most substantially in this period?</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="hockeyfights.com">
+<h3><a class="reference external" href="https://www.hockeyfights.com/">hockeyfights.com</a><a class="headerlink" href="#hockeyfights.com" title="Permalink to this heading">¶</a></h3>
+<p>I’m not a hockey fan, let alone a bloodthirsty one. This website makes the list purely because it is a well-curated source of interesting data. I used it some years ago in a similar assignment to explore the relationship between number of fights and games won / lost in a season for the Detroit Redwings and Toronto Maple Leafs.</p>
+<ul class="simple">
+<li><p>Which are the top three most bellicose hockey teams?</p></li>
+<li><p>Which teams have the greatest fighting rivalry?</p></li>
+<li><p>Is there a relationship between number of fights in a season and the number of games won / lost?</p></li>
+</ul>
+</section>
+<section id="Our-World-in-Data">
+<h3><a class="reference external" href="https://ourworldindata.org/">Our World in Data</a><a class="headerlink" href="#Our-World-in-Data" title="Permalink to this heading">¶</a></h3>
+<p>This brilliant website publishes data-driven reports on poverty, disease, hunger, climate change, war and many other big problems that exist in the World. Most reports include a link to download the raw data, usually in <code class="docutils literal notranslate"><span class="pre">CSV</span></code> format. Here are a few examples:</p>
+<ul class="simple">
+<li><p><cite>Global CO:math:`^2</cite> Emissions &lt;<a class="reference external" href="https://ourworldindata.org/co2-data-update-2022">https://ourworldindata.org/co2-data-update-2022</a>&gt;`__</p>
+<ul>
+<li><p>Since records began, which 10 countries are responsible for the most CO<span class="math notranslate nohighlight">\(^2\)</span> emissions resulting from fossil fuel burning? Which 10 are responsible for the least emissions?</p></li>
+<li><p>As above, but for emissions resulting from land use changes</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://ourworldindata.org/europe-mammal-comeback">Wild Mammals are making a comeback</a></p>
+<ul>
+<li><p>Download the data and recreate the chart on the web page</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://ourworldindata.org/explorers/air-pollution">Air Polution</a></p>
+<ul>
+<li><p>Over the last 10 years in the United Kingdom, which pollutants have increased, and which have decreased?</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="Google-Trends">
+<h3><a class="reference external" href="https://trends.google.com/trends/?geo=GB">Google Trends</a><a class="headerlink" href="#Google-Trends" title="Permalink to this heading">¶</a></h3>
+<p>Google trends allows you to analyze and compare ‘interest’ in specific search terms over time and by geographical region, and to then download the results in <code class="docutils literal notranslate"><span class="pre">CSV</span></code> format. Often this reveals perplexing trends that warrant further exploration. For example, when comparing interest in ‘marriage’ and ‘divorce’ across the world since 2004, most countries were more interested in marriage, but France showed a strong preference for divorce. What’s going on there?</p>
+</section>
+<section id="Google-Dataset-Search">
+<h3><a class="reference external" href="https://datasetsearch.research.google.com/">Google Dataset Search</a><a class="headerlink" href="#Google-Dataset-Search" title="Permalink to this heading">¶</a></h3>
+<p>This is Google’s search engine for datasets. With a simple keyword search, users can find datasets hosted in thousands of repositories across the Web.</p>
+<p>Good luck!</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[79]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="c1">#%matplotlib inline</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">context</span><span class="o">=</span><span class="s1">&#39;notebook&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;darkgrid&#39;</span><span class="p">)</span>
+<br/><br/></pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[80]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;/Users/jtm545/Projects/Enviroplus/data/*.csv&#39;</span><span class="p">)</span>
+<span class="n">files</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[80]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&#39;/Users/jtm545/Projects/Enviroplus/data/2022-10-19.csv&#39;,
+ &#39;/Users/jtm545/Projects/Enviroplus/data/2022-10-24.csv&#39;,
+ &#39;/Users/jtm545/Projects/Enviroplus/data/2022-10-18.csv&#39;,
+ &#39;/Users/jtm545/Projects/Enviroplus/data/2022-10-20.csv&#39;,
+ &#39;/Users/jtm545/Projects/Enviroplus/data/2022-10-08.csv&#39;,
+ &#39;/Users/jtm545/Projects/Enviroplus/data/2022-09-29.csv&#39;,
+ &#39;/Users/jtm545/Projects/Enviroplus/data/2022-09-28.csv&#39;,
+ &#39;/Users/jtm545/Projects/Enviroplus/data/2022-10-09.csv&#39;,
+ &#39;/Users/jtm545/Projects/Enviroplus/data/2022-10-21.csv&#39;,
+ &#39;/Users/jtm545/Projects/Enviroplus/data/2022-10-23.csv&#39;,
+ &#39;/Users/jtm545/Projects/Enviroplus/data/2022-10-22.csv&#39;,
+ &#39;/Users/jtm545/Projects/Enviroplus/data/2022-10-13.csv&#39;,
+ &#39;/Users/jtm545/Projects/Enviroplus/data/2022-10-07.csv&#39;,
+ &#39;/Users/jtm545/Projects/Enviroplus/data/2022-09-27.csv&#39;,
+ &#39;/Users/jtm545/Projects/Enviroplus/data/2022-10-06.csv&#39;,
+ &#39;/Users/jtm545/Projects/Enviroplus/data/2022-10-12.csv&#39;,
+ &#39;/Users/jtm545/Projects/Enviroplus/data/2022-10-04.csv&#39;,
+ &#39;/Users/jtm545/Projects/Enviroplus/data/2022-10-10.csv&#39;,
+ &#39;/Users/jtm545/Projects/Enviroplus/data/2022-09-30.csv&#39;,
+ &#39;/Users/jtm545/Projects/Enviroplus/data/2022-10-11.csv&#39;,
+ &#39;/Users/jtm545/Projects/Enviroplus/data/2022-10-05.csv&#39;,
+ &#39;/Users/jtm545/Projects/Enviroplus/data/2022-10-01.csv&#39;,
+ &#39;/Users/jtm545/Projects/Enviroplus/data/2022-10-15.csv&#39;,
+ &#39;/Users/jtm545/Projects/Enviroplus/data/2022-10-14.csv&#39;,
+ &#39;/Users/jtm545/Projects/Enviroplus/data/2022-10-16.csv&#39;,
+ &#39;/Users/jtm545/Projects/Enviroplus/data/2022-10-02.csv&#39;,
+ &#39;/Users/jtm545/Projects/Enviroplus/data/2022-10-03.csv&#39;,
+ &#39;/Users/jtm545/Projects/Enviroplus/data/2022-10-17.csv&#39;]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[117]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;/Users/jtm545/Projects/Enviroplus/data/*.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="k">lambda</span> <span class="n">df_</span><span class="p">:</span> <span class="n">df_</span><span class="o">.</span><span class="n">timestamp</span><span class="o">!=</span><span class="s1">&#39;timestamp&#39;</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">timestamp</span><span class="o">=</span><span class="k">lambda</span> <span class="n">df_</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">(</span><span class="n">df_</span><span class="o">.</span><span class="n">timestamp</span><span class="p">))</span>
+    <span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;timestamp&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[117]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pm1</th>
+      <th>pm2_5</th>
+      <th>pm10</th>
+      <th>pm1_atenv</th>
+      <th>pm2_5_atenv</th>
+      <th>pm_0_3_L_air</th>
+      <th>pm_0_5_L_air</th>
+      <th>pm_1_0_L_air</th>
+      <th>pm_2_5_L_air</th>
+      <th>pm_5_L_air</th>
+      <th>pm_10_L_air</th>
+      <th>oxidised</th>
+      <th>reduced</th>
+      <th>nh3</th>
+      <th>lux</th>
+      <th>humidity</th>
+      <th>pressure</th>
+      <th>raw_temp</th>
+      <th>cpu_temp</th>
+    </tr>
+    <tr>
+      <th>timestamp</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2022-09-27 14:44:42.782628</th>
+      <td>5.0</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>5.0</td>
+      <td>6.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>425.250000</td>
+      <td>49.299145</td>
+      <td>10.738895</td>
+      <td>30.87290</td>
+      <td>37.498973</td>
+      <td>997.100696</td>
+      <td>26.703378</td>
+      <td>45.764</td>
+    </tr>
+    <tr>
+      <th>2022-09-27 14:45:41.389818</th>
+      <td>4.0</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>4.0</td>
+      <td>6.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>13.369369</td>
+      <td>489.132743</td>
+      <td>89.971564</td>
+      <td>15.25235</td>
+      <td>37.329221</td>
+      <td>997.073092</td>
+      <td>26.686582</td>
+      <td>46.738</td>
+    </tr>
+    <tr>
+      <th>2022-09-27 14:46:41.414148</th>
+      <td>5.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>5.0</td>
+      <td>7.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>16.385429</td>
+      <td>466.033898</td>
+      <td>100.345178</td>
+      <td>31.34695</td>
+      <td>37.088857</td>
+      <td>997.088630</td>
+      <td>26.703378</td>
+      <td>46.738</td>
+    </tr>
+    <tr>
+      <th>2022-09-27 14:47:41.414749</th>
+      <td>4.0</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>4.0</td>
+      <td>6.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>18.666667</td>
+      <td>453.090909</td>
+      <td>105.256545</td>
+      <td>11.93225</td>
+      <td>37.222845</td>
+      <td>997.082105</td>
+      <td>26.788649</td>
+      <td>47.225</td>
+    </tr>
+    <tr>
+      <th>2022-09-27 14:48:41.440509</th>
+      <td>5.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>5.0</td>
+      <td>7.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>20.807980</td>
+      <td>448.918033</td>
+      <td>109.147453</td>
+      <td>5.27390</td>
+      <td>36.622362</td>
+      <td>997.074713</td>
+      <td>27.048015</td>
+      <td>47.225</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2022-10-24 15:47:28.088811</th>
+      <td>8.0</td>
+      <td>14.0</td>
+      <td>16.0</td>
+      <td>8.0</td>
+      <td>14.0</td>
+      <td>1698.0</td>
+      <td>461.0</td>
+      <td>102.0</td>
+      <td>8.0</td>
+      <td>4.0</td>
+      <td>2.0</td>
+      <td>59.140187</td>
+      <td>255.111111</td>
+      <td>96.098765</td>
+      <td>2.87705</td>
+      <td>44.937032</td>
+      <td>998.441310</td>
+      <td>27.443365</td>
+      <td>48.199</td>
+    </tr>
+    <tr>
+      <th>2022-10-24 15:48:28.110564</th>
+      <td>8.0</td>
+      <td>14.0</td>
+      <td>16.0</td>
+      <td>8.0</td>
+      <td>14.0</td>
+      <td>1698.0</td>
+      <td>461.0</td>
+      <td>102.0</td>
+      <td>8.0</td>
+      <td>4.0</td>
+      <td>2.0</td>
+      <td>58.925373</td>
+      <td>255.111111</td>
+      <td>95.724138</td>
+      <td>2.01475</td>
+      <td>44.306554</td>
+      <td>998.441559</td>
+      <td>27.749246</td>
+      <td>49.173</td>
+    </tr>
+    <tr>
+      <th>2022-10-24 15:49:28.128657</th>
+      <td>8.0</td>
+      <td>13.0</td>
+      <td>16.0</td>
+      <td>8.0</td>
+      <td>13.0</td>
+      <td>1722.0</td>
+      <td>452.0</td>
+      <td>100.0</td>
+      <td>8.0</td>
+      <td>4.0</td>
+      <td>2.0</td>
+      <td>58.925373</td>
+      <td>255.111111</td>
+      <td>95.724138</td>
+      <td>3.85445</td>
+      <td>44.855641</td>
+      <td>998.444918</td>
+      <td>27.519593</td>
+      <td>49.173</td>
+    </tr>
+    <tr>
+      <th>2022-10-24 15:50:28.162982</th>
+      <td>8.0</td>
+      <td>13.0</td>
+      <td>16.0</td>
+      <td>8.0</td>
+      <td>13.0</td>
+      <td>1722.0</td>
+      <td>452.0</td>
+      <td>100.0</td>
+      <td>8.0</td>
+      <td>4.0</td>
+      <td>2.0</td>
+      <td>58.925373</td>
+      <td>255.111111</td>
+      <td>95.724138</td>
+      <td>1.24440</td>
+      <td>45.386307</td>
+      <td>998.460043</td>
+      <td>27.268623</td>
+      <td>47.225</td>
+    </tr>
+    <tr>
+      <th>2022-10-24 15:51:28.170190</th>
+      <td>8.0</td>
+      <td>13.0</td>
+      <td>16.0</td>
+      <td>8.0</td>
+      <td>13.0</td>
+      <td>1722.0</td>
+      <td>452.0</td>
+      <td>100.0</td>
+      <td>8.0</td>
+      <td>4.0</td>
+      <td>2.0</td>
+      <td>58.925373</td>
+      <td>256.690355</td>
+      <td>95.724138</td>
+      <td>2.50815</td>
+      <td>48.062645</td>
+      <td>998.490721</td>
+      <td>26.299634</td>
+      <td>47.712</td>
+    </tr>
+  </tbody>
+</table>
+<p>38855 rows × 19 columns</p>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[134]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gas_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;oxidised&#39;</span><span class="p">,</span> <span class="s1">&#39;reduced&#39;</span><span class="p">,</span> <span class="s1">&#39;nh3&#39;</span><span class="p">]</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">hour</span><span class="p">)[</span><span class="n">gas_cols</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[134]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([&lt;AxesSubplot:xlabel=&#39;timestamp&#39;&gt;, &lt;AxesSubplot:xlabel=&#39;timestamp&#39;&gt;,
+       &lt;AxesSubplot:xlabel=&#39;timestamp&#39;&gt;], dtype=object)
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_06_assignment_4_1.png" src="../_images/notebooks_06_assignment_4_1.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[170]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">hour</span><span class="p">)[</span><span class="s1">&#39;humidity&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;tab:orange&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Humidity&#39;</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">hour</span><span class="p">)[</span><span class="s1">&#39;pressure&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Humidity&#39;</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[170]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;AxesSubplot:xlabel=&#39;timestamp&#39;, ylabel=&#39;Humidity&#39;&gt;
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_06_assignment_5_1.png" src="../_images/notebooks_06_assignment_5_1.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[171]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gas_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pm1&#39;</span><span class="p">,</span> <span class="s1">&#39;pm2_5&#39;</span><span class="p">,</span> <span class="s1">&#39;pm10&#39;</span><span class="p">]</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">hour</span><span class="p">)[</span><span class="n">gas_cols</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[171]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([&lt;AxesSubplot:xlabel=&#39;timestamp&#39;&gt;, &lt;AxesSubplot:xlabel=&#39;timestamp&#39;&gt;,
+       &lt;AxesSubplot:xlabel=&#39;timestamp&#39;&gt;], dtype=object)
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_06_assignment_6_1.png" src="../_images/notebooks_06_assignment_6_1.png" />
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[166]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;30min&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[167]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">hour</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
+<span class="ansi-green-fg">/var/folders/c9/7yddvl1n2ss863cgfngj0wpm0000gp/T/ipykernel_21120/2230753826.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>new<span class="ansi-blue-fg">.</span>groupby<span class="ansi-blue-fg">(</span>df<span class="ansi-blue-fg">.</span>index<span class="ansi-blue-fg">.</span>hour<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">~/opt/anaconda3/envs/py3/lib/python3.9/site-packages/pandas/core/frame.py</span> in <span class="ansi-cyan-fg">groupby</span><span class="ansi-blue-fg">(self, by, axis, level, as_index, sort, group_keys, squeeze, observed, dropna)</span>
+<span class="ansi-green-intense-fg ansi-bold">   7719</span>         <span class="ansi-red-fg"># error: Argument &#34;squeeze&#34; to &#34;DataFrameGroupBy&#34; has incompatible type</span>
+<span class="ansi-green-intense-fg ansi-bold">   7720</span>         <span class="ansi-red-fg"># &#34;Union[bool, NoDefault]&#34;; expected &#34;bool&#34;</span>
+<span class="ansi-green-fg">-&gt; 7721</span><span class="ansi-red-fg">         return DataFrameGroupBy(
+</span><span class="ansi-green-intense-fg ansi-bold">   7722</span>             obj<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">   7723</span>             keys<span class="ansi-blue-fg">=</span>by<span class="ansi-blue-fg">,</span>
+
+<span class="ansi-green-fg">~/opt/anaconda3/envs/py3/lib/python3.9/site-packages/pandas/core/groupby/groupby.py</span> in <span class="ansi-cyan-fg">__init__</span><span class="ansi-blue-fg">(self, obj, keys, axis, level, grouper, exclusions, selection, as_index, sort, group_keys, squeeze, observed, mutated, dropna)</span>
+<span class="ansi-green-intense-fg ansi-bold">    880</span>             <span class="ansi-green-fg">from</span> pandas<span class="ansi-blue-fg">.</span>core<span class="ansi-blue-fg">.</span>groupby<span class="ansi-blue-fg">.</span>grouper <span class="ansi-green-fg">import</span> get_grouper
+<span class="ansi-green-intense-fg ansi-bold">    881</span>
+<span class="ansi-green-fg">--&gt; 882</span><span class="ansi-red-fg">             grouper, exclusions, obj = get_grouper(
+</span><span class="ansi-green-intense-fg ansi-bold">    883</span>                 obj<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">    884</span>                 keys<span class="ansi-blue-fg">,</span>
+
+<span class="ansi-green-fg">~/opt/anaconda3/envs/py3/lib/python3.9/site-packages/pandas/core/groupby/grouper.py</span> in <span class="ansi-cyan-fg">get_grouper</span><span class="ansi-blue-fg">(obj, key, axis, level, sort, observed, mutated, validate, dropna)</span>
+<span class="ansi-green-intense-fg ansi-bold">    891</span>         <span class="ansi-red-fg"># allow us to passing the actual Grouping as the gpr</span>
+<span class="ansi-green-intense-fg ansi-bold">    892</span>         ping = (
+<span class="ansi-green-fg">--&gt; 893</span><span class="ansi-red-fg">             Grouping(
+</span><span class="ansi-green-intense-fg ansi-bold">    894</span>                 group_axis<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">    895</span>                 gpr<span class="ansi-blue-fg">,</span>
+
+<span class="ansi-green-fg">~/opt/anaconda3/envs/py3/lib/python3.9/site-packages/pandas/core/groupby/grouper.py</span> in <span class="ansi-cyan-fg">__init__</span><span class="ansi-blue-fg">(self, index, grouper, obj, level, sort, observed, in_axis, dropna)</span>
+<span class="ansi-green-intense-fg ansi-bold">    479</span>         self<span class="ansi-blue-fg">.</span>level <span class="ansi-blue-fg">=</span> level
+<span class="ansi-green-intense-fg ansi-bold">    480</span>         self<span class="ansi-blue-fg">.</span>_orig_grouper <span class="ansi-blue-fg">=</span> grouper
+<span class="ansi-green-fg">--&gt; 481</span><span class="ansi-red-fg">         </span>self<span class="ansi-blue-fg">.</span>grouping_vector <span class="ansi-blue-fg">=</span> _convert_grouper<span class="ansi-blue-fg">(</span>index<span class="ansi-blue-fg">,</span> grouper<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    482</span>         self<span class="ansi-blue-fg">.</span>_all_grouper <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">None</span>
+<span class="ansi-green-intense-fg ansi-bold">    483</span>         self<span class="ansi-blue-fg">.</span>_index <span class="ansi-blue-fg">=</span> index
+
+<span class="ansi-green-fg">~/opt/anaconda3/envs/py3/lib/python3.9/site-packages/pandas/core/groupby/grouper.py</span> in <span class="ansi-cyan-fg">_convert_grouper</span><span class="ansi-blue-fg">(axis, grouper)</span>
+<span class="ansi-green-intense-fg ansi-bold">    935</span>     <span class="ansi-green-fg">elif</span> isinstance<span class="ansi-blue-fg">(</span>grouper<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">(</span>list<span class="ansi-blue-fg">,</span> tuple<span class="ansi-blue-fg">,</span> Index<span class="ansi-blue-fg">,</span> Categorical<span class="ansi-blue-fg">,</span> np<span class="ansi-blue-fg">.</span>ndarray<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    936</span>         <span class="ansi-green-fg">if</span> len<span class="ansi-blue-fg">(</span>grouper<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">!=</span> len<span class="ansi-blue-fg">(</span>axis<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 937</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">raise</span> ValueError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Grouper and axis must be same length&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    938</span>
+<span class="ansi-green-intense-fg ansi-bold">    939</span>         <span class="ansi-green-fg">if</span> isinstance<span class="ansi-blue-fg">(</span>grouper<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">(</span>list<span class="ansi-blue-fg">,</span> tuple<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+
+<span class="ansi-red-fg">ValueError</span>: Grouper and axis must be same length
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">CLLPython</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="01_syntax_types_builtins.html">Week 1 - Syntax, data types, and built-in functions</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Joel T. Martin.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.0.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/notebooks/06_assignment.ipynb.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

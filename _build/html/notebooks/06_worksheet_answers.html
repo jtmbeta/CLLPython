@@ -1,0 +1,2010 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Week 6 worksheet - GB cycling accidents &#8212; CLLPython 0.0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars and line breaks on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+    white-space: pre;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt .copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+.jp-RenderedHTMLCommon table,
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+.jp-RenderedHTMLCommon thead,
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+.jp-RenderedHTMLCommon tr,
+.jp-RenderedHTMLCommon th,
+.jp-RenderedHTMLCommon td,
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+.jp-RenderedHTMLCommon th,
+div.rendered_html th {
+  font-weight: bold;
+}
+.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.jp-RenderedHTMLCommon tbody tr:hover,
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+</style>
+<section id="Week-6-worksheet---GB-cycling-accidents">
+<h1>Week 6 worksheet - GB cycling accidents<a class="headerlink" href="#Week-6-worksheet---GB-cycling-accidents" title="Permalink to this heading">¶</a></h1>
+<p>In the <code class="docutils literal notranslate"><span class="pre">data</span></code> folder of the course materials you should find a <code class="docutils literal notranslate"><span class="pre">CSV</span></code> file called <code class="docutils literal notranslate"><span class="pre">gb_cycling_accidents.csv</span></code> which contains data on bicycle accidents in Great Britain from 1970 to 2018. I retrieved the data set from <a class="reference external" href="https://www.kaggle.com/datasets/johnharshith/bicycle-accidents-in-great-britain-1979-to-2018">kaggle</a>, which cites <a class="reference external" href="https://data.world/gonzandrobles/bicycleaccidentsuk">data.world</a> as the original source. Each row holds information about a specific accident, and each
+column holds information about the accident, such as the date, time of day, day of week, number of vehicles involved, weather conditions, severity, etc. Here is the full explanation of the columns in the data set.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Definition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Accident_Index</p></td>
+<td><p>Unique identifier for the accident. This may be thought of as the accident “case number”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Number_of_Vehicles</p></td>
+<td><p>Number of vehicles that were involved in the accident</p></td>
+</tr>
+<tr class="row-even"><td><p>Number_of_Casualties</p></td>
+<td><p>Number of casualties resulting from the accident</p></td>
+</tr>
+<tr class="row-odd"><td><p>Date</p></td>
+<td><p>Date when the accident happened</p></td>
+</tr>
+<tr class="row-even"><td><p>Time</p></td>
+<td><p>Time when the accident happened</p></td>
+</tr>
+<tr class="row-odd"><td><p>Speed_limit</p></td>
+<td><p>Speed limit on the part of the road where the accident took place</p></td>
+</tr>
+<tr class="row-even"><td><p>Road_conditions</p></td>
+<td><p>Road condition (e.g., “frost”) at the time and place of the accident</p></td>
+</tr>
+<tr class="row-odd"><td><p>Weather_conditions</p></td>
+<td><p>Whether condition (e.g., “rain”) at time and place of the accident</p></td>
+</tr>
+<tr class="row-even"><td><p>Day</p></td>
+<td><p>Day of the week when the accident occurred</p></td>
+</tr>
+<tr class="row-odd"><td><p>Road_type</p></td>
+<td><p>Type of road (e.g., “Dual carriageway”) where the accident happened</p></td>
+</tr>
+<tr class="row-even"><td><p>Light_conditions</p></td>
+<td><p>Light conditions (e.g., “Daylight”) at time of accident</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gender</p></td>
+<td><p>Whether the accident victim was Male or Female</p></td>
+</tr>
+<tr class="row-even"><td><p>Severity</p></td>
+<td><p>How severe (e.g., “Serious”) the accident was</p></td>
+</tr>
+<tr class="row-odd"><td><p>Age_Grp</p></td>
+<td><p>Age group of the accident victim</p></td>
+</tr>
+</tbody>
+</table>
+<p>Let’s explore the frequency of accidents with respect to the different variables.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;bmh&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<section id="1.-Import-pandas-and-read-data/gb_cycling_accidents.csv-into-a-DataFrame">
+<h2><strong>1.</strong> Import <code class="docutils literal notranslate"><span class="pre">pandas</span></code> and read <code class="docutils literal notranslate"><span class="pre">data/gb_cycling_accidents.csv</span></code> into a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#1.-Import-pandas-and-read-data/gb_cycling_accidents.csv-into-a-DataFrame" title="Permalink to this heading">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/gb_cycling_accidents.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Accident_Index</th>
+      <th>Number_of_Vehicles</th>
+      <th>Number_of_Casualties</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Speed_limit</th>
+      <th>Road_conditions</th>
+      <th>Weather_conditions</th>
+      <th>Day</th>
+      <th>Road_type</th>
+      <th>Light_conditions</th>
+      <th>Gender</th>
+      <th>Severity</th>
+      <th>Age_Grp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>197901A1SEE71</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1979-01-01</td>
+      <td>18:20</td>
+      <td>50.0</td>
+      <td>Snow</td>
+      <td>Unknown</td>
+      <td>Monday</td>
+      <td>Dual carriageway</td>
+      <td>Darkness lights lit</td>
+      <td>Male</td>
+      <td>Serious</td>
+      <td>36 to 45</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>197901A2JDW40</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1979-02-01</td>
+      <td>09:15</td>
+      <td>30.0</td>
+      <td>Snow</td>
+      <td>Unknown</td>
+      <td>Tuesday</td>
+      <td>Unknown</td>
+      <td>Daylight</td>
+      <td>Male</td>
+      <td>Slight</td>
+      <td>46 to 55</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>197901A4IJV90</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1979-04-01</td>
+      <td>08:45</td>
+      <td>30.0</td>
+      <td>Snow</td>
+      <td>Unknown</td>
+      <td>Thursday</td>
+      <td>Unknown</td>
+      <td>Daylight</td>
+      <td>Male</td>
+      <td>Slight</td>
+      <td>46 to 55</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>197901A4NIE33</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1979-04-01</td>
+      <td>13:40</td>
+      <td>30.0</td>
+      <td>Wet</td>
+      <td>Unknown</td>
+      <td>Thursday</td>
+      <td>Unknown</td>
+      <td>Daylight</td>
+      <td>Male</td>
+      <td>Slight</td>
+      <td>36 to 45</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>197901A4SKO47</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1979-04-01</td>
+      <td>18:50</td>
+      <td>30.0</td>
+      <td>Wet</td>
+      <td>Unknown</td>
+      <td>Thursday</td>
+      <td>Unknown</td>
+      <td>Darkness lights lit</td>
+      <td>Male</td>
+      <td>Slight</td>
+      <td>46 to 55</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>827856</th>
+      <td>2018983118818</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2018-02-07</td>
+      <td>14:55</td>
+      <td>30.0</td>
+      <td>Dry</td>
+      <td>Clear</td>
+      <td>Monday</td>
+      <td>Single carriageway</td>
+      <td>Daylight</td>
+      <td>Male</td>
+      <td>Slight</td>
+      <td>6 to 10</td>
+    </tr>
+    <tr>
+      <th>827857</th>
+      <td>2018983119218</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2018-07-24</td>
+      <td>07:45</td>
+      <td>30.0</td>
+      <td>Dry</td>
+      <td>Clear</td>
+      <td>Tuesday</td>
+      <td>Single carriageway</td>
+      <td>Daylight</td>
+      <td>Male</td>
+      <td>Serious</td>
+      <td>56 to 65</td>
+    </tr>
+    <tr>
+      <th>827858</th>
+      <td>2018983120618</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2018-10-08</td>
+      <td>13:25</td>
+      <td>20.0</td>
+      <td>Dry</td>
+      <td>Clear</td>
+      <td>Friday</td>
+      <td>Single carriageway</td>
+      <td>Daylight</td>
+      <td>Male</td>
+      <td>Serious</td>
+      <td>11 to 15</td>
+    </tr>
+    <tr>
+      <th>827859</th>
+      <td>2018983121918</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2018-07-18</td>
+      <td>21:10</td>
+      <td>30.0</td>
+      <td>Dry</td>
+      <td>Clear</td>
+      <td>Wednesday</td>
+      <td>Single carriageway</td>
+      <td>Daylight</td>
+      <td>Male</td>
+      <td>Serious</td>
+      <td>46 to 55</td>
+    </tr>
+    <tr>
+      <th>827860</th>
+      <td>2018983133818</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2018-12-20</td>
+      <td>15:14</td>
+      <td>30.0</td>
+      <td>Wet</td>
+      <td>Rain</td>
+      <td>Thursday</td>
+      <td>Single carriageway</td>
+      <td>Daylight</td>
+      <td>Male</td>
+      <td>Serious</td>
+      <td>6 to 10</td>
+    </tr>
+  </tbody>
+</table>
+<p>827861 rows × 14 columns</p>
+</div></div>
+</div>
+</section>
+<section id="2.-How-many-unique-values-are-in-the-following-columns?">
+<h2><strong>2.</strong> How many unique values are in the following columns?<a class="headerlink" href="#2.-How-many-unique-values-are-in-the-following-columns?" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Speed_limit</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Road_conditions</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Weather_conditions</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Road_type</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Light_conditions</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Gender</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Severity</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Age_Grp</span></code></p></li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cols</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;Road_conditions&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Weather_conditions&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Road_type&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Light_conditions&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Gender&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Severity&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Age_Grp&#39;</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cols</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Road_conditions: [&#39;Snow&#39; &#39;Wet&#39; &#39;Dry&#39; &#39;Frost&#39; &#39;Flood&#39; &#39;Missing Data&#39;]
+Weather_conditions: [&#39;Unknown&#39; &#39;Rain&#39; &#39;Snow&#39; &#39;Fog&#39; &#39;Clear&#39; &#39;Clear and windy&#39; &#39;Other&#39;
+ &#39;Rain and windy&#39; &#39;Snow and windy&#39; &#39;Missing data&#39;]
+Road_type: [&#39;Dual carriageway&#39; &#39;Unknown&#39; &#39;Single carriageway&#39; &#39;Roundabout&#39;
+ &#39;One way sreet&#39; &#39;Slip road&#39;]
+Light_conditions: [&#39;Darkness lights lit&#39; &#39;Daylight&#39; &#39;Darkness no lights&#39;]
+Gender: [&#39;Male&#39; &#39;Female&#39; &#39;Other&#39;]
+Severity: [&#39;Serious&#39; &#39;Slight&#39; &#39;Fatal&#39;]
+Age_Grp: [&#39;36 to 45&#39; &#39;46 to 55&#39; &#39;16 to 20&#39; &#39;21 to 25&#39; &#39;26 to 35&#39; &#39;11 to 15&#39;
+ &#39;56 to 65&#39; &#39;6 to 10&#39; &#39;66 to 75&#39;]
+</pre></div></div>
+</div>
+</section>
+<section id="3.-What-road-conditions-were-associated-with-the-most-and-least-accidents?">
+<h2><strong>3.</strong> What road conditions were associated with the most and least accidents?<a class="headerlink" href="#3.-What-road-conditions-were-associated-with-the-most-and-least-accidents?" title="Permalink to this heading">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Road_conditions</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Dry             633936
+Wet             184279
+Frost             6020
+Snow              1710
+Missing Data      1648
+Flood              268
+Name: Road_conditions, dtype: int64
+</pre></div></div>
+</div>
+</section>
+<section id="4.-What-weather-conditions-were-associated-with-the-most-and-least-accidents?">
+<h2><strong>4.</strong> What weather conditions were associated with the most and least accidents?<a class="headerlink" href="#4.-What-weather-conditions-were-associated-with-the-most-and-least-accidents?" title="Permalink to this heading">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Weather_conditions</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Clear              683162
+Rain                82007
+Unknown             24081
+Clear and windy     11891
+Other               11820
+Rain and windy       8808
+Fog                  3369
+Snow                 2086
+Snow and windy        483
+Missing data          154
+Name: Weather_conditions, dtype: int64
+</pre></div></div>
+</div>
+</section>
+<section id="5.-What-road-type-was-associated-with-the-most-and-least-accidents?">
+<h2><strong>5.</strong> What road type was associated with the most and least accidents?<a class="headerlink" href="#5.-What-road-type-was-associated-with-the-most-and-least-accidents?" title="Permalink to this heading">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Road_type</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Single carriageway    656703
+Roundabout             75066
+Dual carriageway       59037
+Unknown                30647
+One way sreet           5562
+Slip road                846
+Name: Road_type, dtype: int64
+</pre></div></div>
+</div>
+</section>
+<section id="6.-What-light-conditions-were-associated-with-the-most-and-least-accidents?">
+<h2><strong>6.</strong> What light conditions were associated with the most and least accidents?<a class="headerlink" href="#6.-What-light-conditions-were-associated-with-the-most-and-least-accidents?" title="Permalink to this heading">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Light_conditions</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Daylight               660657
+Darkness lights lit    142039
+Darkness no lights      25165
+Name: Light_conditions, dtype: int64
+</pre></div></div>
+</div>
+</section>
+<section id="7.-What-speed-limit-was-associated-with-the-most-and-least-accidents?">
+<h2><strong>7.</strong> What speed limit was associated with the most and least accidents?<a class="headerlink" href="#7.-What-speed-limit-was-associated-with-the-most-and-least-accidents?" title="Permalink to this heading">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Speed_limit</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+30.0     686784
+60.0      58557
+40.0      53337
+70.0      11363
+20.0      10836
+50.0       6676
+10.0        105
+0.0          68
+15.0         53
+36.0         11
+5.0          10
+51.0          7
+31.0          7
+38.0          6
+25.0          6
+61.0          6
+41.0          4
+39.0          4
+66.0          2
+32.0          2
+27.0          2
+33.0          1
+26.0          1
+3.0           1
+660.0         1
+59.0          1
+45.0          1
+13.0          1
+21.0          1
+22.0          1
+16.0          1
+34.0          1
+55.0          1
+35.0          1
+46.0          1
+62.0          1
+Name: Speed_limit, dtype: int64
+</pre></div></div>
+</div>
+</section>
+<section id="8.-Based-on-the-above,-write-a-single-sentence-that-summarises-the-conditions-in-which-most-accidents-appeared-to-occur.">
+<h2><strong>8.</strong> Based on the above, write a single sentence that summarises the conditions in which most accidents appeared to occur.<a class="headerlink" href="#8.-Based-on-the-above,-write-a-single-sentence-that-summarises-the-conditions-in-which-most-accidents-appeared-to-occur." title="Permalink to this heading">¶</a></h2>
+<p>Most accidents occurred on single carriageway roads with a 30-MPH speed limit, in clear and dry daylight conditions.</p>
+</section>
+<section id="9.-Create-a-bar-chart-showing-how-accidents-were-distributed-by-Age_Grp">
+<h2><strong>9.</strong> Create a bar chart showing how accidents were distributed by <code class="docutils literal notranslate"><span class="pre">Age_Grp</span></code><a class="headerlink" href="#9.-Create-a-bar-chart-showing-how-accidents-were-distributed-by-Age_Grp" title="Permalink to this heading">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">group_order</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;6 to 10&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;11 to 15&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;16 to 20&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;21 to 25&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;26 to 35&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;36 to 45&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;46 to 55&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;56 to 65&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;66 to 75&#39;</span>
+<span class="p">]</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Age_Grp&#39;</span><span class="p">)[</span><span class="s1">&#39;Accident_Index&#39;</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">count</span><span class="p">()[</span><span class="n">group_order</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">rot</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Age group&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Total accidents&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Cycling accidents in Great Britain by age group (1979-2018)&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_06_worksheet_answers_19_0.png" src="../_images/notebooks_06_worksheet_answers_19_0.png" />
+</div>
+</div>
+</section>
+<section id="10.-Across-all-accidents,-what-percentage-involved-Males,-what-percentage-involved-Females,-and-what-percentage-involved-people-identifying-as-‘Other’?-Show-the-results-in-a-pie-chart.">
+<h2><strong>10.</strong> Across all accidents, what percentage involved Males, what percentage involved Females, and what percentage involved people identifying as ‘Other’? Show the results in a pie chart.<a class="headerlink" href="#10.-Across-all-accidents,-what-percentage-involved-Males,-what-percentage-involved-Females,-and-what-percentage-involved-people-identifying-as-‘Other’?-Show-the-results-in-a-pie-chart." title="Permalink to this heading">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Gender</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">Gender</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">mul</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">plot</span>
+    <span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">autopct</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%1.2f%%</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Percentage of cycling accidents by Gender </span><span class="se">\n</span><span class="s1">in Great Britain (1979-2018)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Male      0.797265
+Female    0.202591
+Other     0.000144
+Name: Gender, dtype: float64
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_06_worksheet_answers_21_1.png" src="../_images/notebooks_06_worksheet_answers_21_1.png" />
+</div>
+</div>
+</section>
+<section id="11.-What-was-the-highest-number-of-vehicles-involved-in-a-single-accident?">
+<h2><strong>11.</strong> What was the highest number of vehicles involved in a single accident?<a class="headerlink" href="#11.-What-was-the-highest-number-of-vehicles-involved-in-a-single-accident?" title="Permalink to this heading">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Number_of_Vehicles</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+2     758784
+1      41786
+3      24955
+4       1861
+5        343
+6         72
+7         30
+8         21
+9          4
+10         3
+12         1
+13         1
+Name: Number_of_Vehicles, dtype: int64
+</pre></div></div>
+</div>
+</section>
+<section id="12.-What-was-the-highest-number-of-casualties-involved-in-a-single-accident?">
+<h2><strong>12.</strong> What was the highest number of casualties involved in a single accident?<a class="headerlink" href="#12.-What-was-the-highest-number-of-casualties-involved-in-a-single-accident?" title="Permalink to this heading">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Number_of_Casualties</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+1     792685
+2      32367
+3       2227
+4        357
+5        123
+6         54
+7         23
+8          9
+13         5
+9          5
+10         3
+60         1
+12         1
+34         1
+Name: Number_of_Casualties, dtype: int64
+</pre></div></div>
+</div>
+</section>
+<section id="13.-On-which-day-of-the-week-did-the-accident-with-Accident_Index-201443N027074-occur?">
+<h2><strong>13.</strong> On which day of the week did the accident with <code class="docutils literal notranslate"><span class="pre">Accident_Index</span></code> <code class="docutils literal notranslate"><span class="pre">201443N027074</span></code> occur?<a class="headerlink" href="#13.-On-which-day-of-the-week-did-the-accident-with-Accident_Index-201443N027074-occur?" title="Permalink to this heading">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Accident_Index</span><span class="o">==</span><span class="s1">&#39;201443N027074&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Accident_Index</th>
+      <th>Number_of_Vehicles</th>
+      <th>Number_of_Casualties</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Speed_limit</th>
+      <th>Road_conditions</th>
+      <th>Weather_conditions</th>
+      <th>Day</th>
+      <th>Road_type</th>
+      <th>Light_conditions</th>
+      <th>Gender</th>
+      <th>Severity</th>
+      <th>Age_Grp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>751599</th>
+      <td>201443N027074</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2014-05-07</td>
+      <td>19:30</td>
+      <td>30.0</td>
+      <td>Dry</td>
+      <td>Clear</td>
+      <td>Saturday</td>
+      <td>Single carriageway</td>
+      <td>Daylight</td>
+      <td>Male</td>
+      <td>Serious</td>
+      <td>16 to 20</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="14.-Create-a-separate-DataFrame-for-all-serious-accidents-that-happened-on-a-Sunday-in-wet-road-conditions.-How-many-were-there?">
+<h2><strong>14.</strong> Create a separate <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> for all serious accidents that happened on a Sunday in wet road conditions. How many were there?<a class="headerlink" href="#14.-Create-a-separate-DataFrame-for-all-serious-accidents-that-happened-on-a-Sunday-in-wet-road-conditions.-How-many-were-there?" title="Permalink to this heading">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span>
+    <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Severity</span><span class="o">==</span><span class="s1">&#39;Serious&#39;</span><span class="p">)</span>
+    <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Day</span><span class="o">==</span><span class="s1">&#39;Sunday&#39;</span><span class="p">)</span>
+    <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Road_conditions</span><span class="o">==</span><span class="s1">&#39;Wet&#39;</span><span class="p">)</span>
+<span class="p">)]</span>
+<span class="n">df2</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Accident_Index</th>
+      <th>Number_of_Vehicles</th>
+      <th>Number_of_Casualties</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Speed_limit</th>
+      <th>Road_conditions</th>
+      <th>Weather_conditions</th>
+      <th>Day</th>
+      <th>Road_type</th>
+      <th>Light_conditions</th>
+      <th>Gender</th>
+      <th>Severity</th>
+      <th>Age_Grp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>9</th>
+      <td>197901A7PDD49</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1979-07-01</td>
+      <td>15:15</td>
+      <td>30.0</td>
+      <td>Wet</td>
+      <td>Rain</td>
+      <td>Sunday</td>
+      <td>Unknown</td>
+      <td>Daylight</td>
+      <td>Male</td>
+      <td>Serious</td>
+      <td>11 to 15</td>
+    </tr>
+    <tr>
+      <th>107</th>
+      <td>197901ALMAE81</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1979-01-21</td>
+      <td>12:00</td>
+      <td>30.0</td>
+      <td>Wet</td>
+      <td>Fog</td>
+      <td>Sunday</td>
+      <td>Single carriageway</td>
+      <td>Daylight</td>
+      <td>Male</td>
+      <td>Serious</td>
+      <td>56 to 65</td>
+    </tr>
+    <tr>
+      <th>657</th>
+      <td>197901D8LGF35</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1979-08-04</td>
+      <td>11:30</td>
+      <td>30.0</td>
+      <td>Wet</td>
+      <td>Rain</td>
+      <td>Sunday</td>
+      <td>Single carriageway</td>
+      <td>Daylight</td>
+      <td>Male</td>
+      <td>Serious</td>
+      <td>6 to 10</td>
+    </tr>
+    <tr>
+      <th>1538</th>
+      <td>197901FOJEV59</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1979-06-24</td>
+      <td>09:20</td>
+      <td>30.0</td>
+      <td>Wet</td>
+      <td>Rain</td>
+      <td>Sunday</td>
+      <td>Unknown</td>
+      <td>Daylight</td>
+      <td>Male</td>
+      <td>Serious</td>
+      <td>46 to 55</td>
+    </tr>
+    <tr>
+      <th>1542</th>
+      <td>197901FOPGC24</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1979-06-24</td>
+      <td>15:30</td>
+      <td>30.0</td>
+      <td>Wet</td>
+      <td>Unknown</td>
+      <td>Sunday</td>
+      <td>Unknown</td>
+      <td>Daylight</td>
+      <td>Male</td>
+      <td>Serious</td>
+      <td>16 to 20</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>826325</th>
+      <td>2018521902418</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2018-02-12</td>
+      <td>16:56</td>
+      <td>20.0</td>
+      <td>Wet</td>
+      <td>Rain</td>
+      <td>Sunday</td>
+      <td>Single carriageway</td>
+      <td>Darkness lights lit</td>
+      <td>Male</td>
+      <td>Serious</td>
+      <td>26 to 35</td>
+    </tr>
+    <tr>
+      <th>826477</th>
+      <td>2018530806661</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2018-07-29</td>
+      <td>18:50</td>
+      <td>30.0</td>
+      <td>Wet</td>
+      <td>Rain</td>
+      <td>Sunday</td>
+      <td>Single carriageway</td>
+      <td>Daylight</td>
+      <td>Male</td>
+      <td>Serious</td>
+      <td>46 to 55</td>
+    </tr>
+    <tr>
+      <th>827229</th>
+      <td>201863C114718</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2018-09-30</td>
+      <td>15:35</td>
+      <td>30.0</td>
+      <td>Wet</td>
+      <td>Clear</td>
+      <td>Sunday</td>
+      <td>Single carriageway</td>
+      <td>Daylight</td>
+      <td>Male</td>
+      <td>Serious</td>
+      <td>46 to 55</td>
+    </tr>
+    <tr>
+      <th>827580</th>
+      <td>2018961800246</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2018-07-15</td>
+      <td>11:00</td>
+      <td>60.0</td>
+      <td>Wet</td>
+      <td>Rain</td>
+      <td>Sunday</td>
+      <td>Single carriageway</td>
+      <td>Daylight</td>
+      <td>Female</td>
+      <td>Serious</td>
+      <td>56 to 65</td>
+    </tr>
+    <tr>
+      <th>827618</th>
+      <td>201897GC01011</td>
+      <td>3</td>
+      <td>1</td>
+      <td>2018-11-25</td>
+      <td>10:30</td>
+      <td>60.0</td>
+      <td>Wet</td>
+      <td>Clear</td>
+      <td>Sunday</td>
+      <td>Single carriageway</td>
+      <td>Daylight</td>
+      <td>Male</td>
+      <td>Serious</td>
+      <td>56 to 65</td>
+    </tr>
+  </tbody>
+</table>
+<p>2621 rows × 14 columns</p>
+</div></div>
+</div>
+</section>
+<section id="15.-Create-and-assign-a-new-`DatetimeIndex-&lt;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.html&gt;`__-for-the-DataFrame-using-the-Date-and-Time-columns">
+<h2><strong>15.</strong> Create and assign a new <code class="docutils literal notranslate"><span class="pre">`DatetimeIndex</span></code> &lt;<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.html">https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.html</a>&gt;`__ for the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> using the <code class="docutils literal notranslate"><span class="pre">Date</span></code> and <code class="docutils literal notranslate"><span class="pre">Time</span></code> columns<a class="headerlink" href="#15.-Create-and-assign-a-new-`DatetimeIndex-<https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.html>`__-for-the-DataFrame-using-the-Date-and-Time-columns" title="Permalink to this heading">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Date</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">df</span><span class="o">.</span><span class="n">Time</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Accident_Index</th>
+      <th>Number_of_Vehicles</th>
+      <th>Number_of_Casualties</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Speed_limit</th>
+      <th>Road_conditions</th>
+      <th>Weather_conditions</th>
+      <th>Day</th>
+      <th>Road_type</th>
+      <th>Light_conditions</th>
+      <th>Gender</th>
+      <th>Severity</th>
+      <th>Age_Grp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1979-01-01 18:20:00</th>
+      <td>197901A1SEE71</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1979-01-01</td>
+      <td>18:20</td>
+      <td>50.0</td>
+      <td>Snow</td>
+      <td>Unknown</td>
+      <td>Monday</td>
+      <td>Dual carriageway</td>
+      <td>Darkness lights lit</td>
+      <td>Male</td>
+      <td>Serious</td>
+      <td>36 to 45</td>
+    </tr>
+    <tr>
+      <th>1979-02-01 09:15:00</th>
+      <td>197901A2JDW40</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1979-02-01</td>
+      <td>09:15</td>
+      <td>30.0</td>
+      <td>Snow</td>
+      <td>Unknown</td>
+      <td>Tuesday</td>
+      <td>Unknown</td>
+      <td>Daylight</td>
+      <td>Male</td>
+      <td>Slight</td>
+      <td>46 to 55</td>
+    </tr>
+    <tr>
+      <th>1979-04-01 08:45:00</th>
+      <td>197901A4IJV90</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1979-04-01</td>
+      <td>08:45</td>
+      <td>30.0</td>
+      <td>Snow</td>
+      <td>Unknown</td>
+      <td>Thursday</td>
+      <td>Unknown</td>
+      <td>Daylight</td>
+      <td>Male</td>
+      <td>Slight</td>
+      <td>46 to 55</td>
+    </tr>
+    <tr>
+      <th>1979-04-01 13:40:00</th>
+      <td>197901A4NIE33</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1979-04-01</td>
+      <td>13:40</td>
+      <td>30.0</td>
+      <td>Wet</td>
+      <td>Unknown</td>
+      <td>Thursday</td>
+      <td>Unknown</td>
+      <td>Daylight</td>
+      <td>Male</td>
+      <td>Slight</td>
+      <td>36 to 45</td>
+    </tr>
+    <tr>
+      <th>1979-04-01 18:50:00</th>
+      <td>197901A4SKO47</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1979-04-01</td>
+      <td>18:50</td>
+      <td>30.0</td>
+      <td>Wet</td>
+      <td>Unknown</td>
+      <td>Thursday</td>
+      <td>Unknown</td>
+      <td>Darkness lights lit</td>
+      <td>Male</td>
+      <td>Slight</td>
+      <td>46 to 55</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2018-02-07 14:55:00</th>
+      <td>2018983118818</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2018-02-07</td>
+      <td>14:55</td>
+      <td>30.0</td>
+      <td>Dry</td>
+      <td>Clear</td>
+      <td>Monday</td>
+      <td>Single carriageway</td>
+      <td>Daylight</td>
+      <td>Male</td>
+      <td>Slight</td>
+      <td>6 to 10</td>
+    </tr>
+    <tr>
+      <th>2018-07-24 07:45:00</th>
+      <td>2018983119218</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2018-07-24</td>
+      <td>07:45</td>
+      <td>30.0</td>
+      <td>Dry</td>
+      <td>Clear</td>
+      <td>Tuesday</td>
+      <td>Single carriageway</td>
+      <td>Daylight</td>
+      <td>Male</td>
+      <td>Serious</td>
+      <td>56 to 65</td>
+    </tr>
+    <tr>
+      <th>2018-10-08 13:25:00</th>
+      <td>2018983120618</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2018-10-08</td>
+      <td>13:25</td>
+      <td>20.0</td>
+      <td>Dry</td>
+      <td>Clear</td>
+      <td>Friday</td>
+      <td>Single carriageway</td>
+      <td>Daylight</td>
+      <td>Male</td>
+      <td>Serious</td>
+      <td>11 to 15</td>
+    </tr>
+    <tr>
+      <th>2018-07-18 21:10:00</th>
+      <td>2018983121918</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2018-07-18</td>
+      <td>21:10</td>
+      <td>30.0</td>
+      <td>Dry</td>
+      <td>Clear</td>
+      <td>Wednesday</td>
+      <td>Single carriageway</td>
+      <td>Daylight</td>
+      <td>Male</td>
+      <td>Serious</td>
+      <td>46 to 55</td>
+    </tr>
+    <tr>
+      <th>2018-12-20 15:14:00</th>
+      <td>2018983133818</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2018-12-20</td>
+      <td>15:14</td>
+      <td>30.0</td>
+      <td>Wet</td>
+      <td>Rain</td>
+      <td>Thursday</td>
+      <td>Single carriageway</td>
+      <td>Daylight</td>
+      <td>Male</td>
+      <td>Serious</td>
+      <td>6 to 10</td>
+    </tr>
+  </tbody>
+</table>
+<p>827861 rows × 14 columns</p>
+</div></div>
+</div>
+</section>
+<section id="16.-Add-a-new-column-to-the-DataFrame-called-long_date.-It-should-contain-the-correct-dates-matching-the-following-format.">
+<h2><strong>16.</strong> Add a new column to the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> called <code class="docutils literal notranslate"><span class="pre">long_date</span></code>. It should contain the correct dates matching the following format.<a class="headerlink" href="#16.-Add-a-new-column-to-the-DataFrame-called-long_date.-It-should-contain-the-correct-dates-matching-the-following-format." title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Wednesday 09 February 2012</p></li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;long_date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%A </span><span class="si">%d</span><span class="s1"> %B %Y&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Accident_Index</th>
+      <th>Number_of_Vehicles</th>
+      <th>Number_of_Casualties</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Speed_limit</th>
+      <th>Road_conditions</th>
+      <th>Weather_conditions</th>
+      <th>Day</th>
+      <th>Road_type</th>
+      <th>Light_conditions</th>
+      <th>Gender</th>
+      <th>Severity</th>
+      <th>Age_Grp</th>
+      <th>long_date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1979-01-01 18:20:00</th>
+      <td>197901A1SEE71</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1979-01-01</td>
+      <td>18:20</td>
+      <td>50.0</td>
+      <td>Snow</td>
+      <td>Unknown</td>
+      <td>Monday</td>
+      <td>Dual carriageway</td>
+      <td>Darkness lights lit</td>
+      <td>Male</td>
+      <td>Serious</td>
+      <td>36 to 45</td>
+      <td>Monday 01 January 1979</td>
+    </tr>
+    <tr>
+      <th>1979-02-01 09:15:00</th>
+      <td>197901A2JDW40</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1979-02-01</td>
+      <td>09:15</td>
+      <td>30.0</td>
+      <td>Snow</td>
+      <td>Unknown</td>
+      <td>Tuesday</td>
+      <td>Unknown</td>
+      <td>Daylight</td>
+      <td>Male</td>
+      <td>Slight</td>
+      <td>46 to 55</td>
+      <td>Thursday 01 February 1979</td>
+    </tr>
+    <tr>
+      <th>1979-04-01 08:45:00</th>
+      <td>197901A4IJV90</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1979-04-01</td>
+      <td>08:45</td>
+      <td>30.0</td>
+      <td>Snow</td>
+      <td>Unknown</td>
+      <td>Thursday</td>
+      <td>Unknown</td>
+      <td>Daylight</td>
+      <td>Male</td>
+      <td>Slight</td>
+      <td>46 to 55</td>
+      <td>Sunday 01 April 1979</td>
+    </tr>
+    <tr>
+      <th>1979-04-01 13:40:00</th>
+      <td>197901A4NIE33</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1979-04-01</td>
+      <td>13:40</td>
+      <td>30.0</td>
+      <td>Wet</td>
+      <td>Unknown</td>
+      <td>Thursday</td>
+      <td>Unknown</td>
+      <td>Daylight</td>
+      <td>Male</td>
+      <td>Slight</td>
+      <td>36 to 45</td>
+      <td>Sunday 01 April 1979</td>
+    </tr>
+    <tr>
+      <th>1979-04-01 18:50:00</th>
+      <td>197901A4SKO47</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1979-04-01</td>
+      <td>18:50</td>
+      <td>30.0</td>
+      <td>Wet</td>
+      <td>Unknown</td>
+      <td>Thursday</td>
+      <td>Unknown</td>
+      <td>Darkness lights lit</td>
+      <td>Male</td>
+      <td>Slight</td>
+      <td>46 to 55</td>
+      <td>Sunday 01 April 1979</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="17.-What-is-the-worst-day-on-record-in-terms-of-the-number-of-accidents-that-were-reported?">
+<h2><strong>17.</strong> What is the worst day on record in terms of the number of accidents that were reported?<a class="headerlink" href="#17.-What-is-the-worst-day-on-record-in-terms-of-the-number-of-accidents-that-were-reported?" title="Permalink to this heading">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">date</span><span class="p">)[</span><span class="s1">&#39;Accident_Index&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+2010-12-25      2
+2009-01-01      2
+2017-10-12      3
+2003-01-01      3
+2007-12-25      3
+             ...
+1984-07-23    152
+1983-07-21    154
+1983-07-25    154
+1989-07-26    161
+1983-11-25    166
+Name: Accident_Index, Length: 14609, dtype: int64
+</pre></div></div>
+</div>
+</section>
+<section id="18.-Make-a-bar-chart-showing-total-accidents-by-month-of-the-year">
+<h2><strong>18.</strong> Make a bar chart showing total accidents by month of the year<a class="headerlink" href="#18.-Make-a-bar-chart-showing-total-accidents-by-month-of-the-year" title="Permalink to this heading">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">months</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Jan&#39;</span><span class="p">,</span> <span class="s1">&#39;Feb&#39;</span><span class="p">,</span> <span class="s1">&#39;Mar&#39;</span><span class="p">,</span> <span class="s1">&#39;Apr&#39;</span><span class="p">,</span> <span class="s1">&#39;May&#39;</span><span class="p">,</span> <span class="s1">&#39;Jun&#39;</span><span class="p">,</span> <span class="s1">&#39;Jul&#39;</span><span class="p">,</span> <span class="s1">&#39;Aug&#39;</span><span class="p">,</span> <span class="s1">&#39;Sep&#39;</span><span class="p">,</span> <span class="s1">&#39;Oct&#39;</span><span class="p">,</span> <span class="s1">&#39;Nov&#39;</span><span class="p">,</span> <span class="s1">&#39;Dec&#39;</span><span class="p">]</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">month</span><span class="p">)[</span><span class="s1">&#39;Accident_Index&#39;</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">count</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">months</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Total accidents&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Cycling accidents by month in Great Britain (1979-2018)&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_06_worksheet_answers_37_0.png" src="../_images/notebooks_06_worksheet_answers_37_0.png" />
+</div>
+</div>
+</section>
+<section id="19.-Make-a-line-graph-showing-the-total-number-of-accidents-that-occurred-each-year-from-1979-2018.-Have-accidents-declined-overall?-In-which-years-did-the-most-and-least-cycling-accidents-occur?">
+<h2><strong>19.</strong> Make a line graph showing the total number of accidents that occurred each year from 1979-2018. Have accidents declined overall? In which years did the most and least cycling accidents occur?<a class="headerlink" href="#19.-Make-a-line-graph-showing-the-total-number-of-accidents-that-occurred-each-year-from-1979-2018.-Have-accidents-declined-overall?-In-which-years-did-the-most-and-least-cycling-accidents-occur?" title="Permalink to this heading">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">)[</span><span class="s1">&#39;Accident_Index&#39;</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">count</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Total accidents&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Cycling accidents in Great Britain (1979-2018)&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_06_worksheet_answers_39_0.png" src="../_images/notebooks_06_worksheet_answers_39_0.png" />
+</div>
+</div>
+</section>
+<section id="20.-Repeat-the-above,-but-this-time-with-separate-lines-for-``Gender``">
+<h2><strong>20.</strong> Repeat the above, but this time with <strong>separate lines for ``Gender``</strong><a class="headerlink" href="#20.-Repeat-the-above,-but-this-time-with-separate-lines-for-``Gender``" title="Permalink to this heading">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="s1">&#39;Gender&#39;</span><span class="p">])[</span><span class="s1">&#39;Accident_Index&#39;</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">count</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Total accidents&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Cycling accidents in Great Britain (1979-2018)&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_06_worksheet_answers_41_0.png" src="../_images/notebooks_06_worksheet_answers_41_0.png" />
+</div>
+</div>
+</section>
+<section id="21.-Repeat-the-above,-but-this-time-with-separate-lines-for-``Age_Grp``">
+<h2><strong>21.</strong> Repeat the above, but this time with <strong>separate lines for ``Age_Grp``</strong><a class="headerlink" href="#21.-Repeat-the-above,-but-this-time-with-separate-lines-for-``Age_Grp``" title="Permalink to this heading">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">group_order</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;6 to 10&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;11 to 15&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;16 to 20&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;21 to 25&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;26 to 35&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;36 to 45&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;46 to 55&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;56 to 65&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;66 to 75&#39;</span>
+<span class="p">]</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="s1">&#39;Age_Grp&#39;</span><span class="p">])[</span><span class="s1">&#39;Accident_Index&#39;</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">count</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">unstack</span><span class="p">()[</span><span class="n">group_order</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Total accidents&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Cycling accidents in Great Britain (1979-2018)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Age group&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_06_worksheet_answers_43_0.png" src="../_images/notebooks_06_worksheet_answers_43_0.png" />
+</div>
+</div>
+</section>
+<section id="22.-Repeat-the-above,-but-this-time-with-separate-subplots-for-``Severity``">
+<h2><strong>22.</strong> Repeat the above, but this time with <strong>separate subplots for ``Severity``</strong><a class="headerlink" href="#22.-Repeat-the-above,-but-this-time-with-separate-subplots-for-``Severity``" title="Permalink to this heading">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="s1">&#39;Severity&#39;</span><span class="p">])[</span><span class="s1">&#39;Accident_Index&#39;</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">count</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Total accidents&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Cycling accident severity in Great Britain (1979-2018)&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_06_worksheet_answers_45_0.png" src="../_images/notebooks_06_worksheet_answers_45_0.png" />
+</div>
+</div>
+</section>
+<section id="23.-Make-a-bar-chart-showing-the-total-number-of-accidents-for-each-hour-in-the-day-from-1979-2018">
+<h2><strong>23.</strong> Make a bar chart showing the total number of accidents for each hour in the day from 1979-2018<a class="headerlink" href="#23.-Make-a-bar-chart-showing-the-total-number-of-accidents-for-each-hour-in-the-day-from-1979-2018" title="Permalink to this heading">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">hour</span><span class="p">)[</span><span class="s1">&#39;Accident_Index&#39;</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">count</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Total accidents&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Cycling accidents in Great Britain by time of day (1979-2018)&#39;</span><span class="p">)</span>
+<span class="n">hours</span> <span class="o">=</span> <span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%I %p&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">24</span><span class="p">)]</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">hours</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_06_worksheet_answers_47_0.png" src="../_images/notebooks_06_worksheet_answers_47_0.png" />
+</div>
+</div>
+</section>
+<section id="24.-As-above,-but-with-stacked-bars-using-different-colours-for-each-day-of-the-week">
+<h2><strong>24.</strong> As above, but with stacked bars using different colours for each day of the week<a class="headerlink" href="#24.-As-above,-but-with-stacked-bars-using-different-colours-for-each-day-of-the-week" title="Permalink to this heading">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="n">group_order</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Monday&#39;</span><span class="p">,</span> <span class="s1">&#39;Tuesday&#39;</span><span class="p">,</span> <span class="s1">&#39;Wednesday&#39;</span><span class="p">,</span> <span class="s1">&#39;Thursday&#39;</span><span class="p">,</span> <span class="s1">&#39;Friday&#39;</span><span class="p">,</span> <span class="s1">&#39;Saturday&#39;</span><span class="p">,</span> <span class="s1">&#39;Sunday&#39;</span><span class="p">]</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">hour</span><span class="p">,</span> <span class="s1">&#39;Day&#39;</span><span class="p">])[</span><span class="s1">&#39;Accident_Index&#39;</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">count</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">unstack</span><span class="p">()[</span><span class="n">group_order</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Total accidents&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Cycling accidents in Great Britain by time of day (1979-2018)&#39;</span><span class="p">)</span>
+<span class="n">hours</span> <span class="o">=</span> <span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%I %p&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">24</span><span class="p">)]</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">hours</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_06_worksheet_answers_49_0.png" src="../_images/notebooks_06_worksheet_answers_49_0.png" />
+</div>
+</div>
+</section>
+<section id="25.-Make-a-bar-chart-showing-the-year-on-year-percentage-change-for-accidents-with-different-coloured-bars-for-each-Severity">
+<h2><strong>25.</strong> Make a bar chart showing the year-on-year percentage change for accidents with different coloured bars for each <code class="docutils literal notranslate"><span class="pre">Severity</span></code><a class="headerlink" href="#25.-Make-a-bar-chart-showing-the-year-on-year-percentage-change-for-accidents-with-different-coloured-bars-for-each-Severity" title="Permalink to this heading">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="s1">&#39;Severity&#39;</span><span class="p">])[</span><span class="s1">&#39;Accident_Index&#39;</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">count</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">pct_change</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">mul</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">plot</span>
+    <span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">rot</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">.6</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">.6</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Toal accidents</span><span class="se">\n</span><span class="s1"> (</span><span class="si">%-c</span><span class="s1">hange from previous year)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Cycling accidents in Great Britain by year and severity (1979-2018)&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_06_worksheet_answers_51_0.png" src="../_images/notebooks_06_worksheet_answers_51_0.png" />
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">CLLPython</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="01_syntax_types_builtins.html">Week 1 - Syntax, data types, and built-in functions</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Joel T. Martin.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.0.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/notebooks/06_worksheet_answers.ipynb.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

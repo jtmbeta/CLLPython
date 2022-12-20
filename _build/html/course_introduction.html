@@ -1,0 +1,450 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Python Programming and Data Visualisation for Beginners &#8212; CLLPython 0.0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars and line breaks on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+    white-space: pre;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt .copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+.jp-RenderedHTMLCommon table,
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+.jp-RenderedHTMLCommon thead,
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+.jp-RenderedHTMLCommon tr,
+.jp-RenderedHTMLCommon th,
+.jp-RenderedHTMLCommon td,
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+.jp-RenderedHTMLCommon th,
+div.rendered_html th {
+  font-weight: bold;
+}
+.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.jp-RenderedHTMLCommon tbody tr:hover,
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+</style>
+<section id="Python-Programming-and-Data-Visualisation-for-Beginners">
+<h1>Python Programming and Data Visualisation for Beginners<a class="headerlink" href="#Python-Programming-and-Data-Visualisation-for-Beginners" title="Permalink to this heading">¶</a></h1>
+<p>Congratulations on deciding to learn a new skill!</p>
+<p>Python is a popular, general purpose programming language with applications in web development, software development, mathematics, data science, and many other areas. It has a thriving community and a long-term outlook, so the time and effort that you invest in learning Python now is likely to pay dividends in the future.</p>
+<p>This 8-week course focuses on data visualisation. By the end of it you will be able to load data into Python and make basic charts to describe the data, and you should also see the benefits of continuing to learn Python and using it instead of, or alongside, other familiar software such as Microsfot Excel.</p>
+<p>Although our focus will be on working with data, we will start from the very beginning and much of what you learn will prepare you for any future Python endeavors. For example, you may end up using Python as part of your everyday workflow, or you may be inspired to apply it to existing hobbies or to undertake fun and rewarding projects, such as using a <a class="reference external" href="https://www.raspberrypi.com/products/">raspberry pi microcomputer</a> to make an <a class="reference external" href="https://projects.raspberrypi.org/en/projects/infrared-bird-box">infrared bird box that live streams to
+YouTube</a>, an <a class="reference external" href="https://www.robpeck.com/2017/11/robs-raspberry-pi-powered-cat-feeders/">automatic cat feeder</a>, an <a class="reference external" href="https://www.instructables.com/Raspberry-Pi-Powered-IOT-Garden/">environmental sensor for monitoring the health of plants</a>, or a <a class="reference external" href="https://dillonmcc.myportfolio.com/auralock">face recognition door lock</a>.</p>
+<section id="Course-overview">
+<h2>Course overview<a class="headerlink" href="#Course-overview" title="Permalink to this heading">¶</a></h2>
+<p>The materials for this course are available from the following Google Drive link:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://drive.google.com/drive/folders/1Uo7LRb1mckiVBkjtNci8ejSZQT4Cxwna?usp=sharing">https://drive.google.com/drive/folders/1Uo7LRb1mckiVBkjtNci8ejSZQT4Cxwna?usp=sharing</a></p></li>
+</ul>
+<p>What follows is a broad outline of what we will cover in the 2-hour sessions over the next 8 weeks. It may be subject to change at short notice! Please note that I will also provide practice worksheets that should keep you busy for 1-2 hours between our weekly sessions.</p>
+<ul class="simple">
+<li><p><strong>Week 0</strong>: <em>An introduction to the Python programming language.</em> This will cover the history and community of the Python programming language and offer a broad overview of how it can be used. We will also take the opportunity in this first session to introduce the software that we will be using throughout the course (<a class="reference external" href="https://www.anaconda.com/">Anaconda</a>, <a class="reference external" href="https://jupyter.org/">Jupyter</a>, <a class="reference external" href="https://www.spyder-ide.org/">Spyder</a>) and to make sure that everyone has downloaded and
+installed them successfully.</p></li>
+<li><p><strong>Week 1</strong>: <em>Syntax, data types and built-in functions.</em> This will be an introduction to the very basics of Python. We will talk about syntax, the rules that govern how Python code should be written, and data types, the “objects” that are used to store bits of information, such as lists, tuples, booleans, dictionaries, integers, strings, and floating points. We will also consider functions that are already “built in” to the language.</p></li>
+<li><p><strong>Week 2</strong>: <em>Operators, control flow statements and defining functions.</em> This will be a light introduction to mathematical operators (e.g., <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>), logical operators (e.g., <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>) and control flow statements (e.g., <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code>, <code class="docutils literal notranslate"><span class="pre">for</span></code>), which are combined to create complex expressions and determine how a program is executed. For example, you may want to only execute some code if a certain condition is true, in which case you can use a logical
+<code class="docutils literal notranslate"><span class="pre">if</span></code> statement. Or you may want to execute some code until a certain condition is met, in which case you would use a <code class="docutils literal notranslate"><span class="pre">while</span></code> statement. We will also cover how to define functions to handle repetitive tasks.</p></li>
+<li><p><strong>Week 3</strong>: <em>Imports, the standard library, and third party libraries.</em> In Python, most functionality is buried away in modules that must be imported at the beginning of a script. This session will cover how to locate and import relevant modules, and it will explore what is already available in the <a class="reference external" href="https://docs.python.org/3/library/">Python standard library</a>. Examples include <code class="docutils literal notranslate"><span class="pre">os</span></code>, <code class="docutils literal notranslate"><span class="pre">time</span></code>, <code class="docutils literal notranslate"><span class="pre">datetime</span></code>, <code class="docutils literal notranslate"><span class="pre">math</span></code>, <code class="docutils literal notranslate"><span class="pre">random</span></code>, <code class="docutils literal notranslate"><span class="pre">csv</span></code>, etc. We will also talk about third party libraries.
+Owing to its popularity and widespread adoption, Python has a thriving development community. There are literally hundreds of thousands of Python packages, all designed to solve particular problems. This session will introduce the <a class="reference external" href="https://pypi.org/">Python Package Index</a> (where different python packages are stored) and how to search for and install packages that may be of interest. Finally, I will introduce three key packages that we will use in the next four sessions:
+<a class="reference external" href="https://numpy.org/">numpy</a>, the core numerical computing package for python; <a class="reference external" href="https://matplotlib.org/">matplotlib</a>, a powerful plotting library for making graphs; and <a class="reference external" href="https://pandas.pydata.org/">pandas</a>, an advanced package for handling and manipulating large datasets.</p></li>
+<li><p><strong>Week 4</strong>: <em>An introduction to data visualisation</em>. Today we will begin by exploring basic principles of data visualisation and considering different methods of presenting data, such as line graphs, scatter plots and bar charts. We will look at examples of what are widely considered to be some of the best and worst data visualisations ever made, which is a great way to refresh one’s chart reading abilities. I will then introduce three separate data sets that we will be using for the rest of
+the course and demonstrate how to load the data and make basic charts.</p></li>
+<li><p><strong>Week 5</strong>: <em>numpy, matplotlib, and pandas.</em> This session will explore these three packages in depth. We will begin by exploring the key functionality of numpy and work through examples of how to create and operate on numerical arrays. Then we will import matplotlib and visualise the data from numpy. Finally, we will import pandas and use it to load and describe the example datasets. By the end of the session, you will be able to import these packages, load example data, and make basic plots.</p></li>
+<li><p><strong>Week 6</strong>: <em>Locating and visualising interesting data.</em> This session will focus on locating data and describing the data with visualisations using numpy, matplotlib and pandas. I will then set an assignment for nexts week’s presentations, which will involve locating some data, loading it into python, and making a plot that describes the data. You may choose from some set examples that I will provide, or come up with your own idea entirely.</p></li>
+<li><p><strong>Week 7</strong>: <em>2-5 min presentations and inspiration.</em> In this session you will give a short presentation on the assignment set in the previous week. I will then describe some of my own Python projects and aim to inspire you with ideas for continuing your Python development.</p></li>
+</ul>
+</section>
+<section id="Getting-help">
+<h2>Getting help<a class="headerlink" href="#Getting-help" title="Permalink to this heading">¶</a></h2>
+<p>As a beginner learning Python, the internet will almost certainly have answers to any questions that may arise, but knowing how to find them can be tricky. A carefully worded google search is usually the best place to start for specific issues, but you may wish to bookmark the following resources.</p>
+<section id="General">
+<h3>General<a class="headerlink" href="#General" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.python.org/doc/essays/blurb/">What is Python?</a> - the executive summary.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/reference/index.html#reference-index">The Python Language Reference</a> - Technical, informative, dry. If all of Python suddenly disappeared and had to be re-implemented from a single document, this is the one.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/index.html">The Python Standard Library</a> - Documentation for the 200+ modules in the standard library.</p></li>
+</ul>
+</section>
+<section id="Self-guided-tutorials">
+<h3>Self-guided tutorials<a class="headerlink" href="#Self-guided-tutorials" title="Permalink to this heading">¶</a></h3>
+<p>For supplementary learning during the course, or continued learning afterwards.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/index.html#tutorial-index">The official Python Tutorial</a> - Comprehensive and at times entertaining.</p></li>
+<li><p><a class="reference external" href="https://www.w3schools.com/python/default.asp">W3schools’ Python tutorial</a> - Comprehensive, interactive and easy to navigate.</p></li>
+<li><p><a class="reference external" href="https://www.codecademy.com/catalog/language/python">Codeacademy Python tutorials</a> - Free and paid courses covering a wide range of topics and for all levels of ability.</p></li>
+</ul>
+</section>
+<section id="Websites">
+<h3>Websites<a class="headerlink" href="#Websites" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://realpython.com/">RealPython</a> - A great website with tutorials and articles for all abilities.</p></li>
+<li><p><a class="reference external" href="https://www.learnpython.org/">learnpython.org</a> - Another great websites with trivia and tutorials for all abilities.</p></li>
+<li><p><a class="reference external" href="https://stackoverflow.com/questions/tagged/python">StackOverflow</a> - Probably the best place to search for answers to Python-related questions, or to ask questions if you can’t find the answer you are looking for.</p></li>
+<li><p><a class="reference external" href="https://www.pythoncheatsheet.org/cheatsheet/basics">PythonCheatSheet</a> - A very useful language reference for all levels</p></li>
+</ul>
+</section>
+<section id="Social-media">
+<h3>Social media<a class="headerlink" href="#Social-media" title="Permalink to this heading">¶</a></h3>
+<p>If you use Twitter and want to fill up your feed with Python trivia, consider following these accounts:</p>
+<ul class="simple">
+<li><p>&#64;<a class="reference external" href="https://twitter.com/driscollis">driscollis</a> - Mike Driscoll writes Python tutorials and posts about Python every day. His “Python pop quizes” often focus on strange and unexpected features of Python.</p></li>
+<li><p>&#64;<a class="reference external" href="https://twitter.com/randal_olson">randal_olson</a> - Randy Olson is a data scientist who frequently tweets about Python and data visualisation.</p></li>
+<li><p>&#64;<a class="reference external" href="https://twitter.com/TalkPython">TalkPython</a> - The #1 Python-focused podcast covering the people and ideas in Python. Created and hosted by &#64;mkennedy.</p></li>
+<li><p>&#64;<a class="reference external" href="https://twitter.com/PythonHub">PythonHub</a> - News and links about Python programming.</p></li>
+<li><p>&#64;<a class="reference external" href="https://twitter.com/PythonStack">PythonStack</a> - StackOverflow feed of Python questions matching certain criteria.</p></li>
+</ul>
+</section>
+</section>
+<section id="Finally…">
+<h2>Finally…<a class="headerlink" href="#Finally…" title="Permalink to this heading">¶</a></h2>
+<p>It is often said that Python is one of the easiest programming languages to learn. This may be true in a relative sense, but the learning curve can be steep for beginners. If at times you find yourself feeling frustrated, overwhelmed, or out of your depth, remind yourself that this is completely normal, and believe me when I say that there is nothing quite like the feeling of satisfaction that accompanies those <em>Ah ha</em> moments, when your perseverance pays off and you finally <em>get it</em>!</p>
+<p>I hope you enjoy learning Python. Please don’t hesitate to contact me directly if you need a hand at any point throughout the course.</p>
+<p>Joel Martin</p>
+<p><a class="reference external" href="mailto:joel&#46;martin&#37;&#52;&#48;york&#46;ac&#46;uk?subject=Python">joel<span>&#46;</span>martin<span>&#64;</span>york<span>&#46;</span>ac<span>&#46;</span>uk</a></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">CLLPython</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/01_syntax_types_builtins.html">Week 1 - Syntax, data types, and built-in functions</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Joel T. Martin.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.0.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/course_introduction.ipynb.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

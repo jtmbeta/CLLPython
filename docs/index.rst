@@ -11,7 +11,14 @@ Welcome to CLLPython's documentation!
    :caption: Contents:
 
    00_introduction_to_the_python_programming_language
-
+   01_syntax_types_builtins
+   02_logic_operators_control_statements
+   03_imports_standard_library_PyPI
+   04_numpy_matplotlib
+   05_pandas
+   06_more_pandas
+   07_other_libraries
+   
 Indices and tables
 ==================
 

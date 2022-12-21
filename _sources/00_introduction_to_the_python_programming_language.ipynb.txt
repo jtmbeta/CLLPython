@@ -7,7 +7,6 @@
    "source": [
     "# Week 0 - Introduction to the Python programming language\n",
     "\n",
-    "\n",
     "Today you are going to install Anaconda, learn the basics of Jupyter and Spyder, and write your first Python program.\n",
     "\n",
     "\n",

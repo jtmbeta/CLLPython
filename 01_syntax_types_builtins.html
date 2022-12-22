@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Week 1 - Syntax, data types, and built-in functions &#8212; CLLPython 0.0.1 documentation</title>
+    <title>Week 1 - Syntax, data types, built-in functions &#8212; CLLPython 0.0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/haiku.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
@@ -19,21 +19,21 @@
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Week 2 - Operators, control flow statements, defining functions" href="02_logic_operators_control_statements.html" />
-    <link rel="prev" title="Week 0 - Introduction to the Python programming language" href="00_introduction_to_the_python_programming_language.html" /> 
+    <link rel="next" title="Week 1 - Exercises" href="01_exercises.html" />
+    <link rel="prev" title="Week 0 - Exercises" href="00_exercises.html" /> 
   </head><body>
       <div class="header" role="banner"><h1 class="heading"><a href="index.html">
           <span>CLLPython 0.0.1 documentation</span></a></h1>
-        <h2 class="heading"><span>Week 1 - Syntax, data types, and built-in functions</span></h2>
+        <h2 class="heading"><span>Week 1 - Syntax, data types, built-in functions</span></h2>
       </div>
       <div class="topnav" role="navigation" aria-label="top navigation">
       
         <p>
-        «&#160;&#160;<a href="00_introduction_to_the_python_programming_language.html">Week 0 - Introduction to the Python programming language</a>
+        «&#160;&#160;<a href="00_exercises.html">Week 0 - Exercises</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="02_logic_operators_control_statements.html">Week 2 - Operators, control flow statements, defining functions</a>&#160;&#160;»
+        <a href="01_exercises.html">Week 1 - Exercises</a>&#160;&#160;»
         </p>
 
       </div>
@@ -297,8 +297,8 @@ div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
 }
 </style>
-<section id="Week-1---Syntax,-data-types,-and-built-in-functions">
-<h1>Week 1 - Syntax, data types, and built-in functions<a class="headerlink" href="#Week-1---Syntax,-data-types,-and-built-in-functions" title="Permalink to this heading">¶</a></h1>
+<section id="Week-1---Syntax,-data-types,-built-in-functions">
+<h1>Week 1 - Syntax, data types, built-in functions<a class="headerlink" href="#Week-1---Syntax,-data-types,-built-in-functions" title="Permalink to this heading">¶</a></h1>
 <p>Before we dive into the basics, let’s remind ourselves that Python is an <a class="reference external" href="https://en.wikipedia.org/wiki/Object-oriented_programming">object-oriented programming</a> language, and that virtually everything in Python is an “object” that bundles together some data and functionality.</p>
 <p>When used in a programming sense, the concept of an “object” is abstract. We can’t physically reach out to the object, pick it up, and manipulate it in the same way that we might a pen or a pencil. But the abstraction make sense, because the objects of computer programs typically represent objects in the real world.</p>
 <p>To illustrate the point, let’s make a <code class="docutils literal notranslate"><span class="pre">Pen</span></code> object and use it write “Hello, World!”.</p>
@@ -336,18 +336,18 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Not enough ink!
-my_pen has 100 ink left
+Hello, World!
+my_pen has 87 ink left
 </pre></div></div>
 </div>
 <p>In the above, <code class="docutils literal notranslate"><span class="pre">class</span></code> is used to define a type of object called <code class="docutils literal notranslate"><span class="pre">Pen</span></code>, which has an <code class="docutils literal notranslate"><span class="pre">ink_left</span></code> <em>attribute</em> and a <code class="docutils literal notranslate"><span class="pre">write_something</span></code> <em>method</em>. We then create an <em>instance</em> of <code class="docutils literal notranslate"><span class="pre">Pen</span></code> and use <code class="docutils literal notranslate"><span class="pre">write_something</span></code> to print the message “Hello, World!”. Every time <code class="docutils literal notranslate"><span class="pre">write_something</span></code> is called, the ink gets depleted, and if there isn’t enough ink to write the message, the program will let us know.</p>
 <p>This is a glimpse into Python’s <code class="docutils literal notranslate"><span class="pre">class</span></code> mechanism, which is what provides the object-oriented features to the language. However, Python does not enforce the object-oriented style, which means that for now we need not worry about <code class="docutils literal notranslate"><span class="pre">class</span></code>, <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, <code class="docutils literal notranslate"><span class="pre">self</span></code>, etc.</p>
-<section id="1.-Syntax">
-<h2>1. Syntax<a class="headerlink" href="#1.-Syntax" title="Permalink to this heading">¶</a></h2>
+<section id="Syntax">
+<h2>Syntax<a class="headerlink" href="#Syntax" title="Permalink to this heading">¶</a></h2>
 <p>In the context of programming languages, <em>syntax</em> refers to the rules that govern the structure of statements and expressions.</p>
 <p>One of Python’s most attractive features is its clear, concise and readable syntax. We will learn more about this continuously throughout the course, but for now let’s explore some of the main components.</p>
-<section id="1.1-Comments">
-<h3>1.1 Comments<a class="headerlink" href="#1.1-Comments" title="Permalink to this heading">¶</a></h3>
+<section id="Comments">
+<h3>Comments<a class="headerlink" href="#Comments" title="Permalink to this heading">¶</a></h3>
 <p>Comments are bits of text that exist inside your code, but which do not get evaluated when the code is executed. You can use them to explain or annotate a piece of code that you have written, so when you (or another developer) reads it at a later stage it will be clear what the code is doing, or why it was written in that particular way.</p>
 <p>In Python, comments are written by putting a <code class="docutils literal notranslate"><span class="pre">#</span></code> (hash) symbol before the comment text. Anything that comes after a <code class="docutils literal notranslate"><span class="pre">#</span></code> on a particular line of code is ignored.</p>
 <div class="nbinput nblast docutils container">
@@ -396,8 +396,8 @@ Hello, world!
 </div>
 <p>Always comment your code, preferably with plain and succinct language. Your colleagues and your future self will be thankful!</p>
 </section>
-<section id="1.2-Variables">
-<h3>1.2 Variables<a class="headerlink" href="#1.2-Variables" title="Permalink to this heading">¶</a></h3>
+<section id="Variables">
+<h3>Variables<a class="headerlink" href="#Variables" title="Permalink to this heading">¶</a></h3>
 <p>In Python, variables are essentially names attached to objects.</p>
 <p>To put it more accurately, Python variables hold a reference or “pointer” to an address in computer memory where an object is stored, but it isn’t particularly helpful to think of variables in this way when learning the language.</p>
 <p>Just think of variables as “names for objects” or “boxes to put things in” and you won’t go far wrong.</p>
@@ -494,8 +494,8 @@ One Two Three
 </pre></div></div>
 </div>
 </section>
-<section id="1.3-Keywords">
-<h3>1.3 Keywords<a class="headerlink" href="#1.3-Keywords" title="Permalink to this heading">¶</a></h3>
+<section id="Keywords">
+<h3>Keywords<a class="headerlink" href="#Keywords" title="Permalink to this heading">¶</a></h3>
 <p>Python has a set of keywords which have their own specific purpose or meaning within the language. They can not be used as variable names, function names, or as any other form of identifier.</p>
 <p>We can get get a list of the available keywords by typing:</p>
 <div class="nbinput docutils container">
@@ -591,8 +591,8 @@ Related help topics: TRUTHVALUE
 </div>
 <p>Note that if you call <code class="docutils literal notranslate"><span class="pre">help()</span></code> without any arguments, you may find yourself in an <em>interactive</em> help session, which you can exit by typing <code class="docutils literal notranslate"><span class="pre">quit</span></code> and hitting <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.</p>
 </section>
-<section id="1.4-Lines,-indentation,-and-whitespace">
-<h3>1.4 Lines, indentation, and whitespace<a class="headerlink" href="#1.4-Lines,-indentation,-and-whitespace" title="Permalink to this heading">¶</a></h3>
+<section id="Lines,-indentation,-and-whitespace">
+<h3>Lines, indentation, and whitespace<a class="headerlink" href="#Lines,-indentation,-and-whitespace" title="Permalink to this heading">¶</a></h3>
 <p>Many computer languages don’t care about whitespace, but Python does!</p>
 <p>In Python, whitespace is part of the syntax. Programs are initially divided into logical lines, and the whitespace is then used by the Python interpreter to parse code into syntactic blocks.</p>
 <p>For example, when writing a loop or defining a function, one must indent subsequent lines with 4 spaces (a <code class="docutils literal notranslate"><span class="pre">Tab</span></code> may also be used, but this is generally discouraged).</p>
@@ -663,13 +663,13 @@ The world is round
 <p>But you should never use whitespace like this as it makes the code hard to read. <a class="reference external" href="https://peps.python.org/pep-0008/">PEP8</a> has recommendations on what it considers to be the correct use of whitespace. The take-home message? Use it sparingly and in a consistent manner.</p>
 </section>
 </section>
-<section id="2.-Built-in-data-types">
-<h2>2. Built-in data types<a class="headerlink" href="#2.-Built-in-data-types" title="Permalink to this heading">¶</a></h2>
+<section id="Built-in-data-types">
+<h2>Built-in data types<a class="headerlink" href="#Built-in-data-types" title="Permalink to this heading">¶</a></h2>
 <p>We already know that everything in Python is an object. Now, consider that <strong>every object has a type</strong>.</p>
 <p>Python has a range of built-in data types, but some are more common than others. For now we will focus on numbers (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>), booleans (<code class="docutils literal notranslate"><span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">False</span></code>), sequences (<code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code>), and dictionaries (<code class="docutils literal notranslate"><span class="pre">dict</span></code>).</p>
 <p><strong>N.B.</strong> The type of an object can always be revealed using Python’s built-in <code class="docutils literal notranslate"><span class="pre">type()</span></code> function.</p>
-<section id="2.1-Numbers">
-<h3>2.1 Numbers<a class="headerlink" href="#2.1-Numbers" title="Permalink to this heading">¶</a></h3>
+<section id="Numbers">
+<h3>Numbers<a class="headerlink" href="#Numbers" title="Permalink to this heading">¶</a></h3>
 <p>Python distinguishes between three types of number: integer, floating point, and complex. We will focus on integers and floating points (because <a class="reference external" href="https://en.wikipedia.org/wiki/Complex_number">complex numbers are complex</a> and I don’t know much about them)!</p>
 <p>Integers (e.g., <code class="docutils literal notranslate"><span class="pre">42</span></code>, <code class="docutils literal notranslate"><span class="pre">36</span></code>, <code class="docutils literal notranslate"><span class="pre">-5</span></code>) are whole numbers, and have type <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
 <div class="nbinput docutils container">
@@ -873,8 +873,8 @@ The value of num_float is 365.25
 </pre></div></div>
 </div>
 </section>
-<section id="2.2-Booleans">
-<h3>2.2 Booleans<a class="headerlink" href="#2.2-Booleans" title="Permalink to this heading">¶</a></h3>
+<section id="Booleans">
+<h3>Booleans<a class="headerlink" href="#Booleans" title="Permalink to this heading">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">boole</span></code> data type, named after <a class="reference external" href="https://en.wikipedia.org/wiki/George_Boole">George Boole (1815-1864)</a>, has two possible values: <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
@@ -1036,8 +1036,8 @@ This will get printed
 </pre></div></div>
 </div>
 </section>
-<section id="2.3-Strings">
-<h3>2.3 Strings<a class="headerlink" href="#2.3-Strings" title="Permalink to this heading">¶</a></h3>
+<section id="Strings">
+<h3>Strings<a class="headerlink" href="#Strings" title="Permalink to this heading">¶</a></h3>
 <p>Besides numbers, Python can manipulate strings, which are sequences of values represented by <a class="reference external" href="https://home.unicode.org/">Unicode</a> points.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
@@ -1393,8 +1393,8 @@ His name is Fred Jones
 </pre></div></div>
 </div>
 </section>
-<section id="2.4-Lists">
-<h3>2.4 Lists<a class="headerlink" href="#2.4-Lists" title="Permalink to this heading">¶</a></h3>
+<section id="Lists">
+<h3>Lists<a class="headerlink" href="#Lists" title="Permalink to this heading">¶</a></h3>
 <p>Python’s <code class="docutils literal notranslate"><span class="pre">list</span></code> is a versatile, compound data type used for grouping together other values, which may or may not have the same type (although items in a list typically have the same type).</p>
 <p>Lists are defined with square brackets and commas between each item.</p>
 <div class="nbinput docutils container">
@@ -1587,8 +1587,8 @@ list
 </div>
 </div>
 </section>
-<section id="2.5-Tuples">
-<h3>2.5 Tuples<a class="headerlink" href="#2.5-Tuples" title="Permalink to this heading">¶</a></h3>
+<section id="Tuples">
+<h3>Tuples<a class="headerlink" href="#Tuples" title="Permalink to this heading">¶</a></h3>
 <p>Tuples are just like lists, except they are <strong>immutable</strong>, which means they can’t be changed after they’ve been made.</p>
 <p>It may seem strange to have two separate data types with only this small difference between them, but the versatility of lists comes at the expense of more allocated computer memory. If you know that a sequence of values is not going to change across the life of a computer program, using a tuple instead of a list can improve performance.</p>
 <div class="nbinput docutils container">
@@ -1657,8 +1657,8 @@ tuple
 </div>
 </div>
 </section>
-<section id="2.6-Dictionaries">
-<h3>2.6 Dictionaries<a class="headerlink" href="#2.6-Dictionaries" title="Permalink to this heading">¶</a></h3>
+<section id="Dictionaries">
+<h3>Dictionaries<a class="headerlink" href="#Dictionaries" title="Permalink to this heading">¶</a></h3>
 <p>Dictionaries, like lists, are a mutable data type for storing collections of objects. The difference with dictionaries is that <strong>data are stored in key-value pairs</strong>.</p>
 <p>We define dictionaries using curly braces, commas to separate key-value pairs, and colons to separate keys and values.</p>
 <p><code class="docutils literal notranslate"><span class="pre">my_dict</span> <span class="pre">=</span> <span class="pre">{key:</span> <span class="pre">value,</span> <span class="pre">key:</span> <span class="pre">value,</span> <span class="pre">...,</span> <span class="pre">key:</span> <span class="pre">value}</span></code></p>
@@ -1797,8 +1797,9 @@ dict_items([(&#39;name&#39;, &#39;University of York&#39;), (&#39;location&#39;,
 </div>
 <p>Try defining your own dictionary in the cell below and experiment with dictionary methods!</p>
 </section>
-<section id="3.-Built-in-Functions">
-<h3>3. Built-in Functions<a class="headerlink" href="#3.-Built-in-Functions" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="Built-in-Functions">
+<h2>Built-in Functions<a class="headerlink" href="#Built-in-Functions" title="Permalink to this heading">¶</a></h2>
 <p>Python has some <a class="reference external" href="https://docs.python.org/3/library/functions.html">built-in functions</a> that are always available for use. Some are more obscure than others and tend to be less relevant for beginners. Up to now, the built-in functions we have encountered include <code class="docutils literal notranslate"><span class="pre">help()</span></code>, <code class="docutils literal notranslate"><span class="pre">print()</span></code>, <code class="docutils literal notranslate"><span class="pre">input()</span></code>, <code class="docutils literal notranslate"><span class="pre">type()</span></code>, <code class="docutils literal notranslate"><span class="pre">int()</span></code>, <code class="docutils literal notranslate"><span class="pre">float()</span></code>, <code class="docutils literal notranslate"><span class="pre">bool()</span></code>, <code class="docutils literal notranslate"><span class="pre">str()</span></code>, <code class="docutils literal notranslate"><span class="pre">list()</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple()</span></code>, and <code class="docutils literal notranslate"><span class="pre">dict()</span></code>.</p>
 <p>Use the cell below to refresh your memory on these. You can use the <code class="docutils literal notranslate"><span class="pre">help()</span></code> function, or type the name of the object (without the <code class="docutils literal notranslate"><span class="pre">()</span></code>) followed by a question mark.</p>
 <div class="nbinput docutils container">
@@ -1959,9 +1960,8 @@ Base 0 means to interpret the base from the string as an integer literal.
 3.142
 </pre></div></div>
 </div>
-</section>
-<section id="4.-That’s-it-for-now!">
-<h3>4. That’s it for now!<a class="headerlink" href="#4.-That’s-it-for-now!" title="Permalink to this heading">¶</a></h3>
+<section id="That’s-it-for-now!">
+<h3>That’s it for now!<a class="headerlink" href="#That’s-it-for-now!" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
@@ -1987,11 +1987,11 @@ Time for a ☕?
       <div class="bottomnav" role="navigation" aria-label="bottom navigation">
       
         <p>
-        «&#160;&#160;<a href="00_introduction_to_the_python_programming_language.html">Week 0 - Introduction to the Python programming language</a>
+        «&#160;&#160;<a href="00_exercises.html">Week 0 - Exercises</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="02_logic_operators_control_statements.html">Week 2 - Operators, control flow statements, defining functions</a>&#160;&#160;»
+        <a href="01_exercises.html">Week 1 - Exercises</a>&#160;&#160;»
         </p>
 
       </div>

@@ -19,8 +19,8 @@
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Week 4 - NumPy and matplotlib" href="04_numpy_matplotlib.html" />
-    <link rel="prev" title="Week 2 - Operators, control flow statements, defining functions" href="02_logic_operators_control_statements.html" /> 
+    <link rel="next" title="Week 3 - Exercises" href="03_exercises.html" />
+    <link rel="prev" title="Week 2 - Exercises" href="02_exercises.html" /> 
   </head><body>
       <div class="header" role="banner"><h1 class="heading"><a href="index.html">
           <span>CLLPython 0.0.1 documentation</span></a></h1>
@@ -29,11 +29,11 @@
       <div class="topnav" role="navigation" aria-label="top navigation">
       
         <p>
-        «&#160;&#160;<a href="02_logic_operators_control_statements.html">Week 2 - Operators, control flow statements, defining functions</a>
+        «&#160;&#160;<a href="02_exercises.html">Week 2 - Exercises</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="04_numpy_matplotlib.html">Week 4 - NumPy and matplotlib</a>&#160;&#160;»
+        <a href="03_exercises.html">Week 3 - Exercises</a>&#160;&#160;»
         </p>
 
       </div>
@@ -301,10 +301,10 @@ div.rendered_html tbody tr:hover {
 <h1>Week 3 - Imports, the standard library, and third-party libraries<a class="headerlink" href="#Week-3---Imports,-the-standard-library,-and-third-party-libraries" title="Permalink to this heading">¶</a></h1>
 <p>When writing code, keep the DRY principle in mind.</p>
 <p><strong>DRY = Don’t Repeat Yourself</strong></p>
-<p>We have already looked at loops and functions, both fantastic ways of not repeating yourself. Loops help you to avoid repeating yourself line for line, and functions help you avoid repeating yourself at several different places within a program.</p>
+<p>Loops and functions are fantastic ways of not repeating yourself. Loops help you to avoid repeating yourself line for line, and functions help you avoid repeating yourself at several different places within a program.</p>
 <p>What happens if you find that you are repeating yourself in <em>separate programs</em>? In that case, you should use a module, or maybe even a collection of modules (known as a library). Modular code is generally more simple, maintainable and reusable, because it breaks down what may be a large problem into smaller separate problem domains, and it limits the number of places that code needs to be modified when fixing bugs or adding new functionality.</p>
-<section id="1.-Modules-and-the-import-statement">
-<h2>1. Modules and the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement<a class="headerlink" href="#1.-Modules-and-the-import-statement" title="Permalink to this heading">¶</a></h2>
+<section id="Modules-and-the-import-statement">
+<h2>Modules and the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement<a class="headerlink" href="#Modules-and-the-import-statement" title="Permalink to this heading">¶</a></h2>
 <p>A Python module is basically a file with a <code class="docutils literal notranslate"><span class="pre">.py</span></code> extension that lives somewhere on your computer, and whose contents can be made available to the programmer via the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement. In the first week, we encountered the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement in its simplest form when using the <code class="docutils literal notranslate"><span class="pre">randrange</span></code> function from Python’s built-in <code class="docutils literal notranslate"><span class="pre">random</span></code> module (to generate a random number for the guessing game).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
@@ -489,8 +489,8 @@ The number is 65
 </pre></div></div>
 </div>
 </section>
-<section id="1.2-The-Standard-Library">
-<h2>1.2 The Standard Library<a class="headerlink" href="#1.2-The-Standard-Library" title="Permalink to this heading">¶</a></h2>
+<section id="The-Standard-Library">
+<h2>The Standard Library<a class="headerlink" href="#The-Standard-Library" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference external" href="https://docs.python.org/3/library/index.html">Python’s standard library</a> offers an extensive range of ‘out-of-the-box’ functionality, all of it accessible via the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement described above. Some modules offer standardized solutions to everyday programming tasks, some provide access to system-level functionality, and others are so highly specialised that even the most experienced Python programmer may never use them. It all depends what problems you are working on.</p>
 <p>An example of a much-utilised module in the standard library is <code class="docutils literal notranslate"><span class="pre">datetime</span></code>, which provides tools for manipulating dates and times. That’s a common task in every-day programming! Suppose we wanted to write a function that takes a person’s date of birth and tells them exactly how many seconds old they are. Here’s how we can do it using <code class="docutils literal notranslate"><span class="pre">datetime</span></code>.</p>
 <div class="nbinput docutils container">
@@ -581,7 +581,7 @@ Congratulations, you are 1077910908 seconds old.
  &#39;03_imports_standard_library_PyPI.ipynb&#39;]
 </pre></div></div>
 </div>
-<p><cite>Read more about ``os`</cite> here. &lt;<a class="reference external" href="https://docs.python.org/3/library/os.html#module-os">https://docs.python.org/3/library/os.html#module-os</a>&gt;`__</p>
+<p>Read more about <code class="docutils literal notranslate"><span class="pre">os</span></code> here: <a class="reference external" href="https://docs.python.org/3/library/os.html#module-os">https://docs.python.org/3/library/os.html#module-os</a></p>
 <hr class="docutils" />
 <p><code class="docutils literal notranslate"><span class="pre">sys</span></code> gives access to variables that are used or maintained by the Python interpreter as well as functions that interact with it. One use of <code class="docutils literal notranslate"><span class="pre">sys</span></code> is to examine the Python path, which is basically a list of folders on your computer that Python searches when you try to import something.</p>
 <div class="nbinput docutils container">
@@ -613,7 +613,7 @@ Congratulations, you are 1077910908 seconds old.
  &#39;/Users/jtm545/.ipython&#39;]
 </pre></div></div>
 </div>
-<p><cite>Read more about ``sys`</cite> here. &lt;<a class="reference external" href="https://docs.python.org/3/library/sys.html#module-sys">https://docs.python.org/3/library/sys.html#module-sys</a>&gt;`__</p>
+<p>Read more about <code class="docutils literal notranslate"><span class="pre">sys</span></code> here: <a class="reference external" href="https://docs.python.org/3/library/sys.html#module-sys">https://docs.python.org/3/library/sys.html#module-sys</a></p>
 <hr class="docutils" />
 <p><code class="docutils literal notranslate"><span class="pre">shutil</span></code> is useful for file and directory management tasks (e.g., copying, moving, removing, renaming)</p>
 <div class="nbinput docutils container">
@@ -637,7 +637,7 @@ Congratulations, you are 1077910908 seconds old.
 &#39;copy_of_00_worksheet.pdf&#39;
 </pre></div></div>
 </div>
-<p><cite>Read more about ``shutil`</cite> here. &lt;<a class="reference external" href="https://docs.python.org/3/library/shutil.html">https://docs.python.org/3/library/shutil.html</a>&gt;`__</p>
+<p>Read more about <code class="docutils literal notranslate"><span class="pre">shutil</span></code> here: <a class="reference external" href="https://docs.python.org/3/library/shutil.html">https://docs.python.org/3/library/shutil.html</a></p>
 <hr class="docutils" />
 <p><code class="docutils literal notranslate"><span class="pre">glob</span></code> provides a function for getting a list of files that match a <a class="reference external" href="https://en.wikipedia.org/wiki/Wildcard_character">wildcard</a> pattern.</p>
 <div class="nbinput docutils container">
@@ -669,7 +669,7 @@ Congratulations, you are 1077910908 seconds old.
  &#39;03_imports_standard_library_PyPI.ipynb&#39;]
 </pre></div></div>
 </div>
-<p><cite>Read more about ``glob`</cite> here. &lt;<a class="reference external" href="https://docs.python.org/3/library/glob.html">https://docs.python.org/3/library/glob.html</a>&gt;`__</p>
+<p>Read more about <code class="docutils literal notranslate"><span class="pre">glob</span></code> here: <a class="reference external" href="https://docs.python.org/3/library/glob.html">https://docs.python.org/3/library/glob.html</a></p>
 <hr class="docutils" />
 <p>The <code class="docutils literal notranslate"><span class="pre">math</span></code> library provides extended functionality for floating point arithmetic.</p>
 <div class="nbinput docutils container">
@@ -697,7 +697,7 @@ The square root of 42 is 6.48074069840786
 The greatest common divisor of 42 and 56 is 14
 </pre></div></div>
 </div>
-<p><cite>Read more about ``math`</cite> here. &lt;<a class="reference external" href="https://docs.python.org/3/library/math.html">https://docs.python.org/3/library/math.html</a>&gt;`__</p>
+<p>Read more about <code class="docutils literal notranslate"><span class="pre">math</span></code> here: <a class="reference external" href="https://docs.python.org/3/library/math.html">https://docs.python.org/3/library/math.html</a></p>
 <hr class="docutils" />
 <p>The <code class="docutils literal notranslate"><span class="pre">statistics</span></code> library supports calculation of basic statistics on numeric data.</p>
 <div class="nbinput docutils container">
@@ -731,21 +731,21 @@ The variance is  9967.104395604396
 The standard deviation is  99.83538648998358
 </pre></div></div>
 </div>
-<p><cite>Read more about ``statistics`</cite> here. &lt;<a class="reference external" href="https://docs.python.org/3/library/statistics.html">https://docs.python.org/3/library/statistics.html</a>&gt;`__</p>
+<p>Read more about <code class="docutils literal notranslate"><span class="pre">statistics</span></code> here: <a class="reference external" href="https://docs.python.org/3/library/statistics.html">https://docs.python.org/3/library/statistics.html</a></p>
 <hr class="docutils" />
 <p>That was only a whirlwind tour of the standard library. Each of these modules has a ton of functionality that you may, or may not, encounter in your time as a Python programmer. Try exploring each of the above libraries in further detail. Here are some others that I use frequently.</p>
 <ul class="simple">
-<li><p><cite>Learn about the ``calendar`</cite> library &lt;<a class="reference external" href="https://docs.python.org/3/library/calendar.html">https://docs.python.org/3/library/calendar.html</a>&gt;`__</p></li>
-<li><p><cite>Learn about the ``itertools`</cite> library &lt;<a class="reference external" href="https://docs.python.org/3/library/itertools.html">https://docs.python.org/3/library/itertools.html</a>&gt;`__</p></li>
-<li><p><cite>Learn about the ``pathlib`</cite> library &lt;<a class="reference external" href="https://docs.python.org/3/library/pathlib.html">https://docs.python.org/3/library/pathlib.html</a>&gt;`__</p></li>
-<li><p><cite>Learn about the ``pickle`</cite> library &lt;<a class="reference external" href="https://docs.python.org/3/library/pickle.html">https://docs.python.org/3/library/pickle.html</a>&gt;`__</p></li>
-<li><p><cite>Learn about the ``time`</cite> library &lt;<a class="reference external" href="https://docs.python.org/3/library/time.html">https://docs.python.org/3/library/time.html</a>&gt;`__</p></li>
-<li><p><cite>Learn about the ``csv`</cite> library &lt;<a class="reference external" href="https://docs.python.org/3/library/csv.html">https://docs.python.org/3/library/csv.html</a>&gt;`__</p></li>
-<li><p><cite>Learn more about the ``re`</cite> library &lt;<a class="reference external" href="https://docs.python.org/3/library/re.html">https://docs.python.org/3/library/re.html</a>&gt;`__</p></li>
+<li><p>Learn about the <code class="docutils literal notranslate"><span class="pre">calendar</span></code> library: <a class="reference external" href="https://docs.python.org/3/library/calendar.html">https://docs.python.org/3/library/calendar.html</a></p></li>
+<li><p>Learn about the <code class="docutils literal notranslate"><span class="pre">itertools</span></code> library: <a class="reference external" href="https://docs.python.org/3/library/itertools.html">https://docs.python.org/3/library/itertools.html</a></p></li>
+<li><p>Learn about the <code class="docutils literal notranslate"><span class="pre">pathlib</span></code> library: <a class="reference external" href="https://docs.python.org/3/library/pathlib.html">https://docs.python.org/3/library/pathlib.html</a></p></li>
+<li><p>Learn about the <code class="docutils literal notranslate"><span class="pre">pickle</span></code> library: <a class="reference external" href="https://docs.python.org/3/library/pickle.html">https://docs.python.org/3/library/pickle.html</a></p></li>
+<li><p>Learn about the <code class="docutils literal notranslate"><span class="pre">time</span></code> library: <a class="reference external" href="https://docs.python.org/3/library/time.html">https://docs.python.org/3/library/time.html</a></p></li>
+<li><p>Learn about the <code class="docutils literal notranslate"><span class="pre">csv</span></code> library: <a class="reference external" href="https://docs.python.org/3/library/csv.html">https://docs.python.org/3/library/csv.html</a></p></li>
+<li><p>Learn more about the <code class="docutils literal notranslate"><span class="pre">re</span></code> library: <a class="reference external" href="https://docs.python.org/3/library/re.html">https://docs.python.org/3/library/re.html</a></p></li>
 </ul>
 </section>
-<section id="1.3-The-Python-Package-Index-(PyPI)">
-<h2>1.3 The Python Package Index (PyPI)<a class="headerlink" href="#1.3-The-Python-Package-Index-(PyPI)" title="Permalink to this heading">¶</a></h2>
+<section id="The-Python-Package-Index-(PyPI)">
+<h2>The Python Package Index (PyPI)<a class="headerlink" href="#The-Python-Package-Index-(PyPI)" title="Permalink to this heading">¶</a></h2>
 <p>Sometimes, the standard library doesn’t have what you need, in which case you may consult the <a class="reference external" href="https://pypi.org/">Python Package Index</a>—an online repository for code that has been developed and shared by the wider Python community. It is currently home to over 400,000 projects, so the chances are that one of them will help to solve your problem ‘out-of-the-box’, or at least inspire you with the means to solve it yourself.</p>
 <p>Here’s a good example that I encountered when preparing this document. Previously, we used the <code class="docutils literal notranslate"><span class="pre">datetime</span></code> module from Python’s standard library to write a function that, given somebody’s date of birth, reports how many seconds old that person is. For my own date of birth, the number was so big that I personally found it difficult to appreciate. It occurred to me that it would be easier to appreciate the number if it was presented in written form, but I could find nothing in Python’s standard
 library to support this. I thought to myself that this problem <em>must</em> have already been solved in Python, so I performed the following Google search:</p>
@@ -754,12 +754,16 @@ library to support this. I thought to myself that this problem <em>must</em> hav
 </div></blockquote>
 <p>Which lead me to <a class="reference external" href="https://stackoverflow.com/questions/8982163/how-do-i-tell-python-to-convert-integers-into-words">this page</a>, which in turn informed me of the <code class="docutils literal notranslate"><span class="pre">inflect</span></code> module. I <a class="reference external" href="https://pypi.org/project/inflect/">looked it up on PyPI</a> and found the following description:</p>
 <blockquote>
-<div><p><em>``inflect.py`` - Correctly generate plurals, singular nouns, ordinals, indefinite articles;</em> <strong>convert numbers to words</strong></p>
+<div><p><code class="docutils literal notranslate"><span class="pre">inflect.py</span></code> - <em>Correctly generate plurals, singular nouns, ordinals, indefinite articles;</em> <strong>convert numbers to words</strong></p>
 </div></blockquote>
 <p>That’s just what I need, so I installed <code class="docutils literal notranslate"><span class="pre">inflect</span></code> using the <code class="docutils literal notranslate"><span class="pre">pip</span></code> packaging tool.</p>
 <hr class="docutils" />
-<p><strong>NOTE:</strong> <code class="docutils literal notranslate"><span class="pre">`pip</span></code> &lt;<a class="reference external" href="https://pip.pypa.io/en/stable/getting-started/">https://pip.pypa.io/en/stable/getting-started/</a>&gt;`__ is a package management system for Python, and the recommended tool for installing Python packages from the Python Package Index. If you know the name of the package you want to install from PyPI, all you need to do is type <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&lt;package_name&gt;</span></code> at the command line and <code class="docutils literal notranslate"><span class="pre">pip</span></code> will get the job done. In the cell below, <code class="docutils literal notranslate"><span class="pre">pip</span></code> is invoked with a <code class="docutils literal notranslate"><span class="pre">!</span></code> at the start of the line, which escapes the Jupyter console and
-executes the program at the level of the underlying operating system. We installed Python with anaconda, which actually has its own package management system called <code class="docutils literal notranslate"><span class="pre">`conda</span></code> &lt;<a class="reference external" href="https://docs.conda.io/en/latest/">https://docs.conda.io/en/latest/</a>&gt;`__. We will mostly use <code class="docutils literal notranslate"><span class="pre">conda</span></code> to install packages (e.g., via Anaconda Navigator), but <code class="docutils literal notranslate"><span class="pre">pip</span></code> is good to know about as it is considered the <em>de facto</em> tool for managing packages in Python (and it can be used alongside <code class="docutils literal notranslate"><span class="pre">conda</span></code>).</p>
+<p><strong>NOTE:</strong> <code class="docutils literal notranslate"><span class="pre">pip</span></code> is a package management system for Python, and the recommended tool for installing Python packages from the Python Package Index. If you know the name of the package you want to install from PyPI, all you need to do is type <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&lt;package_name&gt;</span></code> at the command line and <code class="docutils literal notranslate"><span class="pre">pip</span></code> will get the job done. In the cell below, <code class="docutils literal notranslate"><span class="pre">pip</span></code> is invoked with a <code class="docutils literal notranslate"><span class="pre">!</span></code> at the start of the line, which escapes the Jupyter console and executes the program at the level of the underlying
+operating system. We installed Python with anaconda, which actually has its own package management system called <code class="docutils literal notranslate"><span class="pre">conda</span></code>. We will mostly use <code class="docutils literal notranslate"><span class="pre">conda</span></code> to install packages (e.g., via Anaconda Navigator), but <code class="docutils literal notranslate"><span class="pre">pip</span></code> is good to know about as it is considered the <em>de facto</em> tool for managing packages in Python (and it can be used alongside <code class="docutils literal notranslate"><span class="pre">conda</span></code>).</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span></code> - <a class="reference external" href="https://pip.pypa.io/en/stable/getting-started/">Click here to learn more</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">conda</span></code> - <a class="reference external" href="https://docs.conda.io/en/latest/">Click here to learn more</a></p></li>
+</ul>
 <hr class="docutils" />
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[52]:
@@ -815,8 +819,8 @@ Congratulations, you are one billion, two hundred and sixty-three million, nine 
 </div>
 <p>Obviously, a shrewd programmer would check carefully that a third-party library is up to scratch before depending on it for their own project. The best way to do this is to check that the library has an active community, that it is still being maintained, and ideally that it has a comprehensive testing suite. This information can usually be gleaned from the project’s page on PyPI, or its homepage on another website, such as <a class="reference external" href="https://github.com/">GitHub</a>.</p>
 </section>
-<section id="1.4-numpy,-matplotlib,-and-pandas">
-<h2>1.4 numpy, matplotlib, and pandas<a class="headerlink" href="#1.4-numpy,-matplotlib,-and-pandas" title="Permalink to this heading">¶</a></h2>
+<section id="numpy,-matplotlib,-and-pandas">
+<h2>numpy, matplotlib, and pandas<a class="headerlink" href="#numpy,-matplotlib,-and-pandas" title="Permalink to this heading">¶</a></h2>
 <p>Now is a good time to introduce the libraries that we will be using for the rest of this course.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://numpy.org/">numpy</a> is the core numerical computing package for Python. It provides fast and versatile N-dimensional arrays as well as a comprehensive collection of mathematical functions and routines.</p></li>
@@ -908,11 +912,11 @@ Congratulations, you are one billion, two hundred and sixty-three million, nine 
       <div class="bottomnav" role="navigation" aria-label="bottom navigation">
       
         <p>
-        «&#160;&#160;<a href="02_logic_operators_control_statements.html">Week 2 - Operators, control flow statements, defining functions</a>
+        «&#160;&#160;<a href="02_exercises.html">Week 2 - Exercises</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="04_numpy_matplotlib.html">Week 4 - NumPy and matplotlib</a>&#160;&#160;»
+        <a href="03_exercises.html">Week 3 - Exercises</a>&#160;&#160;»
         </p>
 
       </div>

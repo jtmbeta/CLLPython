@@ -19,8 +19,8 @@
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Week 8 - Other libraries and cool things" href="07_other_libraries.html" />
-    <link rel="prev" title="Week 5 - pandas" href="05_pandas.html" /> 
+    <link rel="next" title="Week 6 - Exercises" href="06_exercises.html" />
+    <link rel="prev" title="Week 5 - Exercises" href="05_exercises.html" /> 
   </head><body>
       <div class="header" role="banner"><h1 class="heading"><a href="index.html">
           <span>CLLPython 0.0.1 documentation</span></a></h1>
@@ -29,11 +29,11 @@
       <div class="topnav" role="navigation" aria-label="top navigation">
       
         <p>
-        «&#160;&#160;<a href="05_pandas.html">Week 5 - pandas</a>
+        «&#160;&#160;<a href="05_exercises.html">Week 5 - Exercises</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="07_other_libraries.html">Week 8 - Other libraries and cool things</a>&#160;&#160;»
+        <a href="06_exercises.html">Week 6 - Exercises</a>&#160;&#160;»
         </p>
 
       </div>
@@ -315,8 +315,16 @@ div.rendered_html tbody tr:hover {
 <p>‘Time series data’ refers to any form of data that is represented or indexed with ordered timestamps. Examples include stock prices, electrical activity in the brain, and temperature throughout the day. As you might have guessed, this involves dates, times, and differences between them.</p>
 <section id="Timestamp-and-Timedelta">
 <h2><code class="docutils literal notranslate"><span class="pre">Timestamp</span></code> and <code class="docutils literal notranslate"><span class="pre">Timedelta</span></code><a class="headerlink" href="#Timestamp-and-Timedelta" title="Permalink to this heading">¶</a></h2>
-<p>In <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, dates and times are represented with <code class="docutils literal notranslate"><span class="pre">`pd.Timestamp</span></code> &lt;<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timestamp.html">https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timestamp.html</a>&gt;`__, which is a replacement for Python’s native <code class="docutils literal notranslate"><span class="pre">`datetime.datetime</span></code> &lt;<a class="reference external" href="https://docs.python.org/3/library/datetime.html">https://docs.python.org/3/library/datetime.html</a>&gt;`__ object. The two are interchangeable in many respects, but a key difference is that <code class="docutils literal notranslate"><span class="pre">pd.Timestamp</span></code> uses <cite>NumPy’s ``datetime64`</cite> and <code class="docutils literal notranslate"><span class="pre">timedelta64</span></code> data types &lt;<a class="reference external" href="https://numpy.org/doc/stable/reference/arrays.datetime.html">https://numpy.org/doc/stable/reference/arrays.datetime.html</a>&gt;`__
-and incorporates a much wider range of functionality and powerful features for creating and manipulating time series.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, dates and times are represented with <code class="docutils literal notranslate"><span class="pre">pd.Timestamp</span></code>, which is a replacement for Python’s native <code class="docutils literal notranslate"><span class="pre">datetime.datetime</span></code> object. The two are interchangeable in many respects, but a key difference is that <code class="docutils literal notranslate"><span class="pre">pd.Timestamp</span></code> uses NumPy’s <code class="docutils literal notranslate"><span class="pre">datetime64</span></code> and <code class="docutils literal notranslate"><span class="pre">timedelta64</span></code> data types and incorporates a much wider range of functionality and powerful features for creating and manipulating time series.</p>
+<hr class="docutils" />
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pd.Timestamp</span></code> - <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timestamp.html">Read more here</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">datetime.datetime</span></code> - <a class="reference external" href="https://docs.python.org/3/library/datetime.html">Read more here</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">datetime64</span></code> and <code class="docutils literal notranslate"><span class="pre">timedelta64</span></code> - <a class="reference external" href="https://numpy.org/doc/stable/reference/arrays.datetime.html">Read more here</a></p></li>
+</ul>
+</div></blockquote>
+<hr class="docutils" />
 <p>Let’s create timestamps to mark two memorable points in history. The First World War ended in 1918 at the eleventh hour of the eleventh day of the eleventh month, and the Second World War ended on the 08 May at one-minute past 11 in the evening.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
@@ -2311,7 +2319,11 @@ Name: 2012-04-23 00:00:00, dtype: object
 </div>
 </div>
 <p>If you can master tricks like this in <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, the world of time series data is at your fingertips.</p>
-<p><cite>Follow this link to learn more about Time Series / Date functionality in ``pandas`</cite> &lt;<a class="reference external" href="https://pandas.pydata.org/pandas-docs/version/0.23.0/timeseries.html">https://pandas.pydata.org/pandas-docs/version/0.23.0/timeseries.html</a>&gt;`__</p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> - <a class="reference external" href="https://pandas.pydata.org/pandas-docs/version/0.23.0/timeseries.html">Follow this link to learn more about Time Series / Date functionality</a></p></li>
+</ul>
+<hr class="docutils" />
 </section>
 </section>
 
@@ -2320,11 +2332,11 @@ Name: 2012-04-23 00:00:00, dtype: object
       <div class="bottomnav" role="navigation" aria-label="bottom navigation">
       
         <p>
-        «&#160;&#160;<a href="05_pandas.html">Week 5 - pandas</a>
+        «&#160;&#160;<a href="05_exercises.html">Week 5 - Exercises</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="07_other_libraries.html">Week 8 - Other libraries and cool things</a>&#160;&#160;»
+        <a href="06_exercises.html">Week 6 - Exercises</a>&#160;&#160;»
         </p>
 
       </div>

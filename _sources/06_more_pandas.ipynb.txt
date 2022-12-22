@@ -33,7 +33,15 @@
     "\n",
     "## `Timestamp` and `Timedelta`\n",
     "\n",
-    "In `pandas`, dates and times are represented with [`pd.Timestamp`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timestamp.html), which is a replacement for Python's native [`datetime.datetime`](https://docs.python.org/3/library/datetime.html) object. The two are interchangeable in many respects, but a key difference is that `pd.Timestamp` uses [NumPy's `datetime64` and `timedelta64` data types](https://numpy.org/doc/stable/reference/arrays.datetime.html) and incorporates a much wider range of functionality and powerful features for creating and manipulating time series. \n",
+    "In `pandas`, dates and times are represented with `pd.Timestamp`, which is a replacement for Python's native `datetime.datetime` object. The two are interchangeable in many respects, but a key difference is that `pd.Timestamp` uses NumPy's `datetime64` and `timedelta64` data types and incorporates a much wider range of functionality and powerful features for creating and manipulating time series. \n",
+    "\n",
+    "---\n",
+    "\n",
+    ">  - `pd.Timestamp` - [Read more here](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timestamp.html)\n",
+    ">  - `datetime.datetime` - [Read more here](https://docs.python.org/3/library/datetime.html)\n",
+    ">  - `datetime64` and `timedelta64` - [Read more here](https://numpy.org/doc/stable/reference/arrays.datetime.html)\n",
+    " \n",
+    "---\n",
     "\n",
     "Let's create timestamps to mark two memorable points in history. The First World War ended in 1918 at the eleventh hour of the eleventh day of the eleventh month, and the Second World War ended on the 08 May at one-minute past 11 in the evening. "
    ]
@@ -2558,7 +2566,11 @@
    "source": [
     "If you can master tricks like this in `pandas`, the world of time series data is at your fingertips. \n",
     "\n",
-    "[Follow this link to learn more about Time Series / Date functionality in `pandas`](https://pandas.pydata.org/pandas-docs/version/0.23.0/timeseries.html)\n"
+    "---\n",
+    "\n",
+    "  - `pandas` - [Follow this link to learn more about Time Series / Date functionality](https://pandas.pydata.org/pandas-docs/version/0.23.0/timeseries.html)\n",
+    "\n",
+    "---"
    ]
   }
  ],

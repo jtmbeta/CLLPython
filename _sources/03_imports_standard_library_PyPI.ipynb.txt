@@ -11,11 +11,11 @@
     "\n",
     "**DRY = Don't Repeat Yourself**\n",
     "\n",
-    "We have already looked at loops and functions, both fantastic ways of not repeating yourself. Loops help you to avoid repeating yourself line for line, and functions help you avoid repeating yourself at several different places within a program. \n",
+    "Loops and functions are fantastic ways of not repeating yourself. Loops help you to avoid repeating yourself line for line, and functions help you avoid repeating yourself at several different places within a program. \n",
     "\n",
     "What happens if you find that you are repeating yourself in *separate programs*? In that case, you should use a module, or maybe even a collection of modules (known as a library). Modular code is generally more simple, maintainable and reusable, because it breaks down what may be a large problem into smaller separate problem domains, and it limits the number of places that code needs to be modified when fixing bugs or adding new functionality.\n",
     "\n",
-    "## 1. Modules and the `import` statement\n",
+    "## Modules and the `import` statement\n",
     "\n",
     "A Python module is basically a file with a `.py` extension that lives somewhere on your computer, and whose contents can be made available to the programmer via the `import` statement. In the first week, we encountered the `import` statement in its simplest form when using the `randrange` function from Python's built-in `random` module (to generate a random number for the guessing game).\n",
     "\n",
@@ -277,7 +277,7 @@
    "id": "4bfd2e32-14c2-4218-90cc-348cbd8ce0ea",
    "metadata": {},
    "source": [
-    "## 1.2 The Standard Library\n",
+    "## The Standard Library\n",
     "\n",
     "[Python's standard library](https://docs.python.org/3/library/index.html) offers an extensive range of 'out-of-the-box' functionality, all of it accessible via the `import` statement described above. Some modules offer standardized solutions to everyday programming tasks, some provide access to system-level functionality, and others are so highly specialised that even the most experienced Python programmer may never use them. It all depends what problems you are working on.\n",
     "\n",
@@ -393,7 +393,7 @@
    "id": "7ec1ce03-ab55-456d-a323-5c0a5981d197",
    "metadata": {},
    "source": [
-    "[Read more about `os` here.](https://docs.python.org/3/library/os.html#module-os)\n",
+    "Read more about `os` here: https://docs.python.org/3/library/os.html#module-os\n",
     "\n",
     "---\n",
     "\n",
@@ -438,7 +438,7 @@
    "id": "4e8acb54-d275-4982-b439-569349d14884",
    "metadata": {},
    "source": [
-    "[Read more about `sys` here.](https://docs.python.org/3/library/sys.html#module-sys)\n",
+    "Read more about `sys` here: https://docs.python.org/3/library/sys.html#module-sys\n",
     "\n",
     "---\n",
     "\n",
@@ -475,7 +475,7 @@
    "id": "75a65ec0-aae7-49e2-8838-5dd289e3f8ed",
    "metadata": {},
    "source": [
-    "[Read more about `shutil` here.](https://docs.python.org/3/library/shutil.html)\n",
+    "Read more about `shutil` here: https://docs.python.org/3/library/shutil.html\n",
     "\n",
     "---\n",
     "\n",
@@ -521,7 +521,7 @@
    "id": "835b6757-d1c7-4db7-a3bb-9977b9dda8b4",
    "metadata": {},
    "source": [
-    "[Read more about `glob` here.](https://docs.python.org/3/library/glob.html)\n",
+    "Read more about `glob` here: https://docs.python.org/3/library/glob.html\n",
     "\n",
     "---\n",
     "\n",
@@ -560,7 +560,7 @@
    "id": "33a37cee-30b7-4ddc-9050-dab4f24bf670",
    "metadata": {},
    "source": [
-    "[Read more about `math` here.](https://docs.python.org/3/library/math.html)\n",
+    "Read more about `math` here: https://docs.python.org/3/library/math.html\n",
     "\n",
     "---\n",
     "\n",
@@ -605,19 +605,19 @@
    "id": "62fd279c-9f5e-4564-bb69-828b41066aee",
    "metadata": {},
    "source": [
-    "[Read more about `statistics` here.](https://docs.python.org/3/library/statistics.html)\n",
+    "Read more about `statistics` here: https://docs.python.org/3/library/statistics.html\n",
     "\n",
     "---\n",
     "\n",
     "That was only a whirlwind tour of the standard library. Each of these modules has a ton of functionality that you may, or may not, encounter in your time as a Python programmer. Try exploring each of the above libraries in further detail. Here are some others that I use frequently.\n",
     "\n",
-    "  - [Learn about the `calendar` library](https://docs.python.org/3/library/calendar.html)\n",
-    "  - [Learn about the `itertools` library](https://docs.python.org/3/library/itertools.html)\n",
-    "  - [Learn about the `pathlib` library](https://docs.python.org/3/library/pathlib.html)\n",
-    "  - [Learn about the `pickle` library](https://docs.python.org/3/library/pickle.html)\n",
-    "  - [Learn about the `time` library](https://docs.python.org/3/library/time.html)\n",
-    "  - [Learn about the `csv` library](https://docs.python.org/3/library/csv.html)\n",
-    "  - [Learn more about the `re` library](https://docs.python.org/3/library/re.html)"
+    "  - Learn about the `calendar` library: https://docs.python.org/3/library/calendar.html\n",
+    "  - Learn about the `itertools` library: https://docs.python.org/3/library/itertools.html\n",
+    "  - Learn about the `pathlib` library: https://docs.python.org/3/library/pathlib.html\n",
+    "  - Learn about the `pickle` library: https://docs.python.org/3/library/pickle.html\n",
+    "  - Learn about the `time` library: https://docs.python.org/3/library/time.html\n",
+    "  - Learn about the `csv` library: https://docs.python.org/3/library/csv.html\n",
+    "  - Learn more about the `re` library: https://docs.python.org/3/library/re.html"
    ]
   },
   {
@@ -625,7 +625,7 @@
    "id": "f72ac8d6-203c-4879-8ce5-93e9e33e13e4",
    "metadata": {},
    "source": [
-    "## 1.3 The Python Package Index (PyPI)\n",
+    "## The Python Package Index (PyPI)\n",
     "\n",
     "Sometimes, the standard library doesn't have what you need, in which case you may consult the [Python Package Index](https://pypi.org/)&mdash;an online repository for code that has been developed and shared by the wider Python community. It is currently home to over 400,000 projects, so the chances are that one of them will help to solve your problem 'out-of-the-box', or at least inspire you with the means to solve it yourself. \n",
     "\n",
@@ -635,13 +635,16 @@
     "\n",
     "Which lead me to [this page](https://stackoverflow.com/questions/8982163/how-do-i-tell-python-to-convert-integers-into-words), which in turn informed me of the `inflect` module. I [looked it up on PyPI](https://pypi.org/project/inflect/) and found the following description:\n",
     "\n",
-    "> *`inflect.py` - Correctly generate plurals, singular nouns, ordinals, indefinite articles;* ***convert numbers to words***\n",
+    "> `inflect.py` - *Correctly generate plurals, singular nouns, ordinals, indefinite articles;* ***convert numbers to words***\n",
     "\n",
     "That's just what I need, so I installed `inflect` using the `pip` packaging tool.\n",
     "\n",
     "---\n",
     "\n",
-    "_**NOTE:**_ [`pip`](https://pip.pypa.io/en/stable/getting-started/) is a package management system for Python, and the recommended tool for installing Python packages from the Python Package Index. If you know the name of the package you want to install from PyPI, all you need to do is type `pip install <package_name>` at the command line and `pip` will get the job done. In the cell below, `pip` is invoked with a `!` at the start of the line, which escapes the Jupyter console and executes the program at the level of the underlying operating system. We installed Python with anaconda, which actually has its own package management system called [`conda`](https://docs.conda.io/en/latest/). We will mostly use `conda` to install packages (e.g., via Anaconda Navigator), but `pip` is good to know about as it is considered the *de facto* tool for managing packages in Python (and it can be used alongside `conda`). \n",
+    "_**NOTE:**_ `pip` is a package management system for Python, and the recommended tool for installing Python packages from the Python Package Index. If you know the name of the package you want to install from PyPI, all you need to do is type `pip install <package_name>` at the command line and `pip` will get the job done. In the cell below, `pip` is invoked with a `!` at the start of the line, which escapes the Jupyter console and executes the program at the level of the underlying operating system. We installed Python with anaconda, which actually has its own package management system called `conda`. We will mostly use `conda` to install packages (e.g., via Anaconda Navigator), but `pip` is good to know about as it is considered the *de facto* tool for managing packages in Python (and it can be used alongside `conda`). \n",
+    "\n",
+    "  - `pip` - [Click here to learn more](https://pip.pypa.io/en/stable/getting-started/)\n",
+    "  - `conda` - [Click here to learn more](https://docs.conda.io/en/latest/)\n",
     "\n",
     "---\n"
    ]
@@ -722,7 +725,7 @@
    "id": "78407b7e-7376-4970-827d-2a758d7eb60a",
    "metadata": {},
    "source": [
-    "## 1.4 numpy, matplotlib, and pandas\n",
+    "## numpy, matplotlib, and pandas\n",
     "\n",
     "Now is a good time to introduce the libraries that we will be using for the rest of this course.\n",
     "\n",

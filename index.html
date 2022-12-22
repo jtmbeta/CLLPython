@@ -15,9 +15,10 @@
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Week 0 - Introduction to the Python programming language" href="00_introduction_to_the_python_programming_language.html" /> 
+    <link rel="next" title="Week 0 - Introduction to the Python programming language" href="00_introduction.html" /> 
   </head><body>
       <div class="header" role="banner"><h1 class="heading"><a href="#">
           <span>CLLPython 0.0.1 documentation</span></a></h1>
@@ -28,7 +29,7 @@
         <p>
         <a class="uplink" href="#">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="00_introduction_to_the_python_programming_language.html">Week 0 - Introduction to the Python programming language</a>&#160;&#160;»
+        <a href="00_introduction.html">Week 0 - Introduction to the Python programming language</a>&#160;&#160;»
         </p>
 
       </div>
@@ -45,34 +46,68 @@
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="00_introduction_to_the_python_programming_language.html">Week 0 - Introduction to the Python programming language</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="00_introduction_to_the_python_programming_language.html#1.-Install-Anaconda">1. Install Anaconda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="00_introduction_to_the_python_programming_language.html#2.-Welcome-to-Jupyter!">2. Welcome to Jupyter!</a></li>
-<li class="toctree-l2"><a class="reference internal" href="00_introduction_to_the_python_programming_language.html#3.-Hello,-World!">3. Hello, World!</a></li>
-<li class="toctree-l2"><a class="reference internal" href="00_introduction_to_the_python_programming_language.html#4.-Welcome-to-Spyder">4. Welcome to Spyder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_introduction.html">Week 0 - Introduction to the Python programming language</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="00_introduction.html#Install-Anaconda">Install Anaconda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00_introduction.html#Welcome-to-Jupyter!">Welcome to Jupyter!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00_introduction.html#Hello,-World!">Hello, World!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00_introduction.html#Welcome-to-Spyder">Welcome to Spyder</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="01_syntax_types_builtins.html">Week 1 - Syntax, data types, and built-in functions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="01_syntax_types_builtins.html#1.-Syntax">1. Syntax</a></li>
-<li class="toctree-l2"><a class="reference internal" href="01_syntax_types_builtins.html#2.-Built-in-data-types">2. Built-in data types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_exercises.html">Week 0 - Exercises</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="00_exercises.html#Jupyter">Jupyter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00_exercises.html#Spyder">Spyder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00_exercises.html#Exercise-1---An-improved-guessing-game">Exercise 1 - An improved guessing game</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00_exercises.html#Exercise-2---Sensible-temperatures">Exercise 2 - Sensible temperatures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00_exercises.html#Exercise-3---Think-it-like-Euclid-did">Exercise 3 - Think it like Euclid did</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="02_logic_operators_control_statements.html">Week 2 - Operators, control flow statements, defining functions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="02_logic_operators_control_statements.html#1-Operators">1 Operators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="02_logic_operators_control_statements.html#2-Control-flow-statements">2 Control flow statements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="02_logic_operators_control_statements.html#3-Defining-functions">3 Defining functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_syntax_types_builtins.html">Week 1 - Syntax, data types, built-in functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_syntax_types_builtins.html#Syntax">Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_syntax_types_builtins.html#Built-in-data-types">Built-in data types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_syntax_types_builtins.html#Built-in-Functions">Built-in Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="01_exercises.html">Week 1 - Exercises</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_exercises.html#Exercise-1---Printing-multiple-lines">Exercise 1 - Printing multiple lines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_exercises.html#Exercise-2---Fixing-bad-code">Exercise 2 - Fixing bad code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_exercises.html#Exercise-3---A-more-realistic-pen">Exercise 3 - A more realistic pen</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="02_operators_control_statements_functions.html">Week 2 - Operators, control flow statements, defining functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="02_operators_control_statements_functions.html#1-Operators">1 Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_operators_control_statements_functions.html#2-Control-flow-statements">2 Control flow statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_operators_control_statements_functions.html#3-Defining-functions">3 Defining functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="02_exercises.html">Week 2 - Exercises</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="02_exercises.html#Exercise-1---Implementing-Euclid’s-algorithm">Exercise 1 - Implementing Euclid’s algorithm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_exercises.html#Exercise-2---Implement-Euclid’s-algorithm-as-a-function">Exercise 2 - Implement Euclid’s algorithm as a function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_exercises.html#Exercise-3---Fahrenheit-to-Celsius">Exercise 3 - Fahrenheit to Celsius</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_exercises.html#Exercise-4---Celsius-to-Fahrenheit">Exercise 4 - Celsius to Fahrenheit</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="03_imports_standard_library_PyPI.html">Week 3 - Imports, the standard library, and third-party libraries</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="03_imports_standard_library_PyPI.html#1.-Modules-and-the-import-statement">1. Modules and the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="03_imports_standard_library_PyPI.html#1.2-The-Standard-Library">1.2 The Standard Library</a></li>
-<li class="toctree-l2"><a class="reference internal" href="03_imports_standard_library_PyPI.html#1.3-The-Python-Package-Index-(PyPI)">1.3 The Python Package Index (PyPI)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="03_imports_standard_library_PyPI.html#1.4-numpy,-matplotlib,-and-pandas">1.4 numpy, matplotlib, and pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_imports_standard_library_PyPI.html#Modules-and-the-import-statement">Modules and the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_imports_standard_library_PyPI.html#The-Standard-Library">The Standard Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_imports_standard_library_PyPI.html#The-Python-Package-Index-(PyPI)">The Python Package Index (PyPI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_imports_standard_library_PyPI.html#numpy,-matplotlib,-and-pandas">numpy, matplotlib, and pandas</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="03_exercises.html">Week 3 - Exercises</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="03_exercises.html#Exercise-1---First-module">Exercise 1 - First module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="04_numpy_matplotlib.html">Week 4 - NumPy and matplotlib</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="04_numpy_matplotlib.html#NumPy">NumPy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="04_numpy_matplotlib.html#matplotlib">matplotlib</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="04_exercises.html">Week 4 - Exercises</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="04_exercises.html#Exercise-1---Simple-bar-chart">Exercise 1 - Simple bar chart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_exercises.html#Exercise-2---Scatterplot-detective">Exercise 2 - Scatterplot detective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_exercises.html#Exercise-3---Manchester-rainfall">Exercise 3 - Manchester rainfall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_exercises.html#Exercise-4---Pacman-pie">Exercise 4 - Pacman pie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_exercises.html#Exercise-5---Image-processing">Exercise 5 - Image processing</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="05_pandas.html">Week 5 - pandas</a><ul>
@@ -85,9 +120,17 @@
 <li class="toctree-l2"><a class="reference internal" href="05_pandas.html#The-big-picture---population-density">The big picture - population density</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="05_exercises.html">Week 5 - Exercises</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="05_exercises.html#RMS-Titanic">RMS Titanic</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="06_more_pandas.html">Week 6 - More about <code class="docutils literal notranslate"><span class="pre">pandas</span></code></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="06_more_pandas.html#Timestamp-and-Timedelta"><code class="docutils literal notranslate"><span class="pre">Timestamp</span></code> and <code class="docutils literal notranslate"><span class="pre">Timedelta</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="06_more_pandas.html#Working-with-dates-and-times">Working with dates and times</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="06_exercises.html">Week 6 - Exercises</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="06_exercises.html#GB-cycling-accidents">GB cycling accidents</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="07_other_libraries.html">Week 7 - Other libraries and cool things</a><ul>
@@ -95,6 +138,16 @@
 <li class="toctree-l2"><a class="reference internal" href="07_other_libraries.html#Matplotlib-figure-anatomy">Matplotlib figure anatomy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="07_other_libraries.html#Animations-with-matplotlib">Animations with matplotlib</a></li>
 <li class="toctree-l2"><a class="reference internal" href="07_other_libraries.html#Geographical-plots-with-cartopy">Geographical plots with <code class="docutils literal notranslate"><span class="pre">cartopy</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Solutions to the exercises:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="exercise_solutions.html">Have a go before you peak!</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_exercises_solutions.html">Week 1 - Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -116,7 +169,7 @@
         <p>
         <a class="uplink" href="#">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="00_introduction_to_the_python_programming_language.html">Week 0 - Introduction to the Python programming language</a>&#160;&#160;»
+        <a href="00_introduction.html">Week 0 - Introduction to the Python programming language</a>&#160;&#160;»
         </p>
 
       </div>

@@ -15,10 +15,13 @@
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Week 2 - Exercises" href="02_exercises.html" />
+    <link rel="prev" title="Week 1 - Exercises" href="01_exercises.html" /> 
   </head><body>
       <div class="header" role="banner"><h1 class="heading"><a href="index.html">
           <span>CLLPython 0.0.1 documentation</span></a></h1>
@@ -27,7 +30,11 @@
       <div class="topnav" role="navigation" aria-label="top navigation">
       
         <p>
+        «&#160;&#160;<a href="01_exercises.html">Week 1 - Exercises</a>
+        &#160;&#160;::&#160;&#160;
         <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="02_exercises.html">Week 2 - Exercises</a>&#160;&#160;»
         </p>
 
       </div>
@@ -344,11 +351,11 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 </pre></div>
 </div>
 </div>
-<section id="1-Operators">
-<h2>1 Operators<a class="headerlink" href="#1-Operators" title="Permalink to this heading">¶</a></h2>
+<section id="Operators">
+<h2>Operators<a class="headerlink" href="#Operators" title="Permalink to this heading">¶</a></h2>
 <p>Operators are the bedrock of a programming language. Let’s look at all of Python’s operators.</p>
-<section id="1.1-Logical-operators">
-<h3>1.1 Logical operators<a class="headerlink" href="#1.1-Logical-operators" title="Permalink to this heading">¶</a></h3>
+<section id="Logical-operators">
+<h3>Logical operators<a class="headerlink" href="#Logical-operators" title="Permalink to this heading">¶</a></h3>
 <p>Last week we looked at how the logical operators <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, and <code class="docutils literal notranslate"><span class="pre">not</span></code> can be used to create Boolean expressions. Here’s a quick reminder of how they work.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
@@ -457,8 +464,8 @@ The world is round.
 </div>
 <p>Unnecessary negation makes code hard to read and interpret, so it should be avoided.</p>
 </section>
-<section id="1.2-Arithmetic-operators">
-<h3>1.2 Arithmetic operators<a class="headerlink" href="#1.2-Arithmetic-operators" title="Permalink to this heading">¶</a></h3>
+<section id="Arithmetic-operators">
+<h3>Arithmetic operators<a class="headerlink" href="#Arithmetic-operators" title="Permalink to this heading">¶</a></h3>
 <p>Python uses the following arithmetic operators to perform standard numerical computations.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
@@ -542,8 +549,8 @@ The floor of fourty-two divided by five is 8
 </pre></div></div>
 </div>
 </section>
-<section id="1.3-Assignment-operators">
-<h3>1.3 Assignment operators<a class="headerlink" href="#1.3-Assignment-operators" title="Permalink to this heading">¶</a></h3>
+<section id="Assignment-operators">
+<h3>Assignment operators<a class="headerlink" href="#Assignment-operators" title="Permalink to this heading">¶</a></h3>
 <p>The equals sign (<code class="docutils literal notranslate"><span class="pre">=</span></code>) serves as the main assignment operator in Python, and we have encountered it many times already. It is used to assign values or expressions to the variable on the left-hand-side.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
@@ -634,8 +641,8 @@ The value of a is -42
 </div>
 </div>
 </section>
-<section id="1.4-Comparison-operators">
-<h3>1.4 Comparison operators<a class="headerlink" href="#1.4-Comparison-operators" title="Permalink to this heading">¶</a></h3>
+<section id="Comparison-operators">
+<h3>Comparison operators<a class="headerlink" href="#Comparison-operators" title="Permalink to this heading">¶</a></h3>
 <p>Comparison operators are used to compare object equality, typically in a Boolean context, to control the flow of a program.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">==</span></code> (equals) operator, not to be confused with the assignment operator, checks whether two values are equal.</p>
 <div class="nbinput docutils container">
@@ -817,8 +824,8 @@ Input <span class="ansi-green-fg">In [60]</span>, in <span class="ansi-cyan-fg">
 </pre></div></div>
 </div>
 </section>
-<section id="1.5-Membership-operators">
-<h3>1.5 Membership operators<a class="headerlink" href="#1.5-Membership-operators" title="Permalink to this heading">¶</a></h3>
+<section id="Membership-operators">
+<h3>Membership operators<a class="headerlink" href="#Membership-operators" title="Permalink to this heading">¶</a></h3>
 <p>The membership operators <code class="docutils literal notranslate"><span class="pre">in</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> are used to check whether a value exists in a sequence or container variable. For example, we can use <code class="docutils literal notranslate"><span class="pre">in</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> to check whether a list (or tuple) contains a specific item.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
@@ -908,8 +915,8 @@ False
 </pre></div></div>
 </div>
 </section>
-<section id="1.6-Identity-operators">
-<h3>1.6 Identity operators<a class="headerlink" href="#1.6-Identity-operators" title="Permalink to this heading">¶</a></h3>
+<section id="Identity-operators">
+<h3>Identity operators<a class="headerlink" href="#Identity-operators" title="Permalink to this heading">¶</a></h3>
 <p>The identity operators <code class="docutils literal notranslate"><span class="pre">is</span></code> and <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">not</span></code> check whether two variables have the same <em>identity</em>.</p>
 <p>As well as having a <em>type</em> and a <em>value</em>, every object in Python also has a numerical identity that does not change after creation, and which can be revealed with the built-in <code class="docutils literal notranslate"><span class="pre">id()</span></code> function. We can think of an object’s identity as its address in computer memory.</p>
 <p>Let’s use <code class="docutils literal notranslate"><span class="pre">id()</span></code> to reveal the identity of the built-in constant <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
@@ -1079,8 +1086,8 @@ False
 </pre></div></div>
 </div>
 </section>
-<section id="1.6-Bitwise-operators">
-<h3>1.6 Bitwise operators<a class="headerlink" href="#1.6-Bitwise-operators" title="Permalink to this heading">¶</a></h3>
+<section id="Bitwise-operators">
+<h3>Bitwise operators<a class="headerlink" href="#Bitwise-operators" title="Permalink to this heading">¶</a></h3>
 <p><a class="reference external" href="https://realpython.com/python-bitwise-operators/">Bitwise operators</a> are for performing Boolean logic on individual bits of data. It is good to know that these operators exist, but you can safely ignore them as you are unlikely to need to manipulate data at such a granular level any time soon. I hardly ever use these operators.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">~</span></code> bitwise not</p></li>
@@ -1093,11 +1100,11 @@ False
 <p>Note that, in Boolean expressions, it is possible to use the bitwise operators <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">|</span></code>, and <code class="docutils literal notranslate"><span class="pre">~</span></code> in place of their logical counterparts, <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, and <code class="docutils literal notranslate"><span class="pre">not</span></code>. But this should be avoided as it makes code less readable and may not work as expected for all types of data (due to matters of precedence).</p>
 </section>
 </section>
-<section id="2-Control-flow-statements">
-<h2>2 Control flow statements<a class="headerlink" href="#2-Control-flow-statements" title="Permalink to this heading">¶</a></h2>
+<section id="Control-flow-statements">
+<h2>Control flow statements<a class="headerlink" href="#Control-flow-statements" title="Permalink to this heading">¶</a></h2>
 <p>Virtually every programming language incorporates statements for controlling the flow of a program. In particular, most languages support <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code> and <code class="docutils literal notranslate"><span class="pre">for</span></code> statements. These statements are explored in further detail below.</p>
-<section id="2.1-if-statements">
-<h3>2.1 <code class="docutils literal notranslate"><span class="pre">if</span></code> statements<a class="headerlink" href="#2.1-if-statements" title="Permalink to this heading">¶</a></h3>
+<section id="if-statements">
+<h3><code class="docutils literal notranslate"><span class="pre">if</span></code> statements<a class="headerlink" href="#if-statements" title="Permalink to this heading">¶</a></h3>
 <p>We have encountered the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement many times already. It is used to execute a block of code if a condition is true. Here’s my favorite example again.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[90]:
@@ -1249,8 +1256,8 @@ The value of c is 42
 </div>
 </section>
 </section>
-<section id="2.2-while-statements">
-<h3>2.2 <code class="docutils literal notranslate"><span class="pre">while</span></code> statements<a class="headerlink" href="#2.2-while-statements" title="Permalink to this heading">¶</a></h3>
+<section id="while-statements">
+<h3><code class="docutils literal notranslate"><span class="pre">while</span></code> statements<a class="headerlink" href="#while-statements" title="Permalink to this heading">¶</a></h3>
 <p>If you want to keep doing something as long as a certain condition is true, you need a <code class="docutils literal notranslate"><span class="pre">while</span></code> statement.</p>
 <p>The example below simulates a countdown to a rocket launch. First, the variable <code class="docutils literal notranslate"><span class="pre">counter</span></code> is initialised with a value of <code class="docutils literal notranslate"><span class="pre">5</span></code>. Then, in the body of the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop, at each iteration the value of <code class="docutils literal notranslate"><span class="pre">counter</span></code> is printed and subsequently decremented by <code class="docutils literal notranslate"><span class="pre">1</span></code>. Finally, when <code class="docutils literal notranslate"><span class="pre">counter</span></code> is no longer greater than <code class="docutils literal notranslate"><span class="pre">0</span></code>, the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop terminates and the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause is executed.</p>
 <p>Note that the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause at the end of a <code class="docutils literal notranslate"><span class="pre">while</span></code> statement is optional.</p>
@@ -1331,8 +1338,8 @@ Blast off!
 </pre></div></div>
 </div>
 </section>
-<section id="2.3-for-statements">
-<h3>2.3 <code class="docutils literal notranslate"><span class="pre">for</span></code> statements<a class="headerlink" href="#2.3-for-statements" title="Permalink to this heading">¶</a></h3>
+<section id="for-statements">
+<h3><code class="docutils literal notranslate"><span class="pre">for</span></code> statements<a class="headerlink" href="#for-statements" title="Permalink to this heading">¶</a></h3>
 <p>Python’s <code class="docutils literal notranslate"><span class="pre">for</span></code> statement is used to iterate over the items of a sequence (e.g., a list, tuple, or string) in the order that they appear.</p>
 <p>At each iteration of a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, the current item of the sequence is assigned to a target variable, and some code is executed. When the items in the sequence are exhausted, an optional <code class="docutils literal notranslate"><span class="pre">else</span></code> statement may be executed, before the loop terminates.</p>
 <p>Here are some examples.</p>
@@ -1552,13 +1559,13 @@ your loop variable.</p></td>
 </section>
 </section>
 </section>
-<section id="3-Defining-functions">
-<h2>3 Defining functions<a class="headerlink" href="#3-Defining-functions" title="Permalink to this heading">¶</a></h2>
+<section id="Defining-functions">
+<h2>Defining functions<a class="headerlink" href="#Defining-functions" title="Permalink to this heading">¶</a></h2>
 <p>A function is a self-contained block of code that encapsulates a specific task, or related group of tasks, and only runs when it is called. You may also hear of functions being referred to as procedures, methods, subroutines, etc.</p>
 <p>If you find that you are repeating yourself when you are writing code, you should probably abstract whatever functionality you are trying to achieve away into a function. This will make your code more concise, modular and flexible, and if you ever need to change how things work at a future time you will only need to make changes in a single place.</p>
 <p>In short, functions are great, and you should considering writing one for any task that you need to do more than once.</p>
 <p>In Python, the keyword <code class="docutils literal notranslate"><span class="pre">def</span></code> is used to define a function. The image below shows the other main components.</p>
-<p><img alt="7571668f7b9e41908a64844707dd33ac" class="no-scaled-link" src="_images/function.png" style="width: 600px;" /></p>
+<p><img alt="aeab73cd337c4f23a4b38533dea7739d" class="no-scaled-link" src="_images/function.png" style="width: 600px;" /></p>
 <p>Let’s define a function that greets anyone whose name is passed in as an argument.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
@@ -1657,7 +1664,9 @@ Hello, Fred Jones. Have a great day!
 😁
 </pre></div></div>
 </div>
-</section>
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {}, "version_major": 2, "version_minor": 0}
+</script></section>
 </section>
 
 
@@ -1665,7 +1674,11 @@ Hello, Fred Jones. Have a great day!
       <div class="bottomnav" role="navigation" aria-label="bottom navigation">
       
         <p>
+        «&#160;&#160;<a href="01_exercises.html">Week 1 - Exercises</a>
+        &#160;&#160;::&#160;&#160;
         <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="02_exercises.html">Week 2 - Exercises</a>&#160;&#160;»
         </p>
 
       </div>

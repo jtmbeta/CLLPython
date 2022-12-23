@@ -5,6 +5,7 @@ Have a go before you peak!
    :maxdepth: 2
    :caption: Contents:
    
+   00_exercises_solutions
    01_exercises_solutions
    02_exercises_solutions
    03_exercises_solutions

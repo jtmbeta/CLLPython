@@ -58,7 +58,8 @@
    "metadata": {},
    "outputs": [],
    "source": [
-    "# Define function here\n"
+    "# Define function here\n",
+    " "
    ]
   },
   {
@@ -68,7 +69,7 @@
    "metadata": {},
    "outputs": [],
    "source": [
-    "# Call function here"
+    "# Call function here\n"
    ]
   },
   {
@@ -103,15 +104,7 @@
    "metadata": {},
    "outputs": [],
    "source": [
-    "# Define function here\n",
-    "\n",
-    "def fahrenheit_to_celsius(temp_in_fahrenheit) -> float:\n",
-    "    \"\"\"Convert fahrenheit to celsius\"\"\"\n",
-    "    # Convert to Celsius\n",
-    "    celsius = (temp_in_fahrenheit - 32) * (5 / 9)\n",
-    "    celsius = round(celsius, 2)\n",
-    "    \n",
-    "    return celsius"
+    "# Define function here\n"
    ]
   },
   {
@@ -121,7 +114,7 @@
    "metadata": {},
    "outputs": [],
    "source": [
-    "fahrenheit_to_celsius(89.43)"
+    "# Call function here\n"
    ]
   },
   {
@@ -143,15 +136,7 @@
    "metadata": {},
    "outputs": [],
    "source": [
-    "# Define function here\n",
-    "\n",
-    "def celsius_to_fahrenheit(temp_in_celsius):\n",
-    "    \n",
-    "    # Convert to Celsius\n",
-    "    fahrenheit = (temp_in_celsius * (9/5)) + 32\n",
-    "    fahrenheit = round(fahrenheit, 2)\n",
-    "    \n",
-    "    return fahrenheit\n"
+    "# Define function here\n"
    ]
   },
   {
@@ -161,7 +146,7 @@
    "metadata": {},
    "outputs": [],
    "source": [
-    "celsius_to_fahrenheit(31.91)"
+    "# Call function here\n"
    ]
   }
  ],
@@ -181,7 +166,14 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.9.13"
+   "version": "3.9.15"
+  },
+  "widgets": {
+   "application/vnd.jupyter.widget-state+json": {
+    "state": {},
+    "version_major": 2,
+    "version_minor": 0
+   }
   }
  },
  "nbformat": 4,

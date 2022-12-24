@@ -8,8 +8,14 @@ Python programming and data visualisation for beginners
 
 .. image:: _static/python_logo.png
   :width: 200
-  :alt: A cute Python wearing a mortarboard
+  :alt: A baby Python with cute eyes wearing a mortaboard cartoon
+  :class: no-scaled-link
 
+.. .. sidebar:: Provenance
+
+  This course was developed for the Center for Lifelong
+  Learning at the University of York, UK.
+   
 Congratulations on deciding to learn a new skill!
 
 Python is a popular, general purpose programming language with applications in web development, software development, mathematics, data science, and many other areas. It has a thriving community and a long-term outlook, so the time and effort that you invest in learning Python now is likely to pay dividends in the future.
@@ -57,6 +63,15 @@ Although our focus will be on working with data, we will start from the very beg
    
    exercise_solutions
    
+------------------
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Advanced topics:
+   
+Coming soon...
+
+
 Indices and tables
 ==================
 

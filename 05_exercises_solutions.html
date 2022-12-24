@@ -366,10 +366,21 @@ passengers did appear to have a better chance of surviving than others.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Age</span></code>: fractional if less than 1. If the age is estimated, it is in the form of <code class="docutils literal notranslate"><span class="pre">xx.5</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">SibSp</span></code>: The dataset defines family relations as follows: - Sibling = brother, sister, stepbrother, stepsister - Spouse = husband, wife (mistresses and fiancés were ignored)</p>
 <p><code class="docutils literal notranslate"><span class="pre">Parch</span></code>: The dataset defines family relations as follows: - Parent = mother, father - Child = daughter, son, stepdaughter, stepson - Some children travelled only with a nanny, therefore parch=0 for them.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;bmh&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <section id="1.-Import-pandas-and-read-data/titanic.csv-into-a-DataFrame">
 <h3><strong>1.</strong> Import <code class="docutils literal notranslate"><span class="pre">pandas</span></code> and read <code class="docutils literal notranslate"><span class="pre">data/titanic.csv</span></code> into a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#1.-Import-pandas-and-read-data/titanic.csv-into-a-DataFrame" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -380,7 +391,7 @@ passengers did appear to have a better chance of surviving than others.</p>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -877,7 +888,7 @@ passengers did appear to have a better chance of surviving than others.</p>
 <section id="4.-Assign-PassengerID-as-the-index">
 <h3><strong>4.</strong> Assign <code class="docutils literal notranslate"><span class="pre">PassengerID</span></code> as the index<a class="headerlink" href="#4.-Assign-PassengerID-as-the-index" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;PassengerID&#39;</span><span class="p">)</span>
@@ -888,7 +899,7 @@ passengers did appear to have a better chance of surviving than others.</p>
 <section id="5.-Print-out-all-of-the-available-information-for-the-passenger-with-567-as-their-PassengerID">
 <h3><strong>5.</strong> Print out all of the available information for the passenger with <code class="docutils literal notranslate"><span class="pre">567</span></code> as their <code class="docutils literal notranslate"><span class="pre">PassengerID</span></code><a class="headerlink" href="#5.-Print-out-all-of-the-available-information-for-the-passenger-with-567-as-their-PassengerID" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">567</span><span class="p">]</span>
@@ -896,7 +907,7 @@ passengers did appear to have a better chance of surviving than others.</p>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -919,7 +930,7 @@ Name: 567, dtype: object
 <section id="6.-Generate-some-descriptive-statistics-for-the-numeric-data">
 <h3><strong>6.</strong> Generate some descriptive statistics for the numeric data<a class="headerlink" href="#6.-Generate-some-descriptive-statistics-for-the-numeric-data" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
@@ -927,7 +938,7 @@ Name: 567, dtype: object
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -1038,13 +1049,13 @@ Name: 567, dtype: object
 <section id="7.-How-many-male-and-female-passengers-are-there-in-this-dataset?-Use-pandas-to-show-this-information-in-a-simple-bar-chart.">
 <h3><strong>7.</strong> How many male and female passengers are there in this dataset? Use <code class="docutils literal notranslate"><span class="pre">pandas</span></code> to show this information in a simple bar chart.<a class="headerlink" href="#7.-How-many-male-and-female-passengers-are-there-in-this-dataset?-Use-pandas-to-show-this-information-in-a-simple-bar-chart." title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
     <span class="n">df</span><span class="o">.</span><span class="n">Sex</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Sex&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Total Passengers (%)&#39;</span><span class="p">,</span> <span class="n">rot</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="p">);</span>
+<span class="p">);</span>  <span class="c1"># rot=0 stops the &#39;male&#39; and &#39;female&#39; labels being displayed as horizontal text</span>
 </pre></div>
 </div>
 </div>
@@ -1052,14 +1063,14 @@ Name: 567, dtype: object
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/05_exercises_solutions_14_0.png" src="_images/05_exercises_solutions_14_0.png" />
+<img alt="_images/05_exercises_solutions_15_0.png" src="_images/05_exercises_solutions_15_0.png" />
 </div>
 </div>
 </section>
 <section id="8.-What-were-the-names-of-the-oldest-and-youngest-passengers?">
 <h3><strong>8.</strong> What were the names of the oldest and youngest passengers?<a class="headerlink" href="#8.-What-were-the-names-of-the-oldest-and-youngest-passengers?" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">oldest_youngest</span> <span class="o">=</span> <span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Age</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">df</span><span class="o">.</span><span class="n">Age</span><span class="o">.</span><span class="n">max</span><span class="p">()]</span>
@@ -1068,7 +1079,7 @@ Name: 567, dtype: object
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -1154,10 +1165,11 @@ Name: 567, dtype: object
 <section id="9.-How-many-of-the-5-oldest-female-passengers-traveled-first-class?">
 <h3><strong>9.</strong> How many of the 5 oldest female passengers traveled first class?<a class="headerlink" href="#9.-How-many-of-the-5-oldest-female-passengers-traveled-first-class?" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">five_oldest_females</span> <span class="o">=</span> <span class="p">(</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># All but one</span>
+<span class="n">five_oldest_females</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Sex</span><span class="o">==</span><span class="s1">&#39;female&#39;</span><span class="p">]</span>
     <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
@@ -1167,7 +1179,7 @@ Name: 567, dtype: object
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -1291,38 +1303,55 @@ Name: 567, dtype: object
 </table>
 </div></div>
 </div>
-</section>
-<section id="10.-How-many-passengers-embarked-at-Southampton?">
-<h3><strong>10.</strong> How many passengers embarked at Southampton?<a class="headerlink" href="#10.-How-many-passengers-embarked-at-Southampton?" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Embarked</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">rot</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To get the values... 4 travelled 1st class, 1 travelled third class</span>
+<span class="n">five_oldest_females</span><span class="o">.</span><span class="n">Pclass</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;AxesSubplot:&gt;
+1    4
+3    1
+Name: Pclass, dtype: int64
 </pre></div></div>
 </div>
+</section>
+<section id="10.-How-many-passengers-embarked-at-Southampton?">
+<h3><strong>10.</strong> How many passengers embarked at Southampton?<a class="headerlink" href="#10.-How-many-passengers-embarked-at-Southampton?" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 644</span>
+<span class="n">df</span><span class="o">.</span><span class="n">Embarked</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
 <div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="_images/05_exercises_solutions_20_1.png" src="_images/05_exercises_solutions_20_1.png" />
-</div>
+<div class="highlight"><pre>
+S    644
+C    168
+Q     77
+Name: Embarked, dtype: int64
+</pre></div></div>
 </div>
 </section>
 <section id="11.-Who-paid-the-most-for-their-ticket?">
 <h3><strong>11.</strong> Who paid the most for their ticket?<a class="headerlink" href="#11.-Who-paid-the-most-for-their-ticket?" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Fare</span><span class="o">==</span><span class="n">df</span><span class="o">.</span><span class="n">Fare</span><span class="o">.</span><span class="n">max</span><span class="p">()]</span>
@@ -1330,7 +1359,7 @@ Name: 567, dtype: object
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -1426,19 +1455,43 @@ Name: 567, dtype: object
 </table>
 </div></div>
 </div>
-</section>
-<section id="12.-Of-the-top-ten-passengers-who-paid-the-most-for-their-ticket,-how-many-survived?">
-<h3><strong>12.</strong> Of the top ten passengers who <strong>paid the most</strong> for their ticket, how many survived?<a class="headerlink" href="#12.-Of-the-top-ten-passengers-who-paid-the-most-for-their-ticket,-how-many-survived?" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Fare&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Just get the names</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Fare</span><span class="o">==</span><span class="n">df</span><span class="o">.</span><span class="n">Fare</span><span class="o">.</span><span class="n">max</span><span class="p">()]</span><span class="o">.</span><span class="n">Name</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+PassengerID
+259                      Ward, Miss. Anna
+680    Cardeza, Mr. Thomas Drake Martinez
+738                Lesurer, Mr. Gustave J
+Name: Name, dtype: object
+</pre></div></div>
+</div>
+</section>
+<section id="12.-Of-the-top-ten-passengers-who-paid-the-most-for-their-ticket,-how-many-survived?">
+<h3><strong>12.</strong> Of the top ten passengers who <strong>paid the most</strong> for their ticket, how many survived?<a class="headerlink" href="#12.-Of-the-top-ten-passengers-who-paid-the-most-for-their-ticket,-how-many-survived?" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 7 out of 10</span>
+<span class="c1"># Get the top 10 who paid the most</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Fare&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>  <span class="c1"># ascending=False</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -1632,11 +1685,233 @@ Name: 567, dtype: object
 </table>
 </div></div>
 </div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Just get the number who survived by summing the Survived column</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Fare&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span><span class="o">.</span><span class="n">Survived</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+7
+</pre></div></div>
+</div>
 </section>
 <section id="13.-Of-the-top-ten-passengers-who-paid-the-least-for-their-ticket,-how-many-survived?">
 <h3><strong>13.</strong> Of the top ten passengers who <strong>paid the least</strong> for their ticket, how many survived?<a class="headerlink" href="#13.-Of-the-top-ten-passengers-who-paid-the-least-for-their-ticket,-how-many-survived?" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Only 1</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Fare&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>  <span class="c1"># Now ascending=True</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
+    </tr>
+    <tr>
+      <th>PassengerID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>272</th>
+      <td>1</td>
+      <td>3</td>
+      <td>Tornquist, Mr. William Henry</td>
+      <td>male</td>
+      <td>25.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>LINE</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>598</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Johnson, Mr. Alfred</td>
+      <td>male</td>
+      <td>49.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>LINE</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>303</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Johnson, Mr. William Cahoone Jr</td>
+      <td>male</td>
+      <td>19.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>LINE</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>634</th>
+      <td>0</td>
+      <td>1</td>
+      <td>Parr, Mr. William Henry Marsh</td>
+      <td>male</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>112052</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>278</th>
+      <td>0</td>
+      <td>2</td>
+      <td>Parkes, Mr. Francis "Frank"</td>
+      <td>male</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>239853</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>414</th>
+      <td>0</td>
+      <td>2</td>
+      <td>Cunningham, Mr. Alfred Fleming</td>
+      <td>male</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>239853</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>675</th>
+      <td>0</td>
+      <td>2</td>
+      <td>Watson, Mr. Ennis Hastings</td>
+      <td>male</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>239856</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>264</th>
+      <td>0</td>
+      <td>1</td>
+      <td>Harrison, Mr. William</td>
+      <td>male</td>
+      <td>40.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>112059</td>
+      <td>0.0</td>
+      <td>B94</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>467</th>
+      <td>0</td>
+      <td>2</td>
+      <td>Campbell, Mr. William</td>
+      <td>male</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>239853</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>733</th>
+      <td>0</td>
+      <td>2</td>
+      <td>Knight, Mr. Robert J</td>
+      <td>male</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>239855</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Fare&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">Survived</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -1644,7 +1919,7 @@ Name: 567, dtype: object
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1656,37 +1931,35 @@ Name: 567, dtype: object
 <section id="14.-Of-all-surviving-passengers,-how-many-were-male-and-how-many-were-female?">
 <h3><strong>14.</strong> Of all surviving passengers, how many were male and how many were female?<a class="headerlink" href="#14.-Of-all-surviving-passengers,-how-many-were-male-and-how-many-were-female?" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Survived</span><span class="o">==</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Survived</span><span class="o">==</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;AxesSubplot:&gt;
+female    233
+male      109
+Name: Sex, dtype: int64
 </pre></div></div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="_images/05_exercises_solutions_28_1.png" src="_images/05_exercises_solutions_28_1.png" />
-</div>
 </div>
 </section>
 <section id="15.-Make-a-boxplot-describing-the-age-distribution-for-males-and-females,-showing-the-mean-age-as-well-as-the-median.">
 <h3><strong>15.</strong> Make a boxplot describing the age distribution for males and females, showing the mean age as well as the median.<a class="headerlink" href="#15.-Make-a-boxplot-describing-the-age-distribution-for-males-and-females,-showing-the-mean-age-as-well-as-the-median." title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[48]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s1">&#39;Sex&#39;</span><span class="p">,</span> <span class="n">showmeans</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Age distribution of male and female passengers on the RMS Titanic&#39;</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s1">&#39;Sex&#39;</span><span class="p">,</span> <span class="n">showmeans</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">);</span>  <span class="c1"># Apply sensible title to the axes</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">get_figure</span><span class="p">()</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>  <span class="c1"># Get read of the default figure title</span>
 </pre></div>
 </div>
 </div>
@@ -1694,14 +1967,14 @@ Name: 567, dtype: object
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/05_exercises_solutions_30_0.png" src="_images/05_exercises_solutions_30_0.png" />
+<img alt="_images/05_exercises_solutions_35_0.png" src="_images/05_exercises_solutions_35_0.png" />
 </div>
 </div>
 </section>
 <section id="16.-Get-the-information-for-all-passengers-with-‘Frank’-in-their-name">
 <h3><strong>16.</strong> Get the information for all passengers with ‘Frank’ in their name<a class="headerlink" href="#16.-Get-the-information-for-all-passengers-with-‘Frank’-in-their-name" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[73]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Name</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;Frank&#39;</span><span class="p">)]</span>
@@ -1709,7 +1982,7 @@ Name: 567, dtype: object
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[73]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -1865,16 +2138,20 @@ Name: 567, dtype: object
 <section id="17.-What-was-the-surname-of-the-largest-family-on-board-the-Titanic?">
 <h3><strong>17.</strong> What was the surname of the largest family on board the Titanic?<a class="headerlink" href="#17.-What-was-the-surname-of-the-largest-family-on-board-the-Titanic?" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[75]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;RelsAboard&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">SibSp</span> <span class="o">+</span> <span class="n">df</span><span class="o">.</span><span class="n">Parch</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a new column that is the sum of Parch and SibSp (refer back to the data key)</span>
+<span class="c1"># and then sort the DataFrame by this column to see which surname appears at the top.</span>
+<span class="c1"># The Sage family looks to have been the largest, although some family members</span>
+<span class="c1"># appear not be included in the dataset.</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;RelsAboard&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">SibSp</span> <span class="o">+</span> <span class="n">df</span><span class="o">.</span><span class="n">Parch</span>
 <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;RelsAboard&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[75]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -2080,19 +2357,21 @@ Name: 567, dtype: object
 </table>
 </div></div>
 </div>
+<p><a class="reference external" href="https://www.encyclopedia-titanica.org/titanic-victim/john-george-sage.html">Read about the Sage family in the Encyclopedia Titanica</a></p>
 </section>
 <section id="18.-What-was-the-name,-sex-and-age-of-the-youngest-passenger-to-embark-at-Cherbourg?">
 <h3><strong>18.</strong> What was the name, sex and age of the youngest passenger to embark at Cherbourg?<a class="headerlink" href="#18.-What-was-the-name,-sex-and-age-of-the-youngest-passenger-to-embark-at-Cherbourg?" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[76]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Embarked</span><span class="o">==</span><span class="s1">&#39;C&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Select and sort the Cherbourg embarkees by age</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Embarked</span><span class="o">==</span><span class="s1">&#39;C&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[76]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -2223,19 +2502,41 @@ Name: 567, dtype: object
 </table>
 </div></div>
 </div>
-</section>
-<section id="19.-Who-stayed-in-cabin-D56?-Can-you-find-out-anything-interesting-about-this-person-on-the-Encyclopedia-Titanica?">
-<h3><strong>19.</strong> Who stayed in cabin <code class="docutils literal notranslate"><span class="pre">D56</span></code>? Can you find out anything interesting about this person on the <a class="reference external" href="https://www.encyclopedia-titanica.org/">Encyclopedia Titanica</a>?<a class="headerlink" href="#19.-Who-stayed-in-cabin-D56?-Can-you-find-out-anything-interesting-about-this-person-on-the-Encyclopedia-Titanica?" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[78]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Cabin</span><span class="o">==</span><span class="s1">&#39;D56&#39;</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Just get the relevant information</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Embarked</span><span class="o">==</span><span class="s1">&#39;C&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Sex&#39;</span><span class="p">,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[78]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Name    Thomas, Master. Assad Alexander
+Sex                                male
+Age                                0.42
+Name: 804, dtype: object
+</pre></div></div>
+</div>
+</section>
+<section id="19.-Who-stayed-in-cabin-D56?-Can-you-find-out-anything-interesting-about-this-person-on-the-Encyclopedia-Titanica?">
+<h3><strong>19.</strong> Who stayed in cabin <code class="docutils literal notranslate"><span class="pre">D56</span></code>? Can you find out anything interesting about this person on the <a class="reference external" href="https://www.encyclopedia-titanica.org/">Encyclopedia Titanica</a>?<a class="headerlink" href="#19.-Who-stayed-in-cabin-D56?-Can-you-find-out-anything-interesting-about-this-person-on-the-Encyclopedia-Titanica?" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Beesley, Mr. Lawrence</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Cabin</span><span class="o">==</span><span class="s1">&#39;D56&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -2310,7 +2611,7 @@ Name: 567, dtype: object
 <section id="20.-There-was-a-Countess-aboard-the-Titanic.-What-information-can-you-find-about-her?">
 <h3><strong>20.</strong> There was a Countess aboard the Titanic. What information can you find about her?<a class="headerlink" href="#20.-There-was-a-Countess-aboard-the-Titanic.-What-information-can-you-find-about-her?" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[79]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Name</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;Countess&#39;</span><span class="p">)]</span>
@@ -2318,7 +2619,7 @@ Name: 567, dtype: object
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[79]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -2389,11 +2690,12 @@ Name: 567, dtype: object
 </table>
 </div></div>
 </div>
+<p><a class="reference external" href="https://www.encyclopedia-titanica.org/titanic-survivor/countess-of-rothes.html">Read about the Countess in the Encyclopedia Titanica</a></p>
 </section>
 <section id="21.-Make-two-new-columns-containing-the-first-and-last-name-for-each-passenger.">
 <h3><strong>21.</strong> Make two new columns containing the first and last name for each passenger.<a class="headerlink" href="#21.-Make-two-new-columns-containing-the-first-and-last-name-for-each-passenger." title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[80]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;FirstName&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Name</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -2403,7 +2705,7 @@ Name: 567, dtype: object
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[80]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -2552,7 +2854,7 @@ Name: 567, dtype: object
 <section id="22.-Make-a-bar-chart-showing-the-proportion-of-males-and-females-who-survived-in-each-class">
 <h3><strong>22.</strong> Make a bar chart showing the proportion of males and females who survived in each class<a class="headerlink" href="#22.-Make-a-bar-chart-showing-the-proportion-of-males-and-females-who-survived-in-each-class" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[84]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;tab:red&#39;</span><span class="p">,</span> <span class="s1">&#39;tab:blue&#39;</span><span class="p">]</span>
@@ -2561,12 +2863,12 @@ Name: 567, dtype: object
     <span class="o">.</span><span class="n">Survived</span>
     <span class="o">.</span><span class="n">mean</span><span class="p">()</span>
     <span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Proportion of survivors&#39;</span><span class="p">,</span> <span class="n">rot</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
-<span class="p">)</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[84]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -2578,15 +2880,7 @@ Name: 567, dtype: object
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/05_exercises_solutions_44_1.png" src="_images/05_exercises_solutions_44_1.png" />
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
+<img alt="_images/05_exercises_solutions_52_1.png" src="_images/05_exercises_solutions_52_1.png" />
 </div>
 </div>
 <script type="application/vnd.jupyter.widget-state+json">

@@ -354,7 +354,7 @@ column holds information about the accident, such as the date, time of day, day 
 </table>
 <p>Let’s explore the frequency of accidents with respect to the different variables.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -367,17 +367,18 @@ column holds information about the accident, such as the date, time of day, day 
 <section id="1.-Import-pandas-and-read-data/gb_cycling_accidents.csv-into-a-DataFrame">
 <h3><strong>1.</strong> Import <code class="docutils literal notranslate"><span class="pre">pandas</span></code> and read <code class="docutils literal notranslate"><span class="pre">data/gb_cycling_accidents.csv</span></code> into a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#1.-Import-pandas-and-read-data/gb_cycling_accidents.csv-into-a-DataFrame" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/gb_cycling_accidents.csv&#39;</span><span class="p">)</span>
 <span class="n">df</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -622,7 +623,7 @@ column holds information about the accident, such as the date, time of day, day 
 <li><p><code class="docutils literal notranslate"><span class="pre">Age_Grp</span></code></p></li>
 </ul>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cols</span> <span class="o">=</span> <span class="p">[</span>
@@ -637,7 +638,7 @@ column holds information about the accident, such as the date, time of day, day 
 <span class="p">]</span>
 
 <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cols</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>  <span class="c1"># Use .unique() to get the unique values</span>
 </pre></div>
 </div>
 </div>
@@ -665,15 +666,16 @@ Age_Grp: [&#39;36 to 45&#39; &#39;46 to 55&#39; &#39;16 to 20&#39; &#39;21 to 25
 <section id="3.-What-road-conditions-were-associated-with-the-most-and-least-accidents?">
 <h3><strong>3.</strong> What road conditions were associated with the most and least accidents?<a class="headerlink" href="#3.-What-road-conditions-were-associated-with-the-most-and-least-accidents?" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Road_conditions</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dry</span>
+<span class="n">df</span><span class="o">.</span><span class="n">Road_conditions</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -691,15 +693,16 @@ Name: Road_conditions, dtype: int64
 <section id="4.-What-weather-conditions-were-associated-with-the-most-and-least-accidents?">
 <h3><strong>4.</strong> What weather conditions were associated with the most and least accidents?<a class="headerlink" href="#4.-What-weather-conditions-were-associated-with-the-most-and-least-accidents?" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Weather_conditions</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clear</span>
+<span class="n">df</span><span class="o">.</span><span class="n">Weather_conditions</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -721,15 +724,16 @@ Name: Weather_conditions, dtype: int64
 <section id="5.-What-road-type-was-associated-with-the-most-and-least-accidents?">
 <h3><strong>5.</strong> What road type was associated with the most and least accidents?<a class="headerlink" href="#5.-What-road-type-was-associated-with-the-most-and-least-accidents?" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Road_type</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Single carriageway</span>
+<span class="n">df</span><span class="o">.</span><span class="n">Road_type</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -747,15 +751,16 @@ Name: Road_type, dtype: int64
 <section id="6.-What-light-conditions-were-associated-with-the-most-and-least-accidents?">
 <h3><strong>6.</strong> What light conditions were associated with the most and least accidents?<a class="headerlink" href="#6.-What-light-conditions-were-associated-with-the-most-and-least-accidents?" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Light_conditions</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Daylight</span>
+<span class="n">df</span><span class="o">.</span><span class="n">Light_conditions</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -770,15 +775,18 @@ Name: Light_conditions, dtype: int64
 <section id="7.-What-speed-limit-was-associated-with-the-most-and-least-accidents?">
 <h3><strong>7.</strong> What speed limit was associated with the most and least accidents?<a class="headerlink" href="#7.-What-speed-limit-was-associated-with-the-most-and-least-accidents?" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Speed_limit</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 30 mph</span>
+<span class="c1"># Note that there are some dubious speed limits here,</span>
+<span class="c1"># probably the result of human error when entering the data</span>
+<span class="n">df</span><span class="o">.</span><span class="n">Speed_limit</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -825,26 +833,33 @@ Name: Speed_limit, dtype: int64
 </section>
 <section id="8.-Based-on-the-above,-write-a-single-sentence-that-summarises-the-conditions-in-which-most-accidents-appeared-to-occur.">
 <h3><strong>8.</strong> Based on the above, write a single sentence that summarises the conditions in which most accidents appeared to occur.<a class="headerlink" href="#8.-Based-on-the-above,-write-a-single-sentence-that-summarises-the-conditions-in-which-most-accidents-appeared-to-occur." title="Permalink to this heading">¶</a></h3>
-<p>Most accidents occurred on single carriageway roads with a 30-MPH speed limit, in clear and dry daylight conditions.</p>
+<blockquote>
+<div><p><em>Most accidents occurred on single carriageway roads with a 30-MPH speed limit, in clear and dry daylight conditions.</em></p>
+</div></blockquote>
 </section>
 <section id="9.-Create-a-bar-chart-showing-how-accidents-were-distributed-by-Age_Grp">
 <h3><strong>9.</strong> Create a bar chart showing how accidents were distributed by <code class="docutils literal notranslate"><span class="pre">Age_Grp</span></code><a class="headerlink" href="#9.-Create-a-bar-chart-showing-how-accidents-were-distributed-by-Age_Grp" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">group_order</span> <span class="o">=</span> <span class="p">[</span>
-     <span class="s1">&#39;6 to 10&#39;</span><span class="p">,</span>
-
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A list of desired orders for the groups.</span>
+<span class="c1"># Python&#39;s default alphanumeric sorting would place &#39;6 to 10&#39;</span>
+<span class="c1"># between &#39;56 to 65&#39; and &#39;66 to 75&#39;.</span>
+<span class="n">group_order</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;6 to 10&#39;</span><span class="p">,</span>
     <span class="s1">&#39;11 to 15&#39;</span><span class="p">,</span>
- <span class="s1">&#39;16 to 20&#39;</span><span class="p">,</span>
- <span class="s1">&#39;21 to 25&#39;</span><span class="p">,</span>
- <span class="s1">&#39;26 to 35&#39;</span><span class="p">,</span>
- <span class="s1">&#39;36 to 45&#39;</span><span class="p">,</span>
- <span class="s1">&#39;46 to 55&#39;</span><span class="p">,</span>
- <span class="s1">&#39;56 to 65&#39;</span><span class="p">,</span>
- <span class="s1">&#39;66 to 75&#39;</span><span class="p">]</span>
+    <span class="s1">&#39;16 to 20&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;21 to 25&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;26 to 35&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;36 to 45&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;46 to 55&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;56 to 65&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;66 to 75&#39;</span>
+<span class="p">]</span>
 
+<span class="c1"># Group by Age_Grp and select the Accident_Index column, which has</span>
+<span class="c1"># unique values for each accident, making it suitable for a .count() operation</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Age_Grp&#39;</span><span class="p">)[</span><span class="s1">&#39;Accident_Index&#39;</span><span class="p">]</span>
     <span class="o">.</span><span class="n">count</span><span class="p">()[</span><span class="n">group_order</span><span class="p">]</span>
@@ -867,13 +882,13 @@ Name: Speed_limit, dtype: int64
 <section id="10.-Across-all-accidents,-what-percentage-involved-Males,-what-percentage-involved-Females,-and-what-percentage-involved-people-identifying-as-‘Other’?-Show-the-results-in-a-pie-chart.">
 <h3><strong>10.</strong> Across all accidents, what percentage involved Males, what percentage involved Females, and what percentage involved people identifying as ‘Other’? Show the results in a pie chart.<a class="headerlink" href="#10.-Across-all-accidents,-what-percentage-involved-Males,-what-percentage-involved-Females,-and-what-percentage-involved-people-identifying-as-‘Other’?-Show-the-results-in-a-pie-chart." title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">df</span><span class="o">.</span><span class="n">Gender</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
     <span class="o">.</span><span class="n">plot</span>
-    <span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">autopct</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%1.2f%%</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">autopct</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%1.2f%%</span><span class="s1">&#39;</span><span class="p">)</span>  <span class="c1"># Add percentage text labels</span>
 <span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
 </pre></div>
@@ -890,15 +905,16 @@ Name: Speed_limit, dtype: int64
 <section id="11.-What-was-the-highest-number-of-vehicles-involved-in-a-single-accident?">
 <h3><strong>11.</strong> What was the highest number of vehicles involved in a single accident?<a class="headerlink" href="#11.-What-was-the-highest-number-of-vehicles-involved-in-a-single-accident?" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Number_of_Vehicles</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 13, but it is unclear from the data key what counts as a vehicle</span>
+<span class="n">df</span><span class="o">.</span><span class="n">Number_of_Vehicles</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -922,15 +938,16 @@ Name: Number_of_Vehicles, dtype: int64
 <section id="12.-What-was-the-highest-number-of-casualties-involved-in-a-single-accident?">
 <h3><strong>12.</strong> What was the highest number of casualties involved in a single accident?<a class="headerlink" href="#12.-What-was-the-highest-number-of-casualties-involved-in-a-single-accident?" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Number_of_Casualties</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 60</span>
+<span class="n">df</span><span class="o">.</span><span class="n">Number_of_Casualties</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -943,12 +960,12 @@ Name: Number_of_Vehicles, dtype: int64
 6         54
 7         23
 8          9
-13         5
 9          5
 10         3
-60         1
 12         1
+13         5
 34         1
+60         1
 Name: Number_of_Casualties, dtype: int64
 </pre></div></div>
 </div>
@@ -959,7 +976,8 @@ Name: Number_of_Casualties, dtype: int64
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Accident_Index</span><span class="o">==</span><span class="s1">&#39;201443N027074&#39;</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Saturday</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Accident_Index</span><span class="o">==</span><span class="s1">&#39;201443N027074&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1024,6 +1042,25 @@ Name: Number_of_Casualties, dtype: int64
 </table>
 </div></div>
 </div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Just get the day</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Accident_Index</span><span class="o">==</span><span class="s1">&#39;201443N027074&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">Day</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+751599    Saturday
+Name: Day, dtype: object
+</pre></div></div>
+</div>
 </section>
 <section id="14.-Create-a-separate-DataFrame-for-all-serious-accidents-that-happened-on-a-Sunday-in-wet-road-conditions.-How-many-were-there?">
 <h3><strong>14.</strong> Create a separate <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> for all serious accidents that happened on a Sunday in wet road conditions. How many were there?<a class="headerlink" href="#14.-Create-a-separate-DataFrame-for-all-serious-accidents-that-happened-on-a-Sunday-in-wet-road-conditions.-How-many-were-there?" title="Permalink to this heading">¶</a></h3>
@@ -1031,7 +1068,8 @@ Name: Number_of_Casualties, dtype: int64
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create new DataFrame</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span>
     <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Severity</span><span class="o">==</span><span class="s1">&#39;Serious&#39;</span><span class="p">)</span>
     <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Day</span><span class="o">==</span><span class="s1">&#39;Sunday&#39;</span><span class="p">)</span>
     <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Road_conditions</span><span class="o">==</span><span class="s1">&#39;Wet&#39;</span><span class="p">)</span>
@@ -1272,20 +1310,40 @@ Name: Number_of_Casualties, dtype: int64
 <p>2621 rows × 14 columns</p>
 </div></div>
 </div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the number of entries</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">df2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+2621
+</pre></div></div>
+</div>
 </section>
 <section id="15.-Create-and-assign-a-new-`DatetimeIndex-&lt;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.html&gt;`__-for-the-DataFrame-using-the-Date-and-Time-columns">
 <h3><strong>15.</strong> Create and assign a new <code class="docutils literal notranslate"><span class="pre">`DatetimeIndex</span></code> &lt;<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.html">https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.html</a>&gt;`__ for the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> using the <code class="docutils literal notranslate"><span class="pre">Date</span></code> and <code class="docutils literal notranslate"><span class="pre">Time</span></code> columns<a class="headerlink" href="#15.-Create-and-assign-a-new-`DatetimeIndex-<https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.html>`__-for-the-DataFrame-using-the-Date-and-Time-columns" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Date</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">df</span><span class="o">.</span><span class="n">Time</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Concatenate Date and Time columns to make datetime-like string</span>
+<span class="c1"># and convert to DateTimeIndex</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Date</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">df</span><span class="o">.</span><span class="n">Time</span><span class="p">)</span>
 <span class="n">df</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -1523,16 +1581,17 @@ Name: Number_of_Casualties, dtype: int64
 <li><p>Wednesday 09 February 2012</p></li>
 </ul>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;long_date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%A </span><span class="si">%d</span><span class="s1"> %B %Y&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use date formatting codes</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;long_date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%A </span><span class="si">%d</span><span class="s1"> %B %Y&#39;</span><span class="p">)</span>
 <span class="n">df</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -1775,19 +1834,21 @@ Name: Number_of_Casualties, dtype: int64
 <p>827861 rows × 15 columns</p>
 </div></div>
 </div>
+<p><a class="reference external" href="https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior">Read more about date formatting codes</a></p>
 </section>
 <section id="17.-What-is-the-worst-day-on-record-in-terms-of-the-number-of-accidents-that-were-reported?">
 <h3><strong>17.</strong> What is the worst day on record in terms of the number of accidents that were reported?<a class="headerlink" href="#17.-What-is-the-worst-day-on-record-in-terms-of-the-number-of-accidents-that-were-reported?" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">date</span><span class="p">)[</span><span class="s1">&#39;Accident_Index&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1983-11-25</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">date</span><span class="p">)[</span><span class="s1">&#39;Accident_Index&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1806,11 +1867,29 @@ Name: Number_of_Casualties, dtype: int64
 Name: Accident_Index, Length: 14609, dtype: int64
 </pre></div></div>
 </div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the long format date</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">long_date</span><span class="p">)[</span><span class="s1">&#39;Accident_Index&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;Friday 25 November 1983&#39;
+</pre></div></div>
+</div>
 </section>
 <section id="18.-Make-a-bar-chart-showing-total-accidents-by-month-of-the-year">
 <h3><strong>18.</strong> Make a bar chart showing total accidents by month of the year<a class="headerlink" href="#18.-Make-a-bar-chart-showing-total-accidents-by-month-of-the-year" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">months</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Jan&#39;</span><span class="p">,</span> <span class="s1">&#39;Feb&#39;</span><span class="p">,</span> <span class="s1">&#39;Mar&#39;</span><span class="p">,</span> <span class="s1">&#39;Apr&#39;</span><span class="p">,</span> <span class="s1">&#39;May&#39;</span><span class="p">,</span> <span class="s1">&#39;Jun&#39;</span><span class="p">,</span> <span class="s1">&#39;Jul&#39;</span><span class="p">,</span> <span class="s1">&#39;Aug&#39;</span><span class="p">,</span> <span class="s1">&#39;Sep&#39;</span><span class="p">,</span> <span class="s1">&#39;Oct&#39;</span><span class="p">,</span> <span class="s1">&#39;Nov&#39;</span><span class="p">,</span> <span class="s1">&#39;Dec&#39;</span><span class="p">]</span>
@@ -1829,17 +1908,18 @@ Name: Accident_Index, Length: 14609, dtype: int64
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/06_exercises_solutions_37_0.png" src="_images/06_exercises_solutions_37_0.png" />
+<img alt="_images/06_exercises_solutions_41_0.png" src="_images/06_exercises_solutions_41_0.png" />
 </div>
 </div>
 </section>
 <section id="19.-Make-a-line-graph-showing-the-total-number-of-accidents-that-occurred-each-year-from-1979-2018.-Have-accidents-declined-overall?-In-which-years-did-the-most-and-least-cycling-accidents-occur?">
 <h3><strong>19.</strong> Make a line graph showing the total number of accidents that occurred each year from 1979-2018. Have accidents declined overall? In which years did the most and least cycling accidents occur?<a class="headerlink" href="#19.-Make-a-line-graph-showing-the-total-number-of-accidents-that-occurred-each-year-from-1979-2018.-Have-accidents-declined-overall?-In-which-years-did-the-most-and-least-cycling-accidents-occur?" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="p">(</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1984, 2006</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">)[</span><span class="s1">&#39;Accident_Index&#39;</span><span class="p">]</span>
     <span class="o">.</span><span class="n">count</span><span class="p">()</span>
     <span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
@@ -1854,18 +1934,18 @@ Name: Accident_Index, Length: 14609, dtype: int64
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/06_exercises_solutions_39_0.png" src="_images/06_exercises_solutions_39_0.png" />
+<img alt="_images/06_exercises_solutions_43_0.png" src="_images/06_exercises_solutions_43_0.png" />
 </div>
 </div>
 </section>
 <section id="20.-Repeat-the-above,-but-this-time-with-separate-lines-for-``Gender``">
 <h3><strong>20.</strong> Repeat the above, but this time with <strong>separate lines for ``Gender``</strong><a class="headerlink" href="#20.-Repeat-the-above,-but-this-time-with-separate-lines-for-``Gender``" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="s1">&#39;Gender&#39;</span><span class="p">])[</span><span class="s1">&#39;Accident_Index&#39;</span><span class="p">]</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="s1">&#39;Gender&#39;</span><span class="p">])[</span><span class="s1">&#39;Accident_Index&#39;</span><span class="p">]</span>  <span class="c1"># Add Gender to the groupby</span>
     <span class="o">.</span><span class="n">count</span><span class="p">()</span>
     <span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
     <span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
@@ -1880,14 +1960,14 @@ Name: Accident_Index, Length: 14609, dtype: int64
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/06_exercises_solutions_41_0.png" src="_images/06_exercises_solutions_41_0.png" />
+<img alt="_images/06_exercises_solutions_45_0.png" src="_images/06_exercises_solutions_45_0.png" />
 </div>
 </div>
 </section>
 <section id="21.-Repeat-the-above,-but-this-time-with-separate-lines-for-``Age_Grp``">
 <h3><strong>21.</strong> Repeat the above, but this time with <strong>separate lines for ``Age_Grp``</strong><a class="headerlink" href="#21.-Repeat-the-above,-but-this-time-with-separate-lines-for-``Age_Grp``" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">group_order</span> <span class="o">=</span> <span class="p">[</span>
@@ -1902,7 +1982,7 @@ Name: Accident_Index, Length: 14609, dtype: int64
     <span class="s1">&#39;66 to 75&#39;</span>
 <span class="p">]</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="s1">&#39;Age_Grp&#39;</span><span class="p">])[</span><span class="s1">&#39;Accident_Index&#39;</span><span class="p">]</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="s1">&#39;Age_Grp&#39;</span><span class="p">])[</span><span class="s1">&#39;Accident_Index&#39;</span><span class="p">]</span>  <span class="c1"># Add Age_Grp to the groupby</span>
     <span class="o">.</span><span class="n">count</span><span class="p">()</span>
     <span class="o">.</span><span class="n">unstack</span><span class="p">()[</span><span class="n">group_order</span><span class="p">]</span>
     <span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
@@ -1917,18 +1997,18 @@ Name: Accident_Index, Length: 14609, dtype: int64
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/06_exercises_solutions_43_0.png" src="_images/06_exercises_solutions_43_0.png" />
+<img alt="_images/06_exercises_solutions_47_0.png" src="_images/06_exercises_solutions_47_0.png" />
 </div>
 </div>
 </section>
 <section id="22.-Repeat-the-above,-but-this-time-with-separate-subplots-for-``Severity``">
 <h3><strong>22.</strong> Repeat the above, but this time with <strong>separate subplots for ``Severity``</strong><a class="headerlink" href="#22.-Repeat-the-above,-but-this-time-with-separate-subplots-for-``Severity``" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">axs</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="s1">&#39;Severity&#39;</span><span class="p">])[</span><span class="s1">&#39;Accident_Index&#39;</span><span class="p">]</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="s1">&#39;Severity&#39;</span><span class="p">])[</span><span class="s1">&#39;Accident_Index&#39;</span><span class="p">]</span>  <span class="c1"># Add Severity to the groupby</span>
     <span class="o">.</span><span class="n">count</span><span class="p">()</span>
     <span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
     <span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1943,14 +2023,14 @@ Name: Accident_Index, Length: 14609, dtype: int64
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/06_exercises_solutions_45_0.png" src="_images/06_exercises_solutions_45_0.png" />
+<img alt="_images/06_exercises_solutions_49_0.png" src="_images/06_exercises_solutions_49_0.png" />
 </div>
 </div>
 </section>
 <section id="23.-Make-a-bar-chart-showing-the-total-number-of-accidents-for-each-hour-in-the-day-from-1979-2018">
 <h3><strong>23.</strong> Make a bar chart showing the total number of accidents for each hour in the day from 1979-2018<a class="headerlink" href="#23.-Make-a-bar-chart-showing-the-total-number-of-accidents-for-each-hour-in-the-day-from-1979-2018" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[64]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
@@ -1962,7 +2042,7 @@ Name: Accident_Index, Length: 14609, dtype: int64
 <span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Total accidents&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Cycling accidents in Great Britain by time of day (1979-2018)&#39;</span><span class="p">)</span>
-<span class="n">hours</span> <span class="o">=</span> <span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%I %p&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">24</span><span class="p">)]</span>
+<span class="n">hours</span> <span class="o">=</span> <span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%I %p&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">24</span><span class="p">)]</span>  <span class="c1"># Create xticklabels</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">hours</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -1971,14 +2051,14 @@ Name: Accident_Index, Length: 14609, dtype: int64
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/06_exercises_solutions_47_0.png" src="_images/06_exercises_solutions_47_0.png" />
+<img alt="_images/06_exercises_solutions_51_0.png" src="_images/06_exercises_solutions_51_0.png" />
 </div>
 </div>
 </section>
 <section id="24.-As-above,-but-with-stacked-bars-using-different-colours-for-each-day-of-the-week">
 <h3><strong>24.</strong> As above, but with stacked bars using different colours for each day of the week<a class="headerlink" href="#24.-As-above,-but-with-stacked-bars-using-different-colours-for-each-day-of-the-week" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[67]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
@@ -1989,7 +2069,7 @@ Name: Accident_Index, Length: 14609, dtype: int64
     <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">hour</span><span class="p">,</span> <span class="s1">&#39;Day&#39;</span><span class="p">])[</span><span class="s1">&#39;Accident_Index&#39;</span><span class="p">]</span>
     <span class="o">.</span><span class="n">count</span><span class="p">()</span>
     <span class="o">.</span><span class="n">unstack</span><span class="p">()[</span><span class="n">group_order</span><span class="p">]</span>
-    <span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># Use stacked option</span>
 <span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Total accidents&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Cycling accidents in Great Britain by time of day (1979-2018)&#39;</span><span class="p">)</span>
@@ -2002,22 +2082,22 @@ Name: Accident_Index, Length: 14609, dtype: int64
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/06_exercises_solutions_49_0.png" src="_images/06_exercises_solutions_49_0.png" />
+<img alt="_images/06_exercises_solutions_53_0.png" src="_images/06_exercises_solutions_53_0.png" />
 </div>
 </div>
 </section>
 <section id="25.-Make-a-bar-chart-showing-the-year-on-year-percentage-change-for-accidents-with-different-coloured-bars-for-each-Severity">
 <h3><strong>25.</strong> Make a bar chart showing the year-on-year percentage change for accidents with different coloured bars for each <code class="docutils literal notranslate"><span class="pre">Severity</span></code><a class="headerlink" href="#25.-Make-a-bar-chart-showing-the-year-on-year-percentage-change-for-accidents-with-different-coloured-bars-for-each-Severity" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[73]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="s1">&#39;Severity&#39;</span><span class="p">])[</span><span class="s1">&#39;Accident_Index&#39;</span><span class="p">]</span>
     <span class="o">.</span><span class="n">count</span><span class="p">()</span>
     <span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
-    <span class="o">.</span><span class="n">pct_change</span><span class="p">()</span>
-    <span class="o">.</span><span class="n">mul</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">pct_change</span><span class="p">()</span>  <span class="c1"># Calculates percentage change from previous value</span>
+    <span class="o">.</span><span class="n">mul</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># Times 100 to get percent</span>
     <span class="o">.</span><span class="n">plot</span>
     <span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">rot</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">.6</span><span class="p">)</span>
 <span class="p">)</span>
@@ -2032,15 +2112,7 @@ Name: Accident_Index, Length: 14609, dtype: int64
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/06_exercises_solutions_51_0.png" src="_images/06_exercises_solutions_51_0.png" />
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
+<img alt="_images/06_exercises_solutions_55_0.png" src="_images/06_exercises_solutions_55_0.png" />
 </div>
 </div>
 <script type="application/vnd.jupyter.widget-state+json">

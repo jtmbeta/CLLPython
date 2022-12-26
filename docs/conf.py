@@ -32,7 +32,7 @@ release = '0.0.1'
 # ones.
 extensions = ['nbsphinx'
 ]
-
+nbsphinx_allow_errors = True
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
@@ -47,7 +47,14 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+html_theme = 'haiku'
+#html_logo = '_static/python_logo.png'
+#full_logo = True
+html_theme_options = {
+    'github_user': 'jtmbeta',
+    'github_repo': 'CLLPython',
+    'description': 'An introduction to data visualisation with Python.'
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

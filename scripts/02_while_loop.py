@@ -18,3 +18,5 @@ while keep_counting:
     sleep(1)
     if number == 10:
         keep_counting = False
+
+print("Ready or not, here I come!")

@@ -15,11 +15,13 @@
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Have a go before you peak!" href="exercise_solutions.html" /> 
+    <link rel="next" title="Week 2 - Exercises" href="02_exercises_solutions.html" />
+    <link rel="prev" title="Week 0 - Exercises" href="00_exercises_solutions.html" /> 
   </head><body>
       <div class="header" role="banner"><h1 class="heading"><a href="index.html">
           <span>CLLPython 0.0.1 documentation</span></a></h1>
@@ -28,9 +30,11 @@
       <div class="topnav" role="navigation" aria-label="top navigation">
       
         <p>
-        «&#160;&#160;<a href="exercise_solutions.html">Have a go before you peak!</a>
+        «&#160;&#160;<a href="00_exercises_solutions.html">Week 0 - Exercises</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="02_exercises_solutions.html">Week 2 - Exercises</a>&#160;&#160;»
         </p>
 
       </div>
@@ -307,7 +311,7 @@ div.rendered_html tbody tr:hover {
 </div></blockquote>
 <p><strong>HINT</strong> - <code class="docutils literal notranslate"><span class="pre">\</span></code> and <code class="docutils literal notranslate"><span class="pre">'''</span></code></p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Put the text here</span>
@@ -350,7 +354,7 @@ Go home
 </div>
 <p>But if you try running it you will see that there are errors. Fix the code so that its output is the same as above. Don’t forget to add some comments to remind yourself what you changed!</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">do_shopping_today</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># OK, I&#39;ll do it</span>
@@ -388,30 +392,34 @@ Go home
 <p>Here’s that <code class="docutils literal notranslate"><span class="pre">Pen</span></code> example again…</p>
 <p>If you managed to solve Exercise 1, try printing the solution with the <code class="docutils literal notranslate"><span class="pre">Pen.write_something()</span></code> instead. You should see a message saying <code class="docutils literal notranslate"><span class="pre">'Not</span> <span class="pre">enought</span> <span class="pre">ink!</span></code>.</p>
 <p>Refresh your memory on how <code class="docutils literal notranslate"><span class="pre">len()</span></code> works, and then without changing the <code class="docutils literal notranslate"><span class="pre">ink_left</span></code> attribute, see if you can adjust the code so that the ink is depleted more slowly, but still in proportion to the length of the message.</p>
-<p><strong>Bonus exercise</strong> - At the moment, whitespace uses ink, which is not how real pens work. Can you alter the code so that whitespace does not contribute to ink depletion? This is a tricky one…</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<p><strong>Bonus exercise</strong> - At the moment, whitespace and new line characters (<code class="docutils literal notranslate"><span class="pre">\n</span></code>) use ink, which is not how real pens work. Can you alter the code so that whitespace does not contribute to ink depletion? This is a tricky one…</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[52]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define the Pen class</span>
 <span class="k">class</span> <span class="nc">Pen</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># Attribute to keep track of ink</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">ink_left</span> <span class="o">=</span> <span class="mi">100</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ink_left</span> <span class="o">=</span> <span class="mf">100.</span>
 
     <span class="c1"># Method for writing stuff</span>
     <span class="k">def</span> <span class="nf">write_something</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">what</span><span class="p">):</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">what</span><span class="p">)</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">ink_left</span><span class="p">:</span>
+        <span class="n">valid_chars</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">what</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">))</span>  <span class="c1"># Remove newlines and whitespace</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">valid_chars</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.01</span><span class="p">)</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">ink_left</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Not enough ink!&quot;</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="n">what</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">ink_left</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ink_left</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">what</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ink_left</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ink_left</span> <span class="o">-</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">valid_chars</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.01</span><span class="p">)</span>  <span class="c1"># Deplete 100 times more slowly</span>
 
 <span class="c1"># Create an instance of Pen</span>
 <span class="n">my_pen</span> <span class="o">=</span> <span class="n">Pen</span><span class="p">()</span>
 
 <span class="c1"># Insert the text from exercise 1 here</span>
-<span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;All the world’s a stage,</span><span class="se">\n</span><span class="s1"></span>
+<span class="s1">And all the men and women merely players:</span><span class="se">\n</span><span class="s1"></span>
+<span class="s1">They have their exits and their entrances;</span><span class="se">\n</span><span class="s1"></span>
+<span class="s1">And one man in his time plays many parts.&#39;&#39;&#39;</span>
 
 <span class="c1"># Call the write_something method</span>
 <span class="n">my_pen</span><span class="o">.</span><span class="n">write_something</span><span class="p">(</span><span class="n">what</span><span class="o">=</span><span class="n">msg</span><span class="p">)</span>
@@ -421,7 +429,24 @@ Go home
 </pre></div>
 </div>
 </div>
-</section>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+All the world’s a stage,
+
+And all the men and women merely players:
+
+They have their exits and their entrances;
+
+And one man in his time plays many parts.
+my_pen has 98.77 ink left
+</pre></div></div>
+</div>
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {}, "version_major": 2, "version_minor": 0}
+</script></section>
 </section>
 
 
@@ -429,9 +454,11 @@ Go home
       <div class="bottomnav" role="navigation" aria-label="bottom navigation">
       
         <p>
-        «&#160;&#160;<a href="exercise_solutions.html">Have a go before you peak!</a>
+        «&#160;&#160;<a href="00_exercises_solutions.html">Week 0 - Exercises</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="02_exercises_solutions.html">Week 2 - Exercises</a>&#160;&#160;»
         </p>
 
       </div>

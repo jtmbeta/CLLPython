@@ -55,6 +55,8 @@ Although our focus will be on working with data, we will start from the very beg
    07_other_libraries
    06_assignment
    
+.. fortune_cowsay_lolcat
+   
 ------------------
 
 .. toctree::

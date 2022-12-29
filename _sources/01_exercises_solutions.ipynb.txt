@@ -33,7 +33,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": 1,
    "id": "34699a0e",
    "metadata": {},
    "outputs": [
@@ -87,7 +87,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 13,
+   "execution_count": 2,
    "id": "493711ae",
    "metadata": {},
    "outputs": [
@@ -134,35 +134,54 @@
     "\n",
     "Refresh your memory on how `len()` works, and then without changing the `ink_left` attribute, see if you can adjust the code so that the ink is depleted more slowly, but still in proportion to the length of the message. \n",
     "\n",
-    "**Bonus exercise** - At the moment, whitespace uses ink, which is not how real pens work. Can you alter the code so that whitespace does not contribute to ink depletion? This is a tricky one...\n"
+    "**Bonus exercise** - At the moment, whitespace and new line characters (`\\n`) use ink, which is not how real pens work. Can you alter the code so that whitespace does not contribute to ink depletion? This is a tricky one...\n"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 52,
    "id": "d4b83810",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "All the world’s a stage,\n",
+      "\n",
+      "And all the men and women merely players:\n",
+      "\n",
+      "They have their exits and their entrances;\n",
+      "\n",
+      "And one man in his time plays many parts.\n",
+      "my_pen has 98.77 ink left\n"
+     ]
+    }
+   ],
    "source": [
     "# Define the Pen class\n",
     "class Pen:\n",
     "    def __init__(self):\n",
     "        # Attribute to keep track of ink\n",
-    "        self.ink_left = 100\n",
+    "        self.ink_left = 100.\n",
     "    \n",
     "    # Method for writing stuff\n",
     "    def write_something(self, what):\n",
-    "        if len(what) > self.ink_left:\n",
+    "        valid_chars = ''.join(what.replace('\\n', '').split(' '))  # Remove newlines and whitespace\n",
+    "        if (len(valid_chars) * .01) > self.ink_left:\n",
     "            print(\"Not enough ink!\")\n",
     "        else:\n",
     "            print(what)\n",
-    "            self.ink_left = self.ink_left - len(what)\n",
+    "            self.ink_left = self.ink_left - (len(valid_chars) * .01)  # Deplete 100 times more slowly\n",
     "    \n",
     "# Create an instance of Pen\n",
     "my_pen = Pen()\n",
     "\n",
     "# Insert the text from exercise 1 here\n",
-    "msg = ''\n",
+    "msg = '''All the world’s a stage,\\n\n",
+    "And all the men and women merely players:\\n\n",
+    "They have their exits and their entrances;\\n\n",
+    "And one man in his time plays many parts.'''  \n",
     "\n",
     "# Call the write_something method\n",
     "my_pen.write_something(what=msg)\n",
@@ -188,7 +207,14 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.9.13"
+   "version": "3.9.15"
+  },
+  "widgets": {
+   "application/vnd.jupyter.widget-state+json": {
+    "state": {},
+    "version_major": 2,
+    "version_minor": 0
+   }
   }
  },
  "nbformat": 4,

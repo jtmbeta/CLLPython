@@ -28,3 +28,10 @@ Course credits
 
 Thanks to the Center for Lifelong Learning at the University of York for making this course possible. 
 
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

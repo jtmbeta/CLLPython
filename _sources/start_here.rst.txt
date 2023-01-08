@@ -9,31 +9,11 @@ Start here
   
 *This page is under construction.*
 
-
-This course was designed for the Center of Lifelong Learning at the University of York, UK. 
-
-
-Downloading the course materials
---------------------------------
+This course was designed as an 8-week course for the Center of Lifelong Learning at the University of York, UK. The part of the course that you see on this website is freely available and you may work through it at your leisure. In this case, just ignore any references to weekly sessions, presentation slides, and the like.
 
 You can download the course materials here: https://github.com/jtmbeta/CLLPython
 
-Folders, directories and paths
-------------------------------
+Contact
+-------
 
-Files on a computer are arranged in a hierarchical format, known as a tree. 
-
-Statistics
-----------
-
-This is a course in data visualisation, not statistics. 
-
-Getting help
-------------
-
-Google, StackOverflow, etc.
-
-Course credits
---------------
-
-
+Please direct questions and feedback to joel dot martin at york dot ac dot uk.

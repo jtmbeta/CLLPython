@@ -55,7 +55,7 @@ Although our focus will be on working with data, we will start from the very beg
    07_other_libraries
    06_assignment
    
-.. fortune_cowsay_lolcat
+..   fortune_cowsay_lolcat
    
 ------------------
 
@@ -67,16 +67,9 @@ Although our focus will be on working with data, we will start from the very beg
    
 ------------------
 
-.. toctree::
+.. .. toctree::
    :maxdepth: 1
    :caption: Advanced topics:
    
-Coming soon...
+.. Coming soon...
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

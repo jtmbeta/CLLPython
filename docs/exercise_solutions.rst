@@ -13,10 +13,3 @@ Have a go before you peak!
    05_exercises_solutions
    06_exercises_solutions
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

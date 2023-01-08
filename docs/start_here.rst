@@ -1,12 +1,22 @@
 Start here
 ==========
 
-This page is under construction.
+.. image:: _static/york_logo.svg
+  :width: 300
+  :alt: University of York logo
+  :class: no-scaled-link
+  :align: right
+  
+*This page is under construction.*
+
+
+This course was designed for the Center of Lifelong Learning at the University of York, UK. 
+
 
 Downloading the course materials
 --------------------------------
 
-The notebooks are on GitHub.
+You can download the course materials here: https://github.com/jtmbeta/CLLPython
 
 Folders, directories and paths
 ------------------------------
@@ -21,17 +31,9 @@ This is a course in data visualisation, not statistics.
 Getting help
 ------------
 
-Google
+Google, StackOverflow, etc.
 
 Course credits
 --------------
 
-Thanks to the Center for Lifelong Learning at the University of York for making this course possible. 
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

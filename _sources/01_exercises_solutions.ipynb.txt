@@ -1,0 +1,222 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "11a26c2f-b614-4998-ae13-381435a75aa2",
+   "metadata": {},
+   "source": [
+    "# Week 1 - Exercises\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b364dc06",
+   "metadata": {},
+   "source": [
+    "## Exercise 1 - Printing multiple lines\n",
+    "\n",
+    "Using a single `print()` statement, print this well-loved Shakespeare lyric so that each line is printed on a separate line, with a space between each line.\n",
+    "\n",
+    "\n",
+    " > All the world’s a stage,\n",
+    " >\n",
+    " > And all the men and women merely players:\n",
+    " >\n",
+    " > They have their exits and their entrances;\n",
+    " >\n",
+    " > And one man in his time plays many parts.\n",
+    " \n",
+    " **HINT** - `\\` and `'''`\n",
+    " "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "34699a0e",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "All the world’s a stage,\n",
+      "\n",
+      "And all the men and women merely players:\n",
+      "\n",
+      "They have their exits and their entrances;\n",
+      "\n",
+      "And one man in his time plays many parts.\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Put the text here\n",
+    "text = '''All the world’s a stage,\\n\n",
+    "And all the men and women merely players:\\n\n",
+    "They have their exits and their entrances;\\n\n",
+    "And one man in his time plays many parts.'''  \n",
+    "print(text)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "20208526",
+   "metadata": {},
+   "source": [
+    "Exercise 2 - Fixing bad code\n",
+    "----------------------------\n",
+    "\n",
+    "The code below should have the following output:\n",
+    "\n",
+    "```\n",
+    "Leave house\n",
+    "Go to shop\n",
+    "Put bread in trolley\n",
+    "Put milk in trolley\n",
+    "Put soap in trolley\n",
+    "Put tin foil in trolley\n",
+    "Put dishwasher tablets in trolley\n",
+    "Go to checkout\n",
+    "Go home\n",
+    "```\n",
+    "\n",
+    "But if you try running it you will see that there are errors. Fix the code so that its output is the same as above. Don't forget to add some comments to remind yourself what you changed!"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "493711ae",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Leave house\n",
+      "Go to shop\n",
+      "Put bread in trolley\n",
+      "Put milk in trolley\n",
+      "Put soap in trolley\n",
+      "Put tin foil in trolley\n",
+      "Put dishwasher tablets in trolley\n",
+      "Go to checkout\n",
+      "Go home\n"
+     ]
+    }
+   ],
+   "source": [
+    "do_shopping_today = True  # OK, I'll do it\n",
+    "shopping_list = ['bread', 'milk', 'soap',  'tin foil', 'dishwasher tablets']  # Quotes for soap\n",
+    "\n",
+    "if do_shopping_today:\n",
+    "    print('Leave house')\n",
+    "    print('Go to shop')\n",
+    "    for item in shopping_list: \n",
+    "        print(f'Put {item} in trolley')  # Correct indentation\n",
+    "    print('Go to checkout')\n",
+    "    print('Go home') # Closed quote"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "83cd9820",
+   "metadata": {},
+   "source": [
+    "Exercise 3 - A more realistic pen\n",
+    "---------------------------------\n",
+    "\n",
+    "Here's that `Pen` example again... \n",
+    "\n",
+    "If you managed to solve Exercise 1, try printing the solution with the `Pen.write_something()` instead. You should see a message saying `'Not enought ink!`. \n",
+    "\n",
+    "Refresh your memory on how `len()` works, and then without changing the `ink_left` attribute, see if you can adjust the code so that the ink is depleted more slowly, but still in proportion to the length of the message. \n",
+    "\n",
+    "**Bonus exercise** - At the moment, whitespace and new line characters (`\\n`) use ink, which is not how real pens work. Can you alter the code so that whitespace does not contribute to ink depletion? This is a tricky one...\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 52,
+   "id": "d4b83810",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "All the world’s a stage,\n",
+      "\n",
+      "And all the men and women merely players:\n",
+      "\n",
+      "They have their exits and their entrances;\n",
+      "\n",
+      "And one man in his time plays many parts.\n",
+      "my_pen has 98.77 ink left\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Define the Pen class\n",
+    "class Pen:\n",
+    "    def __init__(self):\n",
+    "        # Attribute to keep track of ink\n",
+    "        self.ink_left = 100.\n",
+    "    \n",
+    "    # Method for writing stuff\n",
+    "    def write_something(self, what):\n",
+    "        valid_chars = ''.join(what.replace('\\n', '').split(' '))  # Remove newlines and whitespace\n",
+    "        if (len(valid_chars) * .01) > self.ink_left:\n",
+    "            print(\"Not enough ink!\")\n",
+    "        else:\n",
+    "            print(what)\n",
+    "            self.ink_left = self.ink_left - (len(valid_chars) * .01)  # Deplete 100 times more slowly\n",
+    "    \n",
+    "# Create an instance of Pen\n",
+    "my_pen = Pen()\n",
+    "\n",
+    "# Insert the text from exercise 1 here\n",
+    "msg = '''All the world’s a stage,\\n\n",
+    "And all the men and women merely players:\\n\n",
+    "They have their exits and their entrances;\\n\n",
+    "And one man in his time plays many parts.'''  \n",
+    "\n",
+    "# Call the write_something method\n",
+    "my_pen.write_something(what=msg)\n",
+    "\n",
+    "# Check ink left\n",
+    "print(f\"my_pen has {my_pen.ink_left} ink left\")"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.15"
+  },
+  "widgets": {
+   "application/vnd.jupyter.widget-state+json": {
+    "state": {},
+    "version_major": 2,
+    "version_minor": 0
+   }
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

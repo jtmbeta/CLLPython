@@ -1,0 +1,2912 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Week 5 - Exercises &#8212; CLLPython 0.0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/haiku.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/analytics.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Week 6 - Exercises" href="06_exercises_solutions.html" />
+    <link rel="prev" title="Week 4 - Exercises" href="04_exercises_solutions.html" /> 
+  </head><body>
+      <div class="header" role="banner"><h1 class="heading"><a href="index.html">
+          <span>CLLPython 0.0.1 documentation</span></a></h1>
+        <h2 class="heading"><span>Week 5 - Exercises</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        «&#160;&#160;<a href="04_exercises_solutions.html">Week 4 - Exercises</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="06_exercises_solutions.html">Week 6 - Exercises</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content" role="main">
+        
+        
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars and line breaks on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+    white-space: pre;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt .copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+.jp-RenderedHTMLCommon table,
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+.jp-RenderedHTMLCommon thead,
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+.jp-RenderedHTMLCommon tr,
+.jp-RenderedHTMLCommon th,
+.jp-RenderedHTMLCommon td,
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+.jp-RenderedHTMLCommon th,
+div.rendered_html th {
+  font-weight: bold;
+}
+.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.jp-RenderedHTMLCommon tbody tr:hover,
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+</style>
+<section id="Week-5---Exercises">
+<h1>Week 5 - Exercises<a class="headerlink" href="#Week-5---Exercises" title="Permalink to this heading">¶</a></h1>
+<section id="Exercise-1---RMS-Titanic">
+<h2>Exercise 1 - RMS Titanic<a class="headerlink" href="#Exercise-1---RMS-Titanic" title="Permalink to this heading">¶</a></h2>
+<p>On April 15, 1912, during her maiden voyage from Southampton to New York, the four-funnelled ocean liner <em>RMS Titanic</em> hit an iceberg and sank to the bottom of the ocean in what is now one of the most infamous maritime disasters in history. For aesthetic reasons, and because the ship was widely considered unsinkable, many lifeboats were removed before the launch. This unfortunate decision contributed to the death of 1502 out of 2224 passengers and crew.</p>
+<p>The <a class="reference external" href="https://www.encyclopedia-titanica.org/">Encyclopedia Titanica</a> maintain a database of the names of passengers on the Titanic, which includes other information such as age, sex, and whether the passenger survived. A subset of these data are available freely through <a class="reference external" href="https://www.kaggle.com/">Kaggle</a>, an online data repository that also hosts regular data science competitions. Extensive analyses of the Titanic data set have shown that, while luck played its part, some groups of
+passengers did appear to have a better chance of surviving than others.</p>
+<p>The Titanic passenger dataset from Kaggle can be found in the <code class="docutils literal notranslate"><span class="pre">data</span></code> folder of the course materials, with the name <code class="docutils literal notranslate"><span class="pre">titanic.csv</span></code>. Let’s use <code class="docutils literal notranslate"><span class="pre">pandas</span></code> to interrogate it!</p>
+<p>Here is the key to the data:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Definition</p></th>
+<th class="head"><p>Key</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PassengerID</p></td>
+<td><p>Unique numeric identifier for the passenger</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Survival</p></td>
+<td><p>Survival</p></td>
+<td><p>0 = No, 1 = Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>Pclass</p></td>
+<td><p>Ticket class</p></td>
+<td><p>1 = 1st, 2 = 2nd, 3 = 3rd</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sex</p></td>
+<td><p>Sex</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-even"><td><p>Age</p></td>
+<td><p>Age in years</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-odd"><td><p>SibSp</p></td>
+<td><p>Number of siblings / spouses aboard the Titanic</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-even"><td><p>Parch</p></td>
+<td><p>Number of parents / children aboard the Titanic</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ticket</p></td>
+<td><p>Ticket number</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-even"><td><p>Fare</p></td>
+<td><p>Passenger fare</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cabin</p></td>
+<td><p>Cabin number</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-even"><td><p>Embarked</p></td>
+<td><p>Port of Embarkation</p></td>
+<td><p>C = Cherbourg, Q = Queenstown, S = Southampton</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes:</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">Pclass</span></code>: a proxy for socio-economic status - 1st = Upper - 2nd = Middle - 3rd = Lower</p>
+<p><code class="docutils literal notranslate"><span class="pre">Age</span></code>: fractional if less than 1. If the age is estimated, it is in the form of <code class="docutils literal notranslate"><span class="pre">xx.5</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">SibSp</span></code>: The dataset defines family relations as follows: - Sibling = brother, sister, stepbrother, stepsister - Spouse = husband, wife (mistresses and fiancés were ignored)</p>
+<p><code class="docutils literal notranslate"><span class="pre">Parch</span></code>: The dataset defines family relations as follows: - Parent = mother, father - Child = daughter, son, stepdaughter, stepson - Some children travelled only with a nanny, therefore parch=0 for them.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;bmh&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<section id="1.-Import-pandas-and-read-data/titanic.csv-into-a-DataFrame">
+<h3><strong>1.</strong> Import <code class="docutils literal notranslate"><span class="pre">pandas</span></code> and read <code class="docutils literal notranslate"><span class="pre">data/titanic.csv</span></code> into a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#1.-Import-pandas-and-read-data/titanic.csv-into-a-DataFrame" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/titanic.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PassengerID</th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Braund, Mr. Owen Harris</td>
+      <td>male</td>
+      <td>22.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>A/5 21171</td>
+      <td>7.2500</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Cumings, Mrs. John Bradley (Florence Briggs Th...</td>
+      <td>female</td>
+      <td>38.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>PC 17599</td>
+      <td>71.2833</td>
+      <td>C85</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>1</td>
+      <td>3</td>
+      <td>Heikkinen, Miss. Laina</td>
+      <td>female</td>
+      <td>26.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>STON/O2. 3101282</td>
+      <td>7.9250</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>
+      <td>female</td>
+      <td>35.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>113803</td>
+      <td>53.1000</td>
+      <td>C123</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Allen, Mr. William Henry</td>
+      <td>male</td>
+      <td>35.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>373450</td>
+      <td>8.0500</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>886</th>
+      <td>887</td>
+      <td>0</td>
+      <td>2</td>
+      <td>Montvila, Rev. Juozas</td>
+      <td>male</td>
+      <td>27.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>211536</td>
+      <td>13.0000</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>887</th>
+      <td>888</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Graham, Miss. Margaret Edith</td>
+      <td>female</td>
+      <td>19.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>112053</td>
+      <td>30.0000</td>
+      <td>B42</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>888</th>
+      <td>889</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Johnston, Miss. Catherine Helen "Carrie"</td>
+      <td>female</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>2</td>
+      <td>W./C. 6607</td>
+      <td>23.4500</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>889</th>
+      <td>890</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Behr, Mr. Karl Howell</td>
+      <td>male</td>
+      <td>26.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>111369</td>
+      <td>30.0000</td>
+      <td>C148</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>890</th>
+      <td>891</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Dooley, Mr. Patrick</td>
+      <td>male</td>
+      <td>32.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>370376</td>
+      <td>7.7500</td>
+      <td>NaN</td>
+      <td>Q</td>
+    </tr>
+  </tbody>
+</table>
+<p>891 rows × 12 columns</p>
+</div></div>
+</div>
+</section>
+<section id="2.-Display-the-first-6-rows-of-the-DataFrame">
+<h3><strong>2.</strong> Display the <strong>first 6</strong> rows of the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#2.-Display-the-first-6-rows-of-the-DataFrame" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PassengerID</th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Braund, Mr. Owen Harris</td>
+      <td>male</td>
+      <td>22.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>A/5 21171</td>
+      <td>7.2500</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Cumings, Mrs. John Bradley (Florence Briggs Th...</td>
+      <td>female</td>
+      <td>38.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>PC 17599</td>
+      <td>71.2833</td>
+      <td>C85</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>1</td>
+      <td>3</td>
+      <td>Heikkinen, Miss. Laina</td>
+      <td>female</td>
+      <td>26.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>STON/O2. 3101282</td>
+      <td>7.9250</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>
+      <td>female</td>
+      <td>35.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>113803</td>
+      <td>53.1000</td>
+      <td>C123</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Allen, Mr. William Henry</td>
+      <td>male</td>
+      <td>35.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>373450</td>
+      <td>8.0500</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Moran, Mr. James</td>
+      <td>male</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>330877</td>
+      <td>8.4583</td>
+      <td>NaN</td>
+      <td>Q</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="3.-Display-the-last-6-rows-of-the-DataFrame">
+<h3><strong>3.</strong> Display the <strong>last 6</strong> rows of the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#3.-Display-the-last-6-rows-of-the-DataFrame" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PassengerID</th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>885</th>
+      <td>886</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Rice, Mrs. William (Margaret Norton)</td>
+      <td>female</td>
+      <td>39.0</td>
+      <td>0</td>
+      <td>5</td>
+      <td>382652</td>
+      <td>29.125</td>
+      <td>NaN</td>
+      <td>Q</td>
+    </tr>
+    <tr>
+      <th>886</th>
+      <td>887</td>
+      <td>0</td>
+      <td>2</td>
+      <td>Montvila, Rev. Juozas</td>
+      <td>male</td>
+      <td>27.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>211536</td>
+      <td>13.000</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>887</th>
+      <td>888</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Graham, Miss. Margaret Edith</td>
+      <td>female</td>
+      <td>19.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>112053</td>
+      <td>30.000</td>
+      <td>B42</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>888</th>
+      <td>889</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Johnston, Miss. Catherine Helen "Carrie"</td>
+      <td>female</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>2</td>
+      <td>W./C. 6607</td>
+      <td>23.450</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>889</th>
+      <td>890</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Behr, Mr. Karl Howell</td>
+      <td>male</td>
+      <td>26.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>111369</td>
+      <td>30.000</td>
+      <td>C148</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>890</th>
+      <td>891</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Dooley, Mr. Patrick</td>
+      <td>male</td>
+      <td>32.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>370376</td>
+      <td>7.750</td>
+      <td>NaN</td>
+      <td>Q</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="4.-Assign-PassengerID-as-the-index">
+<h3><strong>4.</strong> Assign <code class="docutils literal notranslate"><span class="pre">PassengerID</span></code> as the index<a class="headerlink" href="#4.-Assign-PassengerID-as-the-index" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;PassengerID&#39;</span><span class="p">)</span>
+<br/></pre></div>
+</div>
+</div>
+</section>
+<section id="5.-Print-out-all-of-the-available-information-for-the-passenger-with-567-as-their-PassengerID">
+<h3><strong>5.</strong> Print out all of the available information for the passenger with <code class="docutils literal notranslate"><span class="pre">567</span></code> as their <code class="docutils literal notranslate"><span class="pre">PassengerID</span></code><a class="headerlink" href="#5.-Print-out-all-of-the-available-information-for-the-passenger-with-567-as-their-PassengerID" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">567</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Survived                       0
+Pclass                         3
+Name        Stoytcheff, Mr. Ilia
+Sex                         male
+Age                         19.0
+SibSp                          0
+Parch                          0
+Ticket                    349205
+Fare                      7.8958
+Cabin                        NaN
+Embarked                       S
+Name: 567, dtype: object
+</pre></div></div>
+</div>
+</section>
+<section id="6.-Generate-some-descriptive-statistics-for-the-numeric-data">
+<h3><strong>6.</strong> Generate some descriptive statistics for the numeric data<a class="headerlink" href="#6.-Generate-some-descriptive-statistics-for-the-numeric-data" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Fare</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>891.000000</td>
+      <td>891.000000</td>
+      <td>714.000000</td>
+      <td>891.000000</td>
+      <td>891.000000</td>
+      <td>891.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>0.383838</td>
+      <td>2.308642</td>
+      <td>29.699118</td>
+      <td>0.523008</td>
+      <td>0.381594</td>
+      <td>32.204208</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.486592</td>
+      <td>0.836071</td>
+      <td>14.526497</td>
+      <td>1.102743</td>
+      <td>0.806057</td>
+      <td>49.693429</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>0.420000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>0.000000</td>
+      <td>2.000000</td>
+      <td>20.125000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>7.910400</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>0.000000</td>
+      <td>3.000000</td>
+      <td>28.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>14.454200</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>1.000000</td>
+      <td>3.000000</td>
+      <td>38.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>31.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>1.000000</td>
+      <td>3.000000</td>
+      <td>80.000000</td>
+      <td>8.000000</td>
+      <td>6.000000</td>
+      <td>512.329200</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="7.-How-many-male-and-female-passengers-are-there-in-this-dataset?-Use-pandas-to-show-this-information-in-a-simple-bar-chart.">
+<h3><strong>7.</strong> How many male and female passengers are there in this dataset? Use <code class="docutils literal notranslate"><span class="pre">pandas</span></code> to show this information in a simple bar chart.<a class="headerlink" href="#7.-How-many-male-and-female-passengers-are-there-in-this-dataset?-Use-pandas-to-show-this-information-in-a-simple-bar-chart." title="Permalink to this heading">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">Sex</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Sex&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Total Passengers (%)&#39;</span><span class="p">,</span> <span class="n">rot</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="p">);</span>  <span class="c1"># rot=0 stops the &#39;male&#39; and &#39;female&#39; labels being displayed as horizontal text</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/05_exercises_solutions_15_0.png" src="_images/05_exercises_solutions_15_0.png" />
+</div>
+</div>
+</section>
+<section id="8.-What-were-the-names-of-the-oldest-and-youngest-passengers?">
+<h3><strong>8.</strong> What were the names of the oldest and youngest passengers?<a class="headerlink" href="#8.-What-were-the-names-of-the-oldest-and-youngest-passengers?" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">oldest_youngest</span> <span class="o">=</span> <span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Age</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">df</span><span class="o">.</span><span class="n">Age</span><span class="o">.</span><span class="n">max</span><span class="p">()]</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Age</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">oldest_youngest</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
+    </tr>
+    <tr>
+      <th>PassengerID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>631</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Barkworth, Mr. Algernon Henry Wilson</td>
+      <td>male</td>
+      <td>80.00</td>
+      <td>0</td>
+      <td>0</td>
+      <td>27042</td>
+      <td>30.0000</td>
+      <td>A23</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>804</th>
+      <td>1</td>
+      <td>3</td>
+      <td>Thomas, Master. Assad Alexander</td>
+      <td>male</td>
+      <td>0.42</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2625</td>
+      <td>8.5167</td>
+      <td>NaN</td>
+      <td>C</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="9.-How-many-of-the-5-oldest-female-passengers-traveled-first-class?">
+<h3><strong>9.</strong> How many of the 5 oldest female passengers traveled first class?<a class="headerlink" href="#9.-How-many-of-the-5-oldest-female-passengers-traveled-first-class?" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># All but one</span>
+<span class="n">five_oldest_females</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Sex</span><span class="o">==</span><span class="s1">&#39;female&#39;</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">five_oldest_females</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
+    </tr>
+    <tr>
+      <th>PassengerID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>484</th>
+      <td>1</td>
+      <td>3</td>
+      <td>Turkula, Mrs. (Hedwig)</td>
+      <td>female</td>
+      <td>63.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>4134</td>
+      <td>9.5875</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>276</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Andrews, Miss. Kornelia Theodosia</td>
+      <td>female</td>
+      <td>63.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>13502</td>
+      <td>77.9583</td>
+      <td>D7</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>830</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Stone, Mrs. George Nelson (Martha Evelyn)</td>
+      <td>female</td>
+      <td>62.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>113572</td>
+      <td>80.0000</td>
+      <td>B28</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>367</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Warren, Mrs. Frank Manley (Anna Sophia Atkinson)</td>
+      <td>female</td>
+      <td>60.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>110813</td>
+      <td>75.2500</td>
+      <td>D37</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>269</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Graham, Mrs. William Thompson (Edith Junkins)</td>
+      <td>female</td>
+      <td>58.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>PC 17582</td>
+      <td>153.4625</td>
+      <td>C125</td>
+      <td>S</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To get the values... 4 travelled 1st class, 1 travelled third class</span>
+<span class="n">five_oldest_females</span><span class="o">.</span><span class="n">Pclass</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+1    4
+3    1
+Name: Pclass, dtype: int64
+</pre></div></div>
+</div>
+</section>
+<section id="10.-How-many-passengers-embarked-at-Southampton?">
+<h3><strong>10.</strong> How many passengers embarked at Southampton?<a class="headerlink" href="#10.-How-many-passengers-embarked-at-Southampton?" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 644</span>
+<span class="n">df</span><span class="o">.</span><span class="n">Embarked</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+S    644
+C    168
+Q     77
+Name: Embarked, dtype: int64
+</pre></div></div>
+</div>
+</section>
+<section id="11.-Who-paid-the-most-for-their-ticket?">
+<h3><strong>11.</strong> Who paid the most for their ticket?<a class="headerlink" href="#11.-Who-paid-the-most-for-their-ticket?" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Fare</span><span class="o">==</span><span class="n">df</span><span class="o">.</span><span class="n">Fare</span><span class="o">.</span><span class="n">max</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
+    </tr>
+    <tr>
+      <th>PassengerID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>259</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Ward, Miss. Anna</td>
+      <td>female</td>
+      <td>35.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>PC 17755</td>
+      <td>512.3292</td>
+      <td>NaN</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>680</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Cardeza, Mr. Thomas Drake Martinez</td>
+      <td>male</td>
+      <td>36.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>PC 17755</td>
+      <td>512.3292</td>
+      <td>B51 B53 B55</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>738</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Lesurer, Mr. Gustave J</td>
+      <td>male</td>
+      <td>35.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>PC 17755</td>
+      <td>512.3292</td>
+      <td>B101</td>
+      <td>C</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Just get the names</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Fare</span><span class="o">==</span><span class="n">df</span><span class="o">.</span><span class="n">Fare</span><span class="o">.</span><span class="n">max</span><span class="p">()]</span><span class="o">.</span><span class="n">Name</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+PassengerID
+259                      Ward, Miss. Anna
+680    Cardeza, Mr. Thomas Drake Martinez
+738                Lesurer, Mr. Gustave J
+Name: Name, dtype: object
+</pre></div></div>
+</div>
+</section>
+<section id="12.-Of-the-top-ten-passengers-who-paid-the-most-for-their-ticket,-how-many-survived?">
+<h3><strong>12.</strong> Of the top ten passengers who <strong>paid the most</strong> for their ticket, how many survived?<a class="headerlink" href="#12.-Of-the-top-ten-passengers-who-paid-the-most-for-their-ticket,-how-many-survived?" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 7 out of 10</span>
+<span class="c1"># Get the top 10 who paid the most</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Fare&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>  <span class="c1"># ascending=False</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
+    </tr>
+    <tr>
+      <th>PassengerID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>259</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Ward, Miss. Anna</td>
+      <td>female</td>
+      <td>35.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>PC 17755</td>
+      <td>512.3292</td>
+      <td>NaN</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>738</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Lesurer, Mr. Gustave J</td>
+      <td>male</td>
+      <td>35.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>PC 17755</td>
+      <td>512.3292</td>
+      <td>B101</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>680</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Cardeza, Mr. Thomas Drake Martinez</td>
+      <td>male</td>
+      <td>36.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>PC 17755</td>
+      <td>512.3292</td>
+      <td>B51 B53 B55</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>89</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Fortune, Miss. Mabel Helen</td>
+      <td>female</td>
+      <td>23.0</td>
+      <td>3</td>
+      <td>2</td>
+      <td>19950</td>
+      <td>263.0000</td>
+      <td>C23 C25 C27</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>0</td>
+      <td>1</td>
+      <td>Fortune, Mr. Charles Alexander</td>
+      <td>male</td>
+      <td>19.0</td>
+      <td>3</td>
+      <td>2</td>
+      <td>19950</td>
+      <td>263.0000</td>
+      <td>C23 C25 C27</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>342</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Fortune, Miss. Alice Elizabeth</td>
+      <td>female</td>
+      <td>24.0</td>
+      <td>3</td>
+      <td>2</td>
+      <td>19950</td>
+      <td>263.0000</td>
+      <td>C23 C25 C27</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>439</th>
+      <td>0</td>
+      <td>1</td>
+      <td>Fortune, Mr. Mark</td>
+      <td>male</td>
+      <td>64.0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>19950</td>
+      <td>263.0000</td>
+      <td>C23 C25 C27</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>312</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Ryerson, Miss. Emily Borie</td>
+      <td>female</td>
+      <td>18.0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>PC 17608</td>
+      <td>262.3750</td>
+      <td>B57 B59 B63 B66</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>743</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Ryerson, Miss. Susan Parker "Suzette"</td>
+      <td>female</td>
+      <td>21.0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>PC 17608</td>
+      <td>262.3750</td>
+      <td>B57 B59 B63 B66</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>119</th>
+      <td>0</td>
+      <td>1</td>
+      <td>Baxter, Mr. Quigg Edmond</td>
+      <td>male</td>
+      <td>24.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>PC 17558</td>
+      <td>247.5208</td>
+      <td>B58 B60</td>
+      <td>C</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Just get the number who survived by summing the Survived column</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Fare&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span><span class="o">.</span><span class="n">Survived</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+7
+</pre></div></div>
+</div>
+</section>
+<section id="13.-Of-the-top-ten-passengers-who-paid-the-least-for-their-ticket,-how-many-survived?">
+<h3><strong>13.</strong> Of the top ten passengers who <strong>paid the least</strong> for their ticket, how many survived?<a class="headerlink" href="#13.-Of-the-top-ten-passengers-who-paid-the-least-for-their-ticket,-how-many-survived?" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Only 1</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Fare&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>  <span class="c1"># Now ascending=True</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
+    </tr>
+    <tr>
+      <th>PassengerID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>272</th>
+      <td>1</td>
+      <td>3</td>
+      <td>Tornquist, Mr. William Henry</td>
+      <td>male</td>
+      <td>25.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>LINE</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>598</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Johnson, Mr. Alfred</td>
+      <td>male</td>
+      <td>49.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>LINE</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>303</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Johnson, Mr. William Cahoone Jr</td>
+      <td>male</td>
+      <td>19.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>LINE</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>634</th>
+      <td>0</td>
+      <td>1</td>
+      <td>Parr, Mr. William Henry Marsh</td>
+      <td>male</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>112052</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>278</th>
+      <td>0</td>
+      <td>2</td>
+      <td>Parkes, Mr. Francis "Frank"</td>
+      <td>male</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>239853</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>414</th>
+      <td>0</td>
+      <td>2</td>
+      <td>Cunningham, Mr. Alfred Fleming</td>
+      <td>male</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>239853</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>675</th>
+      <td>0</td>
+      <td>2</td>
+      <td>Watson, Mr. Ennis Hastings</td>
+      <td>male</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>239856</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>264</th>
+      <td>0</td>
+      <td>1</td>
+      <td>Harrison, Mr. William</td>
+      <td>male</td>
+      <td>40.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>112059</td>
+      <td>0.0</td>
+      <td>B94</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>467</th>
+      <td>0</td>
+      <td>2</td>
+      <td>Campbell, Mr. William</td>
+      <td>male</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>239853</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>733</th>
+      <td>0</td>
+      <td>2</td>
+      <td>Knight, Mr. Robert J</td>
+      <td>male</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>239855</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Fare&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">Survived</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+1
+</pre></div></div>
+</div>
+</section>
+<section id="14.-Of-all-surviving-passengers,-how-many-were-male-and-how-many-were-female?">
+<h3><strong>14.</strong> Of all surviving passengers, how many were male and how many were female?<a class="headerlink" href="#14.-Of-all-surviving-passengers,-how-many-were-male-and-how-many-were-female?" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Survived</span><span class="o">==</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+female    233
+male      109
+Name: Sex, dtype: int64
+</pre></div></div>
+</div>
+</section>
+<section id="15.-Make-a-boxplot-describing-the-age-distribution-for-males-and-females,-showing-the-mean-age-as-well-as-the-median.">
+<h3><strong>15.</strong> Make a boxplot describing the age distribution for males and females, showing the mean age as well as the median.<a class="headerlink" href="#15.-Make-a-boxplot-describing-the-age-distribution-for-males-and-females,-showing-the-mean-age-as-well-as-the-median." title="Permalink to this heading">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Age distribution of male and female passengers on the RMS Titanic&#39;</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s1">&#39;Sex&#39;</span><span class="p">,</span> <span class="n">showmeans</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">);</span>  <span class="c1"># Apply sensible title to the axes</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">get_figure</span><span class="p">()</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>  <span class="c1"># Get read of the default figure title</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/05_exercises_solutions_35_0.png" src="_images/05_exercises_solutions_35_0.png" />
+</div>
+</div>
+</section>
+<section id="16.-Get-the-information-for-all-passengers-with-‘Frank’-in-their-name">
+<h3><strong>16.</strong> Get the information for all passengers with ‘Frank’ in their name<a class="headerlink" href="#16.-Get-the-information-for-all-passengers-with-‘Frank’-in-their-name" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Name</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;Frank&#39;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
+    </tr>
+    <tr>
+      <th>PassengerID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>94</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Dean, Mr. Bertram Frank</td>
+      <td>male</td>
+      <td>26.0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>C.A. 2315</td>
+      <td>20.575</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>166</th>
+      <td>1</td>
+      <td>3</td>
+      <td>Goldsmith, Master. Frank John William "Frankie"</td>
+      <td>male</td>
+      <td>9.0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>363291</td>
+      <td>20.525</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>278</th>
+      <td>0</td>
+      <td>2</td>
+      <td>Parkes, Mr. Francis "Frank"</td>
+      <td>male</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>239853</td>
+      <td>0.000</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>281</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Duane, Mr. Frank</td>
+      <td>male</td>
+      <td>65.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>336439</td>
+      <td>7.750</td>
+      <td>NaN</td>
+      <td>Q</td>
+    </tr>
+    <tr>
+      <th>329</th>
+      <td>1</td>
+      <td>3</td>
+      <td>Goldsmith, Mrs. Frank John (Emily Alice Brown)</td>
+      <td>female</td>
+      <td>31.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>363291</td>
+      <td>20.525</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>367</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Warren, Mrs. Frank Manley (Anna Sophia Atkinson)</td>
+      <td>female</td>
+      <td>60.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>110813</td>
+      <td>75.250</td>
+      <td>D37</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>549</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Goldsmith, Mr. Frank John</td>
+      <td>male</td>
+      <td>33.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>363291</td>
+      <td>20.525</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="17.-What-was-the-surname-of-the-largest-family-on-board-the-Titanic?">
+<h3><strong>17.</strong> What was the surname of the largest family on board the Titanic?<a class="headerlink" href="#17.-What-was-the-surname-of-the-largest-family-on-board-the-Titanic?" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a new column that is the sum of Parch and SibSp (refer back to the data key)</span>
+<span class="c1"># and then sort the DataFrame by this column to see which surname appears at the top.</span>
+<span class="c1"># The Sage family looks to have been the largest, although some family members</span>
+<span class="c1"># appear not be included in the dataset.</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;RelsAboard&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">SibSp</span> <span class="o">+</span> <span class="n">df</span><span class="o">.</span><span class="n">Parch</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;RelsAboard&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
+      <th>RelsAboard</th>
+    </tr>
+    <tr>
+      <th>PassengerID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>181</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Sage, Miss. Constance Gladys</td>
+      <td>female</td>
+      <td>NaN</td>
+      <td>8</td>
+      <td>2</td>
+      <td>CA. 2343</td>
+      <td>69.55</td>
+      <td>NaN</td>
+      <td>S</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>847</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Sage, Mr. Douglas Bullen</td>
+      <td>male</td>
+      <td>NaN</td>
+      <td>8</td>
+      <td>2</td>
+      <td>CA. 2343</td>
+      <td>69.55</td>
+      <td>NaN</td>
+      <td>S</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>793</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Sage, Miss. Stella Anna</td>
+      <td>female</td>
+      <td>NaN</td>
+      <td>8</td>
+      <td>2</td>
+      <td>CA. 2343</td>
+      <td>69.55</td>
+      <td>NaN</td>
+      <td>S</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>202</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Sage, Mr. Frederick</td>
+      <td>male</td>
+      <td>NaN</td>
+      <td>8</td>
+      <td>2</td>
+      <td>CA. 2343</td>
+      <td>69.55</td>
+      <td>NaN</td>
+      <td>S</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>160</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Sage, Master. Thomas Henry</td>
+      <td>male</td>
+      <td>NaN</td>
+      <td>8</td>
+      <td>2</td>
+      <td>CA. 2343</td>
+      <td>69.55</td>
+      <td>NaN</td>
+      <td>S</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>864</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Sage, Miss. Dorothy Edith "Dolly"</td>
+      <td>female</td>
+      <td>NaN</td>
+      <td>8</td>
+      <td>2</td>
+      <td>CA. 2343</td>
+      <td>69.55</td>
+      <td>NaN</td>
+      <td>S</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>325</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Sage, Mr. George John Jr</td>
+      <td>male</td>
+      <td>NaN</td>
+      <td>8</td>
+      <td>2</td>
+      <td>CA. 2343</td>
+      <td>69.55</td>
+      <td>NaN</td>
+      <td>S</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>387</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Goodwin, Master. Sidney Leonard</td>
+      <td>male</td>
+      <td>1.0</td>
+      <td>5</td>
+      <td>2</td>
+      <td>CA 2144</td>
+      <td>46.90</td>
+      <td>NaN</td>
+      <td>S</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Goodwin, Master. William Frederick</td>
+      <td>male</td>
+      <td>11.0</td>
+      <td>5</td>
+      <td>2</td>
+      <td>CA 2144</td>
+      <td>46.90</td>
+      <td>NaN</td>
+      <td>S</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>679</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Goodwin, Mrs. Frederick (Augusta Tyler)</td>
+      <td>female</td>
+      <td>43.0</td>
+      <td>1</td>
+      <td>6</td>
+      <td>CA 2144</td>
+      <td>46.90</td>
+      <td>NaN</td>
+      <td>S</td>
+      <td>7</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p><a class="reference external" href="https://www.encyclopedia-titanica.org/titanic-victim/john-george-sage.html">Read about the Sage family in the Encyclopedia Titanica</a></p>
+</section>
+<section id="18.-What-was-the-name,-sex-and-age-of-the-youngest-passenger-to-embark-at-Cherbourg?">
+<h3><strong>18.</strong> What was the name, sex and age of the youngest passenger to embark at Cherbourg?<a class="headerlink" href="#18.-What-was-the-name,-sex-and-age-of-the-youngest-passenger-to-embark-at-Cherbourg?" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Select and sort the Cherbourg embarkees by age</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Embarked</span><span class="o">==</span><span class="s1">&#39;C&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
+      <th>RelsAboard</th>
+    </tr>
+    <tr>
+      <th>PassengerID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>804</th>
+      <td>1</td>
+      <td>3</td>
+      <td>Thomas, Master. Assad Alexander</td>
+      <td>male</td>
+      <td>0.42</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2625</td>
+      <td>8.5167</td>
+      <td>NaN</td>
+      <td>C</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>470</th>
+      <td>1</td>
+      <td>3</td>
+      <td>Baclini, Miss. Helene Barbara</td>
+      <td>female</td>
+      <td>0.75</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2666</td>
+      <td>19.2583</td>
+      <td>NaN</td>
+      <td>C</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>645</th>
+      <td>1</td>
+      <td>3</td>
+      <td>Baclini, Miss. Eugenie</td>
+      <td>female</td>
+      <td>0.75</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2666</td>
+      <td>19.2583</td>
+      <td>NaN</td>
+      <td>C</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>828</th>
+      <td>1</td>
+      <td>2</td>
+      <td>Mallet, Master. Andre</td>
+      <td>male</td>
+      <td>1.00</td>
+      <td>0</td>
+      <td>2</td>
+      <td>S.C./PARIS 2079</td>
+      <td>37.0042</td>
+      <td>NaN</td>
+      <td>C</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>382</th>
+      <td>1</td>
+      <td>3</td>
+      <td>Nakid, Miss. Maria ("Mary")</td>
+      <td>female</td>
+      <td>1.00</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2653</td>
+      <td>15.7417</td>
+      <td>NaN</td>
+      <td>C</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Just get the relevant information</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Embarked</span><span class="o">==</span><span class="s1">&#39;C&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Sex&#39;</span><span class="p">,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Name    Thomas, Master. Assad Alexander
+Sex                                male
+Age                                0.42
+Name: 804, dtype: object
+</pre></div></div>
+</div>
+</section>
+<section id="19.-Who-stayed-in-cabin-D56?-Can-you-find-out-anything-interesting-about-this-person-on-the-Encyclopedia-Titanica?">
+<h3><strong>19.</strong> Who stayed in cabin <code class="docutils literal notranslate"><span class="pre">D56</span></code>? Can you find out anything interesting about this person on the <a class="reference external" href="https://www.encyclopedia-titanica.org/">Encyclopedia Titanica</a>?<a class="headerlink" href="#19.-Who-stayed-in-cabin-D56?-Can-you-find-out-anything-interesting-about-this-person-on-the-Encyclopedia-Titanica?" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Beesley, Mr. Lawrence</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Cabin</span><span class="o">==</span><span class="s1">&#39;D56&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
+      <th>RelsAboard</th>
+    </tr>
+    <tr>
+      <th>PassengerID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>22</th>
+      <td>1</td>
+      <td>2</td>
+      <td>Beesley, Mr. Lawrence</td>
+      <td>male</td>
+      <td>34.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>248698</td>
+      <td>13.0</td>
+      <td>D56</td>
+      <td>S</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="20.-There-was-a-Countess-aboard-the-Titanic.-What-information-can-you-find-about-her?">
+<h3><strong>20.</strong> There was a Countess aboard the Titanic. What information can you find about her?<a class="headerlink" href="#20.-There-was-a-Countess-aboard-the-Titanic.-What-information-can-you-find-about-her?" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Name</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;Countess&#39;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
+      <th>RelsAboard</th>
+    </tr>
+    <tr>
+      <th>PassengerID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>760</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Rothes, the Countess. of (Lucy Noel Martha Dye...</td>
+      <td>female</td>
+      <td>33.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>110152</td>
+      <td>86.5</td>
+      <td>B77</td>
+      <td>S</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p><a class="reference external" href="https://www.encyclopedia-titanica.org/titanic-survivor/countess-of-rothes.html">Read about the Countess in the Encyclopedia Titanica</a></p>
+</section>
+<section id="21.-Make-two-new-columns-containing-the-first-and-last-name-for-each-passenger.">
+<h3><strong>21.</strong> Make two new columns containing the first and last name for each passenger.<a class="headerlink" href="#21.-Make-two-new-columns-containing-the-first-and-last-name-for-each-passenger." title="Permalink to this heading">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;FirstName&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Name</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;LastName&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Name</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
+      <th>RelsAboard</th>
+      <th>FirstName</th>
+      <th>LastName</th>
+    </tr>
+    <tr>
+      <th>PassengerID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Braund, Mr. Owen Harris</td>
+      <td>male</td>
+      <td>22.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>A/5 21171</td>
+      <td>7.2500</td>
+      <td>NaN</td>
+      <td>S</td>
+      <td>1</td>
+      <td>Mr. Owen Harris</td>
+      <td>Braund</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Cumings, Mrs. John Bradley (Florence Briggs Th...</td>
+      <td>female</td>
+      <td>38.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>PC 17599</td>
+      <td>71.2833</td>
+      <td>C85</td>
+      <td>C</td>
+      <td>1</td>
+      <td>Mrs. John Bradley (Florence Briggs Thayer)</td>
+      <td>Cumings</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>3</td>
+      <td>Heikkinen, Miss. Laina</td>
+      <td>female</td>
+      <td>26.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>STON/O2. 3101282</td>
+      <td>7.9250</td>
+      <td>NaN</td>
+      <td>S</td>
+      <td>0</td>
+      <td>Miss. Laina</td>
+      <td>Heikkinen</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>
+      <td>female</td>
+      <td>35.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>113803</td>
+      <td>53.1000</td>
+      <td>C123</td>
+      <td>S</td>
+      <td>1</td>
+      <td>Mrs. Jacques Heath (Lily May Peel)</td>
+      <td>Futrelle</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Allen, Mr. William Henry</td>
+      <td>male</td>
+      <td>35.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>373450</td>
+      <td>8.0500</td>
+      <td>NaN</td>
+      <td>S</td>
+      <td>0</td>
+      <td>Mr. William Henry</td>
+      <td>Allen</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="22.-Make-a-bar-chart-showing-the-proportion-of-males-and-females-who-survived-in-each-class">
+<h3><strong>22.</strong> Make a bar chart showing the proportion of males and females who survived in each class<a class="headerlink" href="#22.-Make-a-bar-chart-showing-the-proportion-of-males-and-females-who-survived-in-each-class" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;tab:red&#39;</span><span class="p">,</span> <span class="s1">&#39;tab:blue&#39;</span><span class="p">]</span>
+<span class="p">(</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Pclass&#39;</span><span class="p">,</span> <span class="s1">&#39;Sex&#39;</span><span class="p">])</span>
+    <span class="o">.</span><span class="n">Survived</span>
+    <span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Proportion of survivors&#39;</span><span class="p">,</span> <span class="n">rot</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;AxesSubplot:xlabel=&#39;Pclass,Sex&#39;, ylabel=&#39;Proportion of survivors&#39;&gt;
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/05_exercises_solutions_52_1.png" src="_images/05_exercises_solutions_52_1.png" />
+</div>
+</div>
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {}, "version_major": 2, "version_minor": 0}
+</script></section>
+</section>
+</section>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        «&#160;&#160;<a href="04_exercises_solutions.html">Week 4 - Exercises</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="06_exercises_solutions.html">Week 6 - Exercises</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, Joel T. Martin.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,636 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Week 5 - Exercises &#8212; CLLPython 0.0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/haiku.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/analytics.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Week 6 - More about pandas" href="06_more_pandas.html" />
+    <link rel="prev" title="Week 5 - pandas" href="05_pandas.html" /> 
+  </head><body>
+      <div class="header" role="banner"><h1 class="heading"><a href="index.html">
+          <span>CLLPython 0.0.1 documentation</span></a></h1>
+        <h2 class="heading"><span>Week 5 - Exercises</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        «&#160;&#160;<a href="05_pandas.html">Week 5 - pandas</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="06_more_pandas.html">Week 6 - More about <code class="docutils literal notranslate"><span class="pre">pandas</span></code></a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content" role="main">
+        
+        
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars and line breaks on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+    white-space: pre;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt .copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+.jp-RenderedHTMLCommon table,
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+.jp-RenderedHTMLCommon thead,
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+.jp-RenderedHTMLCommon tr,
+.jp-RenderedHTMLCommon th,
+.jp-RenderedHTMLCommon td,
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+.jp-RenderedHTMLCommon th,
+div.rendered_html th {
+  font-weight: bold;
+}
+.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.jp-RenderedHTMLCommon tbody tr:hover,
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+</style>
+<section id="Week-5---Exercises">
+<h1>Week 5 - Exercises<a class="headerlink" href="#Week-5---Exercises" title="Permalink to this heading">¶</a></h1>
+<section id="Exercise-1---RMS-Titanic">
+<h2>Exercise 1 - RMS Titanic<a class="headerlink" href="#Exercise-1---RMS-Titanic" title="Permalink to this heading">¶</a></h2>
+<p>On April 15, 1912, during her maiden voyage from Southampton to New York, the four-funnelled ocean liner <em>RMS Titanic</em> hit an iceberg and sank to the bottom of the ocean in what is now one of the most infamous maritime disasters in history. For aesthetic reasons, and because the ship was widely considered unsinkable, many lifeboats were removed before the launch. This unfortunate decision contributed to the death of 1502 out of 2224 passengers and crew.</p>
+<p>The <a class="reference external" href="https://www.encyclopedia-titanica.org/">Encyclopedia Titanica</a> maintain a database of the names of passengers on the Titanic, which includes other information such as age, sex, and whether the passenger survived. A subset of these data are available freely through <a class="reference external" href="https://www.kaggle.com/">Kaggle</a>, an online data repository that also hosts regular data science competitions. Extensive analyses of the Titanic data set have shown that, while luck played its part, some groups of
+passengers did appear to have a better chance of surviving than others.</p>
+<p>The Titanic passenger dataset from Kaggle can be found in the <code class="docutils literal notranslate"><span class="pre">data</span></code> folder of the course materials, with the name <code class="docutils literal notranslate"><span class="pre">titanic.csv</span></code>. Let’s use <code class="docutils literal notranslate"><span class="pre">pandas</span></code> to interrogate it!</p>
+<p>Here is the key to the data:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Definition</p></th>
+<th class="head"><p>Key</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PassengerID</p></td>
+<td><p>Unique numeric identifier for the passenger</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Survival</p></td>
+<td><p>Survival</p></td>
+<td><p>0 = No, 1 = Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>Pclass</p></td>
+<td><p>Ticket class</p></td>
+<td><p>1 = 1st, 2 = 2nd, 3 = 3rd</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sex</p></td>
+<td><p>Sex</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-even"><td><p>Age</p></td>
+<td><p>Age in years</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-odd"><td><p>SibSp</p></td>
+<td><p>Number of siblings / spouses aboard the Titanic</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-even"><td><p>Parch</p></td>
+<td><p>Number of parents / children aboard the Titanic</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ticket</p></td>
+<td><p>Ticket number</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-even"><td><p>Fare</p></td>
+<td><p>Passenger fare</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cabin</p></td>
+<td><p>Cabin number</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-even"><td><p>Embarked</p></td>
+<td><p>Port of Embarkation</p></td>
+<td><p>C = Cherbourg, Q = Queenstown, S = Southampton</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes:</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">Pclass</span></code>: a proxy for socio-economic status - 1st = Upper - 2nd = Middle - 3rd = Lower</p>
+<p><code class="docutils literal notranslate"><span class="pre">Age</span></code>: fractional if less than 1. If the age is estimated, it is in the form of <code class="docutils literal notranslate"><span class="pre">xx.5</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">SibSp</span></code>: The dataset defines family relations as follows: - Sibling = brother, sister, stepbrother, stepsister - Spouse = husband, wife (mistresses and fiancés were ignored)</p>
+<p><code class="docutils literal notranslate"><span class="pre">Parch</span></code>: The dataset defines family relations as follows: - Parent = mother, father - Child = daughter, son, stepdaughter, stepson - Some children travelled only with a nanny, therefore parch=0 for them.</p>
+<section id="1.-Import-pandas-and-read-data/titanic.csv-into-a-DataFrame">
+<h3><strong>1.</strong> Import <code class="docutils literal notranslate"><span class="pre">pandas</span></code> and read <code class="docutils literal notranslate"><span class="pre">data/titanic.csv</span></code> into a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#1.-Import-pandas-and-read-data/titanic.csv-into-a-DataFrame" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="2.-Display-the-first-6-rows-of-the-DataFrame">
+<h3><strong>2.</strong> Display the <strong>first 6</strong> rows of the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#2.-Display-the-first-6-rows-of-the-DataFrame" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="3.-Display-the-last-6-rows-of-the-DataFrame">
+<h3><strong>3.</strong> Display the <strong>last 6</strong> rows of the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#3.-Display-the-last-6-rows-of-the-DataFrame" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="4.-Assign-PassengerID-as-the-index">
+<h3><strong>4.</strong> Assign <code class="docutils literal notranslate"><span class="pre">PassengerID</span></code> as the index<a class="headerlink" href="#4.-Assign-PassengerID-as-the-index" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="5.-Print-out-all-of-the-available-information-for-the-passenger-with-567-as-their-PassengerID">
+<h3><strong>5.</strong> Print out all of the available information for the passenger with <code class="docutils literal notranslate"><span class="pre">567</span></code> as their <code class="docutils literal notranslate"><span class="pre">PassengerID</span></code><a class="headerlink" href="#5.-Print-out-all-of-the-available-information-for-the-passenger-with-567-as-their-PassengerID" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="6.-Generate-some-descriptive-statistics-for-the-numeric-data">
+<h3><strong>6.</strong> Generate some descriptive statistics for the numeric data<a class="headerlink" href="#6.-Generate-some-descriptive-statistics-for-the-numeric-data" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="7.-How-many-male-and-female-passengers-are-there-in-this-dataset?-Use-pandas-to-show-this-information-in-a-simple-bar-chart.">
+<h3><strong>7.</strong> How many male and female passengers are there in this dataset? Use <code class="docutils literal notranslate"><span class="pre">pandas</span></code> to show this information in a simple bar chart.<a class="headerlink" href="#7.-How-many-male-and-female-passengers-are-there-in-this-dataset?-Use-pandas-to-show-this-information-in-a-simple-bar-chart." title="Permalink to this heading">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="8.-What-were-the-names-of-the-oldest-and-youngest-passengers?">
+<h3><strong>8.</strong> What were the names of the oldest and youngest passengers?<a class="headerlink" href="#8.-What-were-the-names-of-the-oldest-and-youngest-passengers?" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="9.-How-many-of-the-5-oldest-female-passengers-traveled-first-class?">
+<h3><strong>9.</strong> How many of the 5 oldest female passengers traveled first class?<a class="headerlink" href="#9.-How-many-of-the-5-oldest-female-passengers-traveled-first-class?" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="10.-How-many-passengers-embarked-at-Southampton?">
+<h3><strong>10.</strong> How many passengers embarked at Southampton?<a class="headerlink" href="#10.-How-many-passengers-embarked-at-Southampton?" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="11.-Who-paid-the-most-for-their-ticket?">
+<h3><strong>11.</strong> Who paid the most for their ticket?<a class="headerlink" href="#11.-Who-paid-the-most-for-their-ticket?" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="12.-Of-the-top-ten-passengers-who-paid-the-most-for-their-ticket,-how-many-survived?">
+<h3><strong>12.</strong> Of the top ten passengers who <strong>paid the most</strong> for their ticket, how many survived?<a class="headerlink" href="#12.-Of-the-top-ten-passengers-who-paid-the-most-for-their-ticket,-how-many-survived?" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="13.-Of-the-top-ten-passengers-who-paid-the-least-for-their-ticket,-how-many-survived?">
+<h3><strong>13.</strong> Of the top ten passengers who <strong>paid the least</strong> for their ticket, how many survived?<a class="headerlink" href="#13.-Of-the-top-ten-passengers-who-paid-the-least-for-their-ticket,-how-many-survived?" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="14.-Of-all-surviving-passengers,-how-many-were-male-and-how-many-were-female?">
+<h3><strong>14.</strong> Of all surviving passengers, how many were male and how many were female?<a class="headerlink" href="#14.-Of-all-surviving-passengers,-how-many-were-male-and-how-many-were-female?" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="15.-Make-a-boxplot-describing-the-age-distribution-for-males-and-females,-showing-the-mean-age-as-well-as-the-median.">
+<h3><strong>15.</strong> Make a boxplot describing the age distribution for males and females, showing the mean age as well as the median.<a class="headerlink" href="#15.-Make-a-boxplot-describing-the-age-distribution-for-males-and-females,-showing-the-mean-age-as-well-as-the-median." title="Permalink to this heading">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="16.-Get-the-information-for-all-passengers-with-‘Frank’-in-their-name">
+<h3><strong>16.</strong> Get the information for all passengers with ‘Frank’ in their name<a class="headerlink" href="#16.-Get-the-information-for-all-passengers-with-‘Frank’-in-their-name" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="17.-What-was-the-surname-of-the-largest-family-on-board-the-Titanic?">
+<h3><strong>17.</strong> What was the surname of the largest family on board the Titanic?<a class="headerlink" href="#17.-What-was-the-surname-of-the-largest-family-on-board-the-Titanic?" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="18.-What-was-the-name,-sex-and-age-of-the-youngest-passenger-to-embark-at-Cherbourg?">
+<h3><strong>18.</strong> What was the name, sex and age of the youngest passenger to embark at Cherbourg?<a class="headerlink" href="#18.-What-was-the-name,-sex-and-age-of-the-youngest-passenger-to-embark-at-Cherbourg?" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="19.-Who-stayed-in-cabin-D56?-Can-you-find-out-anything-interesting-about-this-person-on-the-Encyclopedia-Titanica?">
+<h3><strong>19.</strong> Who stayed in cabin <code class="docutils literal notranslate"><span class="pre">D56</span></code>? Can you find out anything interesting about this person on the <a class="reference external" href="https://www.encyclopedia-titanica.org/">Encyclopedia Titanica</a>?<a class="headerlink" href="#19.-Who-stayed-in-cabin-D56?-Can-you-find-out-anything-interesting-about-this-person-on-the-Encyclopedia-Titanica?" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="20.-There-was-a-Countess-aboard-the-Titanic.-What-information-can-you-find-about-her?">
+<h3><strong>20.</strong> There was a Countess aboard the Titanic. What information can you find about her?<a class="headerlink" href="#20.-There-was-a-Countess-aboard-the-Titanic.-What-information-can-you-find-about-her?" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="21.-Make-two-new-columns-containing-the-first-and-last-name-for-each-passenger.">
+<h3><strong>21.</strong> Make two new columns containing the first and last name for each passenger.<a class="headerlink" href="#21.-Make-two-new-columns-containing-the-first-and-last-name-for-each-passenger." title="Permalink to this heading">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="22.-Make-a-bar-chart-showing-the-proportion-of-males-and-females-who-survived-in-each-class">
+<h3><strong>22.</strong> Make a bar chart showing the proportion of males and females who survived in each class<a class="headerlink" href="#22.-Make-a-bar-chart-showing-the-proportion-of-males-and-females-who-survived-in-each-class" title="Permalink to this heading">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {}, "version_major": 2, "version_minor": 0}
+</script></section>
+</section>
+</section>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        «&#160;&#160;<a href="05_pandas.html">Week 5 - pandas</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="06_more_pandas.html">Week 6 - More about <code class="docutils literal notranslate"><span class="pre">pandas</span></code></a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, Joel T. Martin.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    </div>
+  </body>
+</html>

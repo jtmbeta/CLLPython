@@ -1,0 +1,411 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>End of course assignment &#8212; CLLPython 0.0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/haiku.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/analytics.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Have a go before you peak!" href="exercise_solutions.html" />
+    <link rel="prev" title="Week 7 - Other libraries and cool things" href="07_other_libraries.html" /> 
+  </head><body>
+      <div class="header" role="banner"><h1 class="heading"><a href="index.html">
+          <span>CLLPython 0.0.1 documentation</span></a></h1>
+        <h2 class="heading"><span>End of course assignment</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        «&#160;&#160;<a href="07_other_libraries.html">Week 7 - Other libraries and cool things</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="exercise_solutions.html">Have a go before you peak!</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content" role="main">
+        
+        
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars and line breaks on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+    white-space: pre;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt .copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+.jp-RenderedHTMLCommon table,
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+.jp-RenderedHTMLCommon thead,
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+.jp-RenderedHTMLCommon tr,
+.jp-RenderedHTMLCommon th,
+.jp-RenderedHTMLCommon td,
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+.jp-RenderedHTMLCommon th,
+div.rendered_html th {
+  font-weight: bold;
+}
+.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.jp-RenderedHTMLCommon tbody tr:hover,
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+</style>
+<section id="End-of-course-assignment">
+<h1>End of course assignment<a class="headerlink" href="#End-of-course-assignment" title="Permalink to this heading">¶</a></h1>
+<p>It’s time for you to put your newly developed Python skills to use! The assignment is simple: find some data and tell a story. At the very least, this will require you to:</p>
+<ul class="simple">
+<li><p>locate and download an interesting dataset</p></li>
+<li><p>load it into Python</p></li>
+<li><p>make a chart to visualise some trend in the data</p></li>
+<li><p>share your findings with the group in a 3-5 minute presentation</p></li>
+</ul>
+<p>You can complete the task in this notebook using either Jupyter or <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>, or by writing a script in Spyder. Some potential sources of interesting data are listed below, but there are many other sources of quality data on the internet and you are free to choose whatever you want. In the final session, you will be able to share your screen via zoom, or you can post an image or pdf document in the group chat.</p>
+<section id="Potential-sources-of-data">
+<h2>Potential sources of data<a class="headerlink" href="#Potential-sources-of-data" title="Permalink to this heading">¶</a></h2>
+<section id="kaggle">
+<h3><a class="reference external" href="https://www.kaggle.com/">kaggle</a><a class="headerlink" href="#kaggle" title="Permalink to this heading">¶</a></h3>
+<p>This excellent little website is as much a thriving community of data scientists as it is a source of quality data. After making a free account, you can browse over 178,000 data sets or search using keywords. The kaggle community even post code, analyses and discussion points, which you may look to for inspiration.</p>
+<p>Here are some interesting data sets that caught my eye on kaggle:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.kaggle.com/datasets/ricardopaula/blood-type-distribution-by-country">Blood Type Distribution by Country</a></p>
+<ul>
+<li><p>What are the most and least common blood types, and which countries appear to have the most and least of this blood type?</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://www.kaggle.com/datasets/nehaprabhavalkar/indian-food-101">Indian Food 101</a></p>
+<ul>
+<li><p>How many unique ingredients are there across all dishes in the data set?</p></li>
+<li><p>What is the most common ingredient?</p></li>
+<li><p>From which state do most dishes originate?</p></li>
+<li><p>Including both preparation and cooking time, what are the fastest and slowest dishes to make?</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://www.kaggle.com/datasets/unsdsn/world-happiness">World Happiness Report</a></p>
+<ul>
+<li><p>In the period 2015 - 2019, which countries were the happiest? For which countries did happiness increase / decrease most substantially in this period?</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="hockeyfights.com">
+<h3><a class="reference external" href="https://www.hockeyfights.com/">hockeyfights.com</a><a class="headerlink" href="#hockeyfights.com" title="Permalink to this heading">¶</a></h3>
+<p>I’m not a hockey fan, let alone a bloodthirsty one. This website makes the list purely because it is a well-curated source of interesting data. I used it some years ago in a similar assignment to explore the relationship between number of fights and games won / lost in a season for the Detroit Redwings and Toronto Maple Leafs.</p>
+<ul class="simple">
+<li><p>Which are the top three most bellicose hockey teams?</p></li>
+<li><p>Which teams have the greatest fighting rivalry?</p></li>
+<li><p>Is there a relationship between number of fights in a season and the number of games won / lost?</p></li>
+</ul>
+</section>
+<section id="Our-World-in-Data">
+<h3><a class="reference external" href="https://ourworldindata.org/">Our World in Data</a><a class="headerlink" href="#Our-World-in-Data" title="Permalink to this heading">¶</a></h3>
+<p>This brilliant website publishes data-driven reports on poverty, disease, hunger, climate change, war and many other big problems that exist in the World. Most reports include a link to download the raw data, usually in <code class="docutils literal notranslate"><span class="pre">CSV</span></code> format. Here are a few examples:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://ourworldindata.org/co2-data-update-2022">Global CO2 Emissions</a></p>
+<ul>
+<li><p>Since records began, which 10 countries are responsible for the most CO2 emissions resulting from fossil fuel burning? Which 10 are responsible for the least emissions?</p></li>
+<li><p>As above, but for emissions resulting from land use changes</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://ourworldindata.org/europe-mammal-comeback">Wild Mammals are making a comeback</a></p>
+<ul>
+<li><p>Download the data and recreate the chart on the web page</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://ourworldindata.org/explorers/air-pollution">Air Polution</a></p>
+<ul>
+<li><p>Over the last 10 years in the United Kingdom, which pollutants have increased, and which have decreased?</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="Google-Trends">
+<h3><a class="reference external" href="https://trends.google.com/trends/?geo=GB">Google Trends</a><a class="headerlink" href="#Google-Trends" title="Permalink to this heading">¶</a></h3>
+<p>Google trends allows you to analyze and compare ‘interest’ in specific search terms over time and by geographical region, and to then download the results in <code class="docutils literal notranslate"><span class="pre">CSV</span></code> format. Often this reveals perplexing trends that warrant further exploration. For example, when comparing interest in ‘marriage’ and ‘divorce’ across the world since 2004, most countries were more interested in marriage, but France showed a strong preference for divorce. What’s going on there?</p>
+</section>
+<section id="Google-Dataset-Search">
+<h3><a class="reference external" href="https://datasetsearch.research.google.com/">Google Dataset Search</a><a class="headerlink" href="#Google-Dataset-Search" title="Permalink to this heading">¶</a></h3>
+<p>This is Google’s search engine for datasets. With a simple keyword search, users can find datasets hosted in thousands of repositories across the Web.</p>
+<p>Good luck!</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {}, "version_major": 2, "version_minor": 0}
+</script></section>
+</section>
+</section>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        «&#160;&#160;<a href="07_other_libraries.html">Week 7 - Other libraries and cool things</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="exercise_solutions.html">Have a go before you peak!</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, Joel T. Martin.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    </div>
+  </body>
+</html>

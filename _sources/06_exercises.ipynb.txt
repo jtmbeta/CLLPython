@@ -1,0 +1,492 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "c803ad36-fc5a-48d8-a4df-5097049a9960",
+   "metadata": {},
+   "source": [
+    "# Week 6 - Exercises\n",
+    "\n",
+    "## Exercise 1 - GB cycling accidents\n",
+    "\n",
+    "In the `data` folder of the course materials you should find a `CSV` file called `gb_cycling_accidents.csv` which contains data on bicycle accidents in Great Britain from 1970 to 2018. I retrieved the data set from [kaggle](https://www.kaggle.com/datasets/johnharshith/bicycle-accidents-in-great-britain-1979-to-2018), which cites [data.world](https://data.world/gonzandrobles/bicycleaccidentsuk) as the original source. Each row holds information about a specific accident, and each column holds information about the accident, such as the date, time of day, day of week, number of vehicles involved, weather conditions, severity, etc. Here is the full explanation of the columns in the data set.\n",
+    "\n",
+    "| Variable             | Definition                                                                                |\n",
+    "|:---------------------|:------------------------------------------------------------------------------------------|\n",
+    "| Accident_Index       | Unique identifier for the accident. This may be thought of as the accident \"case number\". |\n",
+    "| Number_of_Vehicles   | Number of vehicles that were involved in the accident                                     |\n",
+    "| Number_of_Casualties | Number of casualties resulting from the accident                                          |\n",
+    "| Date                 | Date when the accident happened                                                           |\n",
+    "| Time                 | Time when the accident happened                                                           |\n",
+    "| Speed_limit          | Speed limit on the part of the road where the accident took place                         |\n",
+    "| Road_conditions      | Road condition (e.g., \"frost\") at the time and place of the accident                      |\n",
+    "| Weather_conditions   | Whether condition (e.g., \"rain\") at time and place of the accident                        |\n",
+    "| Day                  | Day of the week when the accident occurred                                                |\n",
+    "| Road_type            | Type of road (e.g., \"Dual carriageway\") where the accident happened                       |\n",
+    "| Light_conditions     | Light conditions (e.g., \"Daylight\") at time of accident                                   |\n",
+    "| Gender               | Whether the accident victim was Male or Female                                            |\n",
+    "| Severity             | How severe (e.g., \"Serious\") the accident was                                             |\n",
+    "| Age_Grp              | Age group of the accident victim                                                          |\n",
+    "\n",
+    "Let's explore the frequency of accidents with respect to the different variables."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "815dc420-951a-4ca5-b399-c303a18e793c",
+   "metadata": {
+    "tags": []
+   },
+   "source": [
+    "### **1.** Import `pandas` and read `data/gb_cycling_accidents.csv` into a `DataFrame`"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "116cb1bc-b0ce-45c2-bae6-36132be362d7",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a1be2a0b-e042-4732-a4ad-4e8760221aa4",
+   "metadata": {
+    "tags": []
+   },
+   "source": [
+    "### **2.** How many unique values are in the following columns?\n",
+    "\n",
+    "  - `Speed_limit`\n",
+    "  - `Road_conditions`\n",
+    "  - `Weather_conditions`\n",
+    "  - `Road_type`\n",
+    "  - `Light_conditions`\n",
+    "  - `Gender`\n",
+    "  - `Severity`\n",
+    "  - `Age_Grp`"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "1e7953ab-a0ef-4f7e-8529-7e1d7700822c",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "4d684bbc-5fa6-4499-8171-5b25b3e4ad57",
+   "metadata": {
+    "tags": []
+   },
+   "source": [
+    "### **3.** What road conditions were associated with the most and least accidents? "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ad5d5130-29d1-4ca1-945e-5907dc48106e",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "549b7820-cfc3-416f-9a7e-e30fe0e041af",
+   "metadata": {
+    "tags": []
+   },
+   "source": [
+    "### **4.** What weather conditions were associated with the most and least accidents? "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "fd08155d-5517-4f08-ac05-96c221669cbe",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "82c47722-c339-41a7-8ecb-8fce0d0a211f",
+   "metadata": {
+    "tags": []
+   },
+   "source": [
+    "### **5.** What road type was associated with the most and least accidents? "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "53df35c7-8e70-4c17-a030-16b743e8d573",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "98362c51-bae9-4867-9e19-ef485ad69c45",
+   "metadata": {
+    "tags": []
+   },
+   "source": [
+    "### **6.** What light conditions were associated with the most and least accidents? "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "c0328e80-3c22-4e80-b1d9-eb73d309201c",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0ac89d62-be5c-40f5-95c3-1f4699ed40a3",
+   "metadata": {
+    "tags": []
+   },
+   "source": [
+    "### **7.** What speed limit was associated with the most and least accidents? "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a4a271ea-038e-44dd-8526-7fef418bec44",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "be5279ea-fa03-45a0-ab2f-0f62cae414d2",
+   "metadata": {
+    "tags": []
+   },
+   "source": [
+    "### **8.** Based on the above, write a single sentence that summarises the conditions in which most accidents appeared to occur."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "6460ea07-f48d-4efb-89fc-fb5b63fd6dd5",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b6d244b0-410b-46e0-a71e-57e1c4f20213",
+   "metadata": {
+    "tags": []
+   },
+   "source": [
+    "### **9.** Create a bar chart showing how accidents were distributed by `Age_Grp`"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "15bfee19-69d8-48c4-83dc-91b4b011c1ed",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "060330a3-98cc-46ee-86be-2f077463bbbf",
+   "metadata": {},
+   "source": [
+    "### **10.** Across all accidents, what percentage involved Males, what percentage involved Females, and what percentage involved people identifying as 'Other'? Show the results in a pie chart."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "84a7ca8a-9488-4d37-a580-ea41705e489f",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ced62010-d22f-404f-bc84-7c1bb9250148",
+   "metadata": {},
+   "source": [
+    "### **11.** What was the highest number of vehicles involved in a single accident?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4562d556-b6cd-4f11-ad5b-01e4dd8277d4",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7ae05901-17ad-4804-9616-8b53b7c75b5e",
+   "metadata": {},
+   "source": [
+    "### **12.** What was the highest number of casualties involved in a single accident?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "dd11df4b-9410-4bd9-be7d-09a721b498cf",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "41f53fa0-abb3-4f0a-a7f0-866b604d37b6",
+   "metadata": {},
+   "source": [
+    "### **13.** On which day of the week did the accident with `Accident_Index` `201443N027074` occur?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "756c1fd7-1abe-46e3-b53b-34a7783bca27",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "956a3c15-404e-4372-8206-840072039c39",
+   "metadata": {},
+   "source": [
+    "### **14.** Create a separate `DataFrame` for all serious accidents that happened on a Sunday in wet road conditions. How many were there?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "afc02a3a-dae2-4af2-a020-ecf063f130b1",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a9687b97-9dd8-437b-91ad-74e824239eee",
+   "metadata": {},
+   "source": [
+    "### **15.** Create and assign a new [`DatetimeIndex`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.html) for the `DataFrame` using the `Date` and `Time` columns"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4214517b-ee40-4d8d-83b9-88586bd5ace9",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5f8a8331-54a0-4352-8127-3c0ab9029c2e",
+   "metadata": {},
+   "source": [
+    "### **16.** Add a new column to the `DataFrame` called `long_date`. It should contain the correct dates matching the following format.\n",
+    "\n",
+    "  - Wednesday 09 February 2012"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "fc582788-4d89-48d1-8713-db46ccfdbd50",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e752e3d9-5449-4d8b-b8f9-f129e65a78f9",
+   "metadata": {},
+   "source": [
+    "### **17.** What is the worst day on record in terms of the number of accidents that were reported?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "9279a373-6262-4a65-b3fa-1bc6a949c1c9",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c89b4d2e-0abe-48e2-b001-e758b6cd8edf",
+   "metadata": {},
+   "source": [
+    "### **18.** Make a bar chart showing total accidents by month of the year"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "bf481730-fae7-4edc-93f7-4b05da4314cf",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "83b18131-f14f-4e88-b93c-0dd02080f41a",
+   "metadata": {},
+   "source": [
+    "### **19.** Make a line graph showing the total number of accidents that occurred each year from 1979-2018. Have accidents declined overall? In which years did the most and least cycling accidents occur? "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "9ff2149d-1917-4d10-99b4-b6e44d645c17",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8401ec0f-bbf1-4ba8-b3de-39bc737636bd",
+   "metadata": {},
+   "source": [
+    "### **20.** Repeat the above, but this time with **separate lines for `Gender`**"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "846afee8-7741-4f1e-82f2-d0beaf15ed98",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "63f1d9b4-589d-4d80-87a9-ffd4b3e7e573",
+   "metadata": {},
+   "source": [
+    "### **21.** Repeat the above, but this time with **separate lines for `Age_Grp`**"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "9238bc46-b98c-48da-95df-2375028dac74",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d1945527-805c-4cdd-bf03-cf195bcb2f8b",
+   "metadata": {},
+   "source": [
+    "### **22.** Repeat the above, but this time with **separate subplots for `Severity`**"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "c735e4f1-052e-4b80-8036-0a22c4ede515",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c5bb5a65-5ff7-430d-aee4-baf12ff50373",
+   "metadata": {},
+   "source": [
+    "### **23.** Make a bar chart showing the total number of accidents for each hour in the day from 1979-2018"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "c8f433f9-d657-4c4a-9da3-73af4054580b",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "4e509908-1c9b-4bf7-ab5a-217d7e2ce5fa",
+   "metadata": {},
+   "source": [
+    "### **24.** As above, but with stacked bars using different colours for each day of the week"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "c1bf3d3b-42bc-4a5c-a45a-bae805e93d8d",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "005dfce2-c1b9-490c-a2d2-be9d062290cf",
+   "metadata": {},
+   "source": [
+    "### **25.** Make a bar chart showing the year-on-year percentage change for accidents with different coloured bars for each `Severity`"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ff0eb7fa-5ad8-46eb-b3cb-6e210e37545b",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.15"
+  },
+  "widgets": {
+   "application/vnd.jupyter.widget-state+json": {
+    "state": {},
+    "version_major": 2,
+    "version_minor": 0
+   }
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

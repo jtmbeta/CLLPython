@@ -1,0 +1,107 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "8fe58656-7a0a-460d-9d01-f7af1a203e59",
+   "metadata": {},
+   "source": [
+    "# End of course assignment\n",
+    "\n",
+    "It's time for you to put your newly developed Python skills to use! The assignment is simple: find some data and tell a story. At the very least, this will require you to:\n",
+    "\n",
+    "  - locate and download an interesting dataset\n",
+    "  - load it into Python\n",
+    "  - make a chart to visualise some trend in the data\n",
+    "  - share your findings with the group in a 3-5 minute presentation\n",
+    "  \n",
+    "You can complete the task in this notebook using either Jupyter or [Google Colab](https://colab.research.google.com/), or by writing a script in Spyder. Some potential sources of interesting data are listed below, but there are many other sources of quality data on the internet and you are free to choose whatever you want. In the final session, you will be able to share your screen via zoom, or you can post an image or pdf document in the group chat.\n",
+    "\n",
+    "## Potential sources of data\n",
+    "\n",
+    "### [kaggle](https://www.kaggle.com/)\n",
+    "\n",
+    "This excellent little website is as much a thriving community of data scientists as it is a source of quality data. After making a free account, you can browse over 178,000 data sets or search using keywords. The kaggle community even post code, analyses and discussion points, which you may look to for inspiration.\n",
+    "\n",
+    "Here are some interesting data sets that caught my eye on kaggle:\n",
+    "\n",
+    "  - [Blood Type Distribution by Country](https://www.kaggle.com/datasets/ricardopaula/blood-type-distribution-by-country)\n",
+    "    - What are the most and least common blood types, and which countries appear to have the most and least of this blood type?\n",
+    "  - [Indian Food 101](https://www.kaggle.com/datasets/nehaprabhavalkar/indian-food-101)\n",
+    "    - How many unique ingredients are there across all dishes in the data set?\n",
+    "    - What is the most common ingredient?\n",
+    "    - From which state do most dishes originate?\n",
+    "    - Including both preparation and cooking time, what are the fastest and slowest dishes to make?\n",
+    "  - [World Happiness Report](https://www.kaggle.com/datasets/unsdsn/world-happiness)\n",
+    "    - In the period 2015 - 2019, which countries were the happiest? For which countries did happiness increase / decrease most substantially in this period?\n",
+    "   \n",
+    "\n",
+    "### [hockeyfights.com](https://www.hockeyfights.com/)\n",
+    "  \n",
+    "I'm not a hockey fan, let alone a bloodthirsty one. This website makes the list purely because it is a well-curated source of interesting data. I used it some years ago in a similar assignment to explore the relationship between number of fights and games won / lost in a season for the Detroit Redwings and Toronto Maple Leafs. \n",
+    "\n",
+    "  - Which are the top three most bellicose hockey teams?\n",
+    "  - Which teams have the greatest fighting rivalry?\n",
+    "  - Is there a relationship between number of fights in a season and the number of games won / lost?\n",
+    "  \n",
+    "### [Our World in Data](https://ourworldindata.org/)\n",
+    "\n",
+    "This brilliant website publishes data-driven reports on poverty, disease, hunger, climate change, war and many other big problems that exist in the World. Most reports include a link to download the raw data, usually in `CSV` format. Here are a few examples:\n",
+    "\n",
+    "  - [Global CO2 Emissions](https://ourworldindata.org/co2-data-update-2022)\n",
+    "    - Since records began, which 10 countries are responsible for the most CO2 emissions resulting from fossil fuel burning? Which 10 are responsible for the least emissions? \n",
+    "    - As above, but for emissions resulting from land use changes\n",
+    "  - [Wild Mammals are making a comeback](https://ourworldindata.org/europe-mammal-comeback)\n",
+    "    - Download the data and recreate the chart on the web page\n",
+    "  - [Air Polution](https://ourworldindata.org/explorers/air-pollution)\n",
+    "    - Over the last 10 years in the United Kingdom, which pollutants have increased, and which have decreased?\n",
+    "\n",
+    "### [Google Trends](https://trends.google.com/trends/?geo=GB)\n",
+    "\n",
+    "Google trends allows you to analyze and compare 'interest' in specific search terms over time and by geographical region, and to then download the results in `CSV` format. Often this reveals perplexing trends that warrant further exploration. For example, when comparing interest in 'marriage' and 'divorce' across the world since 2004, most countries were more interested in marriage, but France showed a strong preference for divorce. What's going on there?\n",
+    "\n",
+    "### [Google Dataset Search](https://datasetsearch.research.google.com/)\n",
+    "\n",
+    "This is Google's search engine for datasets. With a simple keyword search, users can find datasets hosted in thousands of repositories across the Web.\n",
+    "\n",
+    "\n",
+    "Good luck!"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "aa7f5d35",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.15"
+  },
+  "widgets": {
+   "application/vnd.jupyter.widget-state+json": {
+    "state": {},
+    "version_major": 2,
+    "version_minor": 0
+   }
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

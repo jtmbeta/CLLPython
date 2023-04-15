@@ -61,3 +61,9 @@ html_theme_options = {
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+
+def setup(app):
+    # (create a setup() function if you don't already have one;
+    # or add to the existing setup() ...)
+    app.add_js_file('analytics.js')

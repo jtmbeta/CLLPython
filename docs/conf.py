@@ -62,8 +62,11 @@ html_theme_options = {
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-
-def setup(app):
-    # (create a setup() function if you don't already have one;
-    # or add to the existing setup() ...)
-    app.add_js_file('analytics.js')
+html_context = {
+    'ga_tracking_id': 'G-C8D7Q02SML'
+}
+#def setup(app):
+#    # (create a setup() function if you don't already have one;
+#    # or add to the existing setup() ...)
+#    app.add_js_file('analytics.js')
+    
